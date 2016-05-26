@@ -1,0 +1,45 @@
+/*
+cf {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+span {
+  float: left;
+  width: 40%;
+  margin-right: 5%;
+}    
+
+*/
+
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+html {
+    font-size: 13px;
+    line-height: 1.5em;
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.clearfix::after{
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.container {
+  max-width: 1500px;
+  margin: 0 auto;
+}
