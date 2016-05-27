@@ -72,7 +72,7 @@ class Utilisateur {
 
 
     public function setNom( $nom ) {
-        if ( strlen( $nom ) < 4 ) 
+        if ( strlen( $nom ) < 3 ) 
             throw new Exception ("Nom trop court (< 4)");
         else if ( strlen( $nom ) > 63 )
             throw new Exception ("Nom trop long (> 63)");            
@@ -81,7 +81,7 @@ class Utilisateur {
     }
 
     public function setPrenom( $prenom ) {
-        if ( strlen( $prenom ) < 4 ) 
+        if ( strlen( $prenom ) < 3 ) 
             throw new Exception ("Prénom trop court (< 4)");
         else if ( strlen( $prenom ) > 63 )
             throw new Exception ("Prénom trop long (> 63)");            
@@ -97,7 +97,7 @@ class Utilisateur {
     }
 
     public function setMotPasse( $mot_passe ) {
-        if ( strlen( $mot_passe ) < 4 ) 
+        if ( strlen( $mot_passe ) < 3 ) 
             throw new Exception ("Mot de passe trop court (< 4)");
         else if ( strlen( $mot_passe ) > 63 )
             throw new Exception ("Mot de passe trop long (> 63)");            
@@ -110,10 +110,10 @@ class Utilisateur {
     }
 
     public function setTelephone( $telephone ) {
-        if ( strlen( $telephone ) != 10 ) 
-            throw new Exception ("Téléphone incorrect");
-        else if ( $telephone[0] != '0' )
-            throw new Exception ("Téléphone incorrect");            
+        // if ( strlen( $telephone ) != 10 ) 
+        //     throw new Exception ("Téléphone incorrect");
+        // else if ( $telephone[0] != '0' )
+        //     throw new Exception ("Téléphone incorrect");            
 
         $this->telephone = $telephone;
     }
@@ -127,7 +127,7 @@ class Utilisateur {
     }
 
     public function setLogin( $login ) {
-        if ( strlen( $login ) < 4 ) 
+        if ( strlen( $login ) < 3 ) 
             throw new Exception ("Login trop court (< 4)");
         else if ( strlen( $login ) > 63 )
             throw new Exception ("Login trop long (> 63)");            
