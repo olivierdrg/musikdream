@@ -53,7 +53,7 @@ class AdresseManager
         $adresse->setType( $data['type'] );
 
 
-        $id_utilisateur     = $this->link, $adresse->getIdUtilisateur();
+        $id_utilisateur     = mysqli_real_escape_string( $this->link, $adresse->getIdUtilisateur() );
         $designation        = mysqli_real_escape_string( $this->link, $adresse->getDesignation() );
         $rue                = mysqli_real_escape_string( $this->link, $adresse->getRue() );
         $cp                 = mysqli_real_escape_string( $this->link, $adresse->getCp() );
