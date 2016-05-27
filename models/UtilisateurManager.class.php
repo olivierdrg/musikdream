@@ -142,6 +142,7 @@ class UtilisateurManager
         while ( $ligne = mysqli_fetch_assoc( $res ) ) {
             if ( password_verify( $mot_passe, $ligne['mot_passe']) ) {
                 $_SESSION['id'] = $ligne['id'];
+                $_SESSION['login'] = $ligne['login'];
                 $_SESSION['admin'] = $ligne['admin'];
             }
         }
