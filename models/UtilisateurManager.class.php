@@ -101,7 +101,7 @@ class UtilisateurManager
             $telephone          = mysqli_real_escape_string( $this->link, $utilisateur->getTelephone());
             $login              = mysqli_real_escape_string( $this->link, $utilisateur->getLogin());
 
-            $request = "UPDATE utilisateur SET nom='" . $nom . "', prenom='" . $prenom . "', email='" . $email . "', mot_passe='" . $mot_passe . "', date_naissance='" . $date_naissance . "', telephone='" . $telephone . "', login='" . $login . "', WHERE id=" . $id;
+            $request = "UPDATE utilisateur SET nom='" . $nom . "', prenom='" . $prenom . "', email='" . $email . "', mot_passe='" . $mot_passe . "', date_naissance='" . $date_naissance . "', telephone='" . $telephone . "', login='" . $login . "' WHERE id=" . $id;
             $res = mysqli_query( $this->link, $request );
             if ( $res )
                 return $this->findById( $id );
