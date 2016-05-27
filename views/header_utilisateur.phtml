@@ -6,7 +6,7 @@
                         <li class="active"><a href="index.php">Home</a></li>
                         <li><a href="index.php?page=logout">Logout</a></li>
                     </ul>
-                    <p>Bonjour <?= $_SESSION['login'] ?></p>
+                    <p>Bonjour <?= htmlentities( $_SESSION['login'] ) ?></p>
                 </div>      
             </div>
     </nav>    
