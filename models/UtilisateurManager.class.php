@@ -134,9 +134,8 @@ class UtilisateurManager
         $mot_passe = $data['mot_passe'];
         $login     = $data['login'];
 
-        var_dump( $mot_passe, $login );
         $request = 'SELECT id, mot_passe, login, admin FROM utilisateur WHERE login="' . $login . '"';
-        var_dump( $request );
+
         $res = mysqli_query( $this->link, $request ); 
          
         while ( $ligne = mysqli_fetch_assoc( $res ) ) {

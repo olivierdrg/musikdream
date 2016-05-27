@@ -1,5 +1,4 @@
 <?php
-var_dump( $_POST, $_GET );
 if ( isset( $_POST['action'] ) ) {
     
     if ($_POST['action'] == 'register') {
