@@ -1,0 +1,80 @@
+<form method="POST" class="register-form" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="row">
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" name="nom" value="<?= htmlentities( $nom ) ?>">
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="row">
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" name="prenom" value="<?= htmlentities( $prenom ) ?>">
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="row">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" value="<?= htmlentities( $email ) ?>"> 
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="row">
+                <label for="date_naissance">Date_naissance</label>
+                <input type="date" id="date_naissance" name="date_naissance" value="<?= htmlentities( $date_naissance ) ?>"> 
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="row">
+                <label for="mot_passe">Mot de  passe</label>
+                <input type="password" id="mot_passe" name="mot_passe" value="<?= htmlentities( $mot_passe ) ?>">
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="row">
+                <label for="confirme_mot_passe">Confirmez le mot de  passe</label>
+                <input type="password" id="confirme_mot_passe" name="confirme_mot_passe" value="<?= htmlentities( $confirme_mot_passe ) ?>">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="row">
+                <label for="telephone">Telephone</label>
+                <input type="text" id="telephone" name="telephone" value="<?= htmlentities( $telephone ) ?>">
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="row">
+                <label for="sexe">Sexe</label>
+                <input type="text" id="sexe" name="sexe" value="<?= htmlentities( $sexe ) ?>">
+            </div>
+        </div>
+    </div>    
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="row">
+                <label for="login">Login</label>
+                <input type="text" id="login" name="login" value="<?= htmlentities( $login ) ?>"> 
+            </div>
+        </div>
+    </div>
+
+     <div class="row">
+        <div class="col-sm-12 submit">   
+            <button type="submit" class="button" name="action" value="register">Send</button>   
+        </div>
+    </div>
+
+</form>

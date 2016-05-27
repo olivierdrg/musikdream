@@ -1,0 +1,22 @@
+<form method="POST" class="register-form" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="row">
+                <label for="login">Login</label>
+                <input type="text" id="login" name="login" value="<?= htmlentities( $login ) ?>"> 
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="row">
+                <label for="mot_passe">Mot de  passe</label>
+                <input type="password" id="mot_passe" name="mot_passe">
+            </div>
+        </div>
+    </div>
+
+     <div class="row">
+        <div class="col-sm-12 submit">   
+            <button type="submit" class="button" name="action" value="login">Send</button>   
+        </div>
+    </div>    
+</form>

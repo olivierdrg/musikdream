@@ -2,10 +2,10 @@
 -- version 4.0.10deb1
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: May 26, 2016 at 11:45 AM
--- Server version: 5.5.47-0ubuntu0.14.04.1
--- PHP Version: 5.5.9-1ubuntu4.14
+-- Client: localhost
+-- Généré le: Ven 27 Mai 2016 à 13:43
+-- Version du serveur: 5.5.47-0ubuntu0.14.04.1
+-- Version de PHP: 5.5.9-1ubuntu4.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `musikdream`
+-- Base de données: `musikdream`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `adresse`
+-- Structure de la table `adresse`
 --
 
 CREATE TABLE IF NOT EXISTS `adresse` (
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `adresse` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `avis`
+-- Structure de la table `avis`
 --
 
 CREATE TABLE IF NOT EXISTS `avis` (
@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `avis` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categorie`
+-- Structure de la table `categorie`
 --
 
 CREATE TABLE IF NOT EXISTS `categorie` (
@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS `categorie` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `liaison_panier_produit`
+-- Structure de la table `liaison_panier_produit`
 --
 
 CREATE TABLE IF NOT EXISTS `liaison_panier_produit` (
@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `liaison_panier_produit` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `panier`
+-- Structure de la table `panier`
 --
 
 CREATE TABLE IF NOT EXISTS `panier` (
@@ -108,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `panier` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `produit`
+-- Structure de la table `produit`
 --
 
 CREATE TABLE IF NOT EXISTS `produit` (
@@ -130,7 +130,7 @@ CREATE TABLE IF NOT EXISTS `produit` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sous_categorie`
+-- Structure de la table `sous_categorie`
 --
 
 CREATE TABLE IF NOT EXISTS `sous_categorie` (
@@ -146,7 +146,7 @@ CREATE TABLE IF NOT EXISTS `sous_categorie` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `utilisateur`
+-- Structure de la table `utilisateur`
 --
 
 CREATE TABLE IF NOT EXISTS `utilisateur` (
@@ -156,53 +156,62 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `email` varchar(63) NOT NULL,
   `mot_passe` varchar(255) NOT NULL,
   `date_inscription` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `admin` varchar(15) NOT NULL,
+  `admin` tinyint(1) NOT NULL DEFAULT '0',
   `date_naissance` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `telephone` varchar(31) NOT NULL,
-  `sexe` tinyint(1) DEFAULT NULL COMMENT '1 homme  0 femme',
+  `sexe` tinyint(1) NOT NULL DEFAULT '0' COMMENT '1 homme  0 femme',
   `actif` tinyint(1) NOT NULL DEFAULT '1',
   `login` varchar(31) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
--- Constraints for dumped tables
+-- Contenu de la table `utilisateur`
+--
+
+INSERT INTO `utilisateur` (`id`, `nom`, `prenom`, `email`, `mot_passe`, `date_inscription`, `admin`, `date_naissance`, `telephone`, `sexe`, `actif`, `login`) VALUES
+(1, '', '', '', '$2y$08$zIcbDRqqtIZlX/wKYQ/w2eMAQUvS8JaIvrzC8qheJG1B7xfCCTuru', '2016-05-27 09:55:38', 0, '0000-00-00 00:00:00', '', 0, 1, ''),
+(2, 'noms', 'prenom', 'email@fre.fr', '$2y$08$1fmr7ykqjx7JKxgw7kVFQONWGwrtN02EQNGcmuKgw4h116iAtIRmu', '2016-05-27 10:03:13', 0, '2016-06-25 22:00:00', '0123546789', 0, 1, 'login'),
+(3, 'nomgggg', 'prenom', 'email@df.fd', '$2y$08$4cg7JA0jtX3kIWhM9yzrNuNd7C6y6PYD8F3gVWJmpJ4qKB.j1qWb2', '2016-05-27 11:16:52', 0, '2016-06-25 22:00:00', '0134564478', 0, 1, 'login');
+
+--
+-- Contraintes pour les tables exportées
 --
 
 --
--- Constraints for table `adresse`
+-- Contraintes pour la table `adresse`
 --
 ALTER TABLE `adresse`
   ADD CONSTRAINT `adresse_ibfk_1` FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateur` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `avis`
+-- Contraintes pour la table `avis`
 --
 ALTER TABLE `avis`
-  ADD CONSTRAINT `avis_ibfk_2` FOREIGN KEY (`id_produit`) REFERENCES `produit` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `avis_ibfk_1` FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateur` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `avis_ibfk_1` FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateur` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `avis_ibfk_2` FOREIGN KEY (`id_produit`) REFERENCES `produit` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `liaison_panier_produit`
+-- Contraintes pour la table `liaison_panier_produit`
 --
 ALTER TABLE `liaison_panier_produit`
-  ADD CONSTRAINT `liaison_panier_produit_ibfk_2` FOREIGN KEY (`id_produit`) REFERENCES `produit` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `liaison_panier_produit_ibfk_1` FOREIGN KEY (`id_panier`) REFERENCES `panier` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `liaison_panier_produit_ibfk_1` FOREIGN KEY (`id_panier`) REFERENCES `panier` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `liaison_panier_produit_ibfk_2` FOREIGN KEY (`id_produit`) REFERENCES `produit` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `panier`
+-- Contraintes pour la table `panier`
 --
 ALTER TABLE `panier`
   ADD CONSTRAINT `panier_ibfk_1` FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateur` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `produit`
+-- Contraintes pour la table `produit`
 --
 ALTER TABLE `produit`
   ADD CONSTRAINT `produit_ibfk_1` FOREIGN KEY (`id_sous_categorie`) REFERENCES `sous_categorie` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `sous_categorie`
+-- Contraintes pour la table `sous_categorie`
 --
 ALTER TABLE `sous_categorie`
   ADD CONSTRAINT `sous_categorie_ibfk_1` FOREIGN KEY (`id_categorie`) REFERENCES `categorie` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
