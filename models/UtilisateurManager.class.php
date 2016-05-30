@@ -86,29 +86,6 @@ class UtilisateurManager {
                 
     }    
 
-
-
-    public function update( Utilisateur $utilisateur ) { // type-hinting
-        $id = $utilisateur->getId();
-
-        if ($id) {// true si > 0
-            $nom                = mysqli_real_escape_string( $this->link, $utilisateur->getNom());
-            $prenom             = mysqli_real_escape_string( $this->link, $utilisateur->getPrenom());
-            $email              = mysqli_real_escape_string( $this->link, $utilisateur->getEmail());
-            $mot_passe          = mysqli_real_escape_string( $this->link, $utilisateur->getMotPasse());
-            $date_naissance     = mysqli_real_escape_string( $this->link, $utilisateur->getDateNaissance());
-            $telephone          = mysqli_real_escape_string( $this->link, $utilisateur->getTelephone());
-            $login              = mysqli_real_escape_string( $this->link, $utilisateur->getLogin());
-
-            $request = "UPDATE utilisateur SET nom='" . $nom . "', prenom='" . $prenom . "', email='" . $email . "', mot_passe='" . $mot_passe . "', date_naissance='" . $date_naissance . "', telephone='" . $telephone . "', login='" . $login . "' WHERE id=" . $id;
-            $res = mysqli_query( $this->link, $request );
-            if ( $res )
-                return $this->findById( $id );
-            else
-                throw new Exception ("Internal server error");
-        }
-    }
-
     public function remove(Utilisateur $utilisateur ) {
         $id = $utilisateur->getId();
 
@@ -143,6 +120,51 @@ class UtilisateurManager {
                 $_SESSION['login'] = $ligne['login'];
                 $_SESSION['admin'] = $ligne['admin'];
             }
+        }
+    }
+
+    // public function profil( $id ) {  
+
+    //     $utilisateur = $utilisateur->getById();
+
+    //     if ($id) {// true si > 0
+    //         $liste = [
+    //             $nom            => mysqli_real_escape_string( $this->link, $utilisateur->getNom()),
+    //             $prenom         => mysqli_real_escape_string( $this->link, $utilisateur->getPrenom()),
+    //             $email          => mysqli_real_escape_string( $this->link, $utilisateur->getEmail()),
+    //             $date_naissance => mysqli_real_escape_string( $this->link, $utilisateur->getDateNaissance()),
+    //             $telephone      => mysqli_real_escape_string( $this->link, $utilisateur->getTelephone()),
+                
+    //         ];
+    //         return $liste;
+    //     }
+    //     else
+    //         throw new Exception ("Internal server error");
+    // }
+
+    
+
+    public function update( Utilisateur $utilisateur ) { // type-hinting
+        $id = $utilisateur->getId();
+
+        if ($id) {// true si > 0
+            $nom                = mysqli_real_escape_string( $this->link, $utilisateur->getNom());
+            $prenom             = mysqli_real_escape_string( $this->link, $utilisateur->getPrenom());
+            $email              = mysqli_real_escape_string( $this->link, $utilisateur->getEmail());
+            $mot_passe          = mysqli_real_escape_string( $this->link, $utilisateur->getMotPasse());
+            $date_naissance     = mysqli_real_escape_string( $this->link, $utilisateur->getDateNaissance());
+            $telephone          = mysqli_real_escape_string( $this->link, $utilisateur->getTelephone());
+            $login              = mysqli_real_escape_string( $this->link, $utilisateur->getLogin());
+
+            $request = "UPDATE utilisateur SET  nom='" . $nom . "', prenom='" . $prenom . "', email='" . $email . "', 
+                                                mot_passe='" . $mot_passe . "', date_naissance='" . $date_naissance . "',
+                                                telephone='" . $telephone . "', login='" . $login . "' WHERE id=" . $id;
+
+            $res = mysqli_query( $this->link, $request );
+            if ( $res )
+                return $this->findById( $id );
+            else
+                throw new Exception ("Internal server error");
         }
     }
 

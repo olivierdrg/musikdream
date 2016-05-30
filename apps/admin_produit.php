@@ -1,12 +1,12 @@
 <?php
 	$manager = new ProduitManager( $link );
 
-	$list_produit = $manager->findAll();
+	$produits = $manager->findAll();
 
 	$i = 0;
-	$count = count( $list_produit );
+	$count = count( $produits );
     while ( $i < $count ) {
-    	$produit = $list_produit[$i];
+    	$produit = $produits[$i];
     	
         require('views/admin_produit.phtml');
 

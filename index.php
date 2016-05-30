@@ -27,8 +27,10 @@
         'register',
         'profil',
         'admin',
-        'admin_liste_produit',
-        'admin_ajout_produit',
+        'admin_produits',
+        'admin_produit_ajout',
+        'admin_produit_modif',
+        'admin_produit_cache',
     );
 
     $access_traitement = array(      
@@ -38,10 +40,10 @@
         'profil'                => 'utilisateur',
         'update'                => 'utilisateur',
         'admin'                 => 'admin',
-        'admin_ajout_produit'   => 'produit',
-        'admin_modif_produit'   => 'produit',
-        'admin_supp_produit'    => 'produit',
-        'admin_cache_produit'   => 'produit',
+        'admin_produits'        => 'produit',
+        'admin_produit_ajout'   => 'produit',
+        'admin_produit_modif'   => 'produit',
+        'admin_produit_cache'   => 'produit',
     );
 
     if ( isset( $_GET['page'] ) ) {
