@@ -47,11 +47,11 @@ class SousCategorieManager
         if ( !isset( $data['description'] ) ) throw new Exception ("Description de la sous-catégorie manquante");
 
         $sous_categorie->setIdCategorie( $data['id_categorie'] );
-        $sous_categorie->setNom( $data['photo'] );
-        $sous_categorie->setPrenom( $data['nom'] );
-        $sous_categorie->setMotPasse( $data['description'];
+        $sous_categorie->setPhoto( $data['photo'] );
+        $sous_categorie->setNom( $data['nom'] );
+        $sous_categorie->setDescription( $data['description'];
 
-        $id_categorie    = mysqli_real_escape_string( $this->link, $sous_categorie->getPhoto() );
+        $id_categorie    = mysqli_real_escape_string( $this->link, $sous_categorie->getIdCategorie() );
         $photo           = mysqli_real_escape_string( $this->link, $sous_categorie->getPhoto() );
         $nom             = mysqli_real_escape_string( $this->link, $sous_categorie->getNom() );
         $description     = mysqli_real_escape_string( $this->link, $sous_categorie->getDescription() );

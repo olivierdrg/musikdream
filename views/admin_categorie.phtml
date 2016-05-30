@@ -1,37 +1,14 @@
-<div class="row">
-    <div><a href="?page=admin_categorie_ajout">Nouvelle catégorie</a></div>
-    <table>
-        <tr>
-            <td>Photo</td>
-	        <td>Nom</td>
-	        <td>Description</td>
-        </tr>
-    </table>
-</div>
-
-<div class="row">
-	<p>
-		<?= htmlentities ($ligne['id']) ?>
-	</p>
-
-	<div><a href="?page=admin_souscategorie_modif">Modifier la catégorie</a></div>
-	    <table>
-	        <tr>
-	            <td>Photo</td>
-	            <td>Nom</td>
-	            <td>Description</td>
-	        </tr>
-	    </table>
-	</div>
-
-	<img src="<?= $ligne['photo'] ?>">
-	<p>
-		<?= htmlentities ($ligne['nom']) ?>
-		<?= htmlentities ($ligne['description']) ?>
-	</p>
-
-	<?php
-	    require('apps/admin_souscategories.php');
-	?>
-
-</div>
+<tr>
+    <td><a href="?page=admin_categorie_modif&id=<?= $categorie->getId() ?>">Modifier</a></td>
+    <td>
+        <form method="POST" class="register-form">
+            <input type="hidden" name="id" value="<?= htmlentities( $categorie->getId() ) ?>">
+            <button type="submit" class="button" name="action" value="supp">Supprimer</button>
+        </form>
+    </td>
+    <td><?= $categorie->getPhoto() ?></td>
+    <td><?= $categorie->getNom() ?></td>
+    <td><?= $categorie->getDescription() ?></td>
+    
+    <?php require('apps/admin_souscategories.php'); ?>
+</tr>
