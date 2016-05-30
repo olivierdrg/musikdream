@@ -1,33 +1,13 @@
-<div class="row">
-    <div><a href="?page=admin_souscategorie_ajout">Nouvelle sous-catégorie</a></div>
-    <table>
-        <tr>
-            <td>Photo</td>
-            <td>Nom</td>
-            <td>Descriptif</td>
-        </tr>
-    </table>
-</div>
-
-<div class="row">
-	<p>
-		<?= htmlentities ($ligne['id']) ?>
-		<?= htmlentities ($ligne['id_categorie']) ?>
-	</p>
-
-	<div><a href="?page=admin_souscategorie_modif">Modifier la sous-catégorie</a></div>
-	    <table>
-	        <tr>
-	            <td>Photo</td>
-	            <td>Nom</td>
-	            <td>Descriptif</td>
-	        </tr>
-	    </table>
-	</div>
-
-	<img src="<?= $ligne['photo'] ?>">
-	<p>
-		<?= htmlentities ($ligne['nom']) ?>
-		<?= htmlentities ($ligne['description']) ?>
-	</p>
-</div>
+<tr>
+    <td><a href="?page=admin_souscategorie_modif&id=<?= $sous_categorie->getId() ?>">Modifier</a></td>
+    <td>
+        <form method="POST" class="register-form">
+            <input type="hidden" name="id" value="<?= htmlentities( $sous_categorie->getId() ) ?>">
+            <button type="submit" class="button" name="action" value="supp">Supprimer</button>
+        </form>
+    </td>
+    <td><?= $sous_categorie->getIdCategorie() ?></td>
+    <td><?= $sous_categorie->getPhoto() ?></td>
+    <td><?= $sous_categorie->getNom() ?></td>
+    <td><?= $sous_categorie->getDescription() ?></td>
+</tr>

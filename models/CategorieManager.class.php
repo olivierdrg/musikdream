@@ -45,9 +45,9 @@ class CategorieManager
         if ( !isset( $data['nom'] ) ) throw new Exception ("Nom de la catégorie manquant");
         if ( !isset( $data['description'] ) ) throw new Exception ("Description de la catégorie manquante");
 
-        $categorie->setNom( $data['photo'] );
-        $categorie->setPrenom( $data['nom'] );
-        $categorie->setMotPasse( $data['description'] );
+        $categorie->setPhoto( $data['photo'] );
+        $categorie->setNom( $data['nom'] );
+        $categorie->setDescription( $data['description'] );
 
         $photo           = mysqli_real_escape_string( $this->link, $categorie->getPhoto() );
         $nom             = mysqli_real_escape_string( $this->link, $categorie->getNom() );
