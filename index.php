@@ -27,6 +27,8 @@
         'register',
         'admin_produits',
         'admin_produit_ajout',
+        'admin_produit_modif',
+        'admin_produit_cache',
     );
 
     $access_traitement = array(      
