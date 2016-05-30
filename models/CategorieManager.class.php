@@ -47,7 +47,7 @@ class CategorieManager
 
         $categorie->setNom( $data['photo'] );
         $categorie->setPrenom( $data['nom'] );
-        $categorie->setMotPasse( $data['description'];
+        $categorie->setMotPasse( $data['description'] );
 
         $photo           = mysqli_real_escape_string( $this->link, $categorie->getPhoto() );
         $nom             = mysqli_real_escape_string( $this->link, $categorie->getNom() );
