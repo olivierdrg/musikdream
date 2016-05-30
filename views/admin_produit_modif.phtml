@@ -1,5 +1,5 @@
 <form method="POST" class="register-form" enctype="multipart/form-data">
-    <input type="hidden" id="id" name="id" value="<?= htmlentities( $id ) ?>">
+    <input type="hidden" id="id" name="id" value="<?= htmlentities( $produit->getId() ) ?>">
     <div class="row">
         <div class="col-sm-6">
             <div class="row">
@@ -14,7 +14,7 @@
         <div class="col-sm-6">
             <div class="row">
                 <label for="reference">Réference</label>
-                <input type="text" id="reference" name="reference" value="<?= htmlentities( $reference ) ?>">
+                <input type="text" id="reference" name="reference" value="<?= htmlentities( $produit->getReference() ) ?>">
             </div>
         </div>
     </div>
@@ -23,7 +23,7 @@
         <div class="col-sm-6">
             <div class="row">
                 <label for="stock">Stock</label>
-                <input type="text" id="stock" name="stock" value="<?= htmlentities( $stock ) ?>"> 
+                <input type="text" id="stock" name="stock" value="<?= htmlentities( $produit->getStock() ) ?>"> 
             </div>
         </div>
     </div>
@@ -31,8 +31,8 @@
     <div class="row">
         <div class="col-sm-6">
             <div class="row">
-                <label for="prix_ht">Prix_ht</label>
-                <input type="text" id="prix_ht" name="prix_ht" value="<?= htmlentities( $prix_ht ) ?>"> 
+                <label for="prix_ht">Prix ht</label>
+                <input type="text" id="prix_ht" name="prix_ht" value="<?= htmlentities( $produit->getPrixHt() ) ?>"> 
             </div>
         </div>
     </div>
@@ -41,13 +41,13 @@
         <div class="col-sm-6">
             <div class="row">
                 <label for="tva">Tva</label>
-                <input type="text" id="tva" name="tva" value="<?= htmlentities( $tva ) ?>">
+                <input type="text" id="tva" name="tva" value="<?= htmlentities( $produit->getTva() ) ?>">
             </div>
         </div>
         <div class="col-sm-6">
             <div class="row">
                 <label for="description">Déscription</label>
-                <input type="text" id="description" name="description" value="<?= htmlentities( $description ) ?>">
+                <input type="text" id="description" name="description" value="<?= htmlentities( $produit->getDescription() ) ?>">
             </div>
         </div>
     </div>
@@ -56,13 +56,13 @@
         <div class="col-sm-6">
             <div class="row">
                 <label for="photo">Photo</label>
-                <input type="text" id="photo" name="photo" value="<?= htmlentities( $photo ) ?>">
+                <input type="text" id="photo" name="photo" value="<?= htmlentities( $produit->getPhoto() ) ?>">
             </div>
         </div>
         <div class="col-sm-6">
             <div class="row">
                 <label for="nom">Nom</label>
-                <input type="text" id="nom" name="nom" value="<?= htmlentities( $nom ) ?>">
+                <input type="text" id="nom" name="nom" value="<?= htmlentities( $produit->getNom() ) ?>">
             </div>
         </div>
     </div>    
@@ -71,7 +71,7 @@
         <div class="col-sm-6">
             <div class="row">
                 <label for="poids">Poids</label>
-                <input type="text" id="poids" name="poids" value="<?= htmlentities( $poids ) ?>"> 
+                <input type="text" id="poids" name="poids" value="<?= htmlentities( $produit->getPoids() ) ?>"> 
             </div>
         </div>
     </div>
@@ -80,14 +80,15 @@
         <div class="col-sm-6">
             <div class="row">
                 <label for="actif">Actif</label>
-                <input type="text" id="actif" name="actif" value="<?= htmlentities( $actif ) ?>"> 
+                Oui<input type="radio" id="actif" name="actif" value="1"> 
+                Non<input type="radio" name="actif" value="0">                 
             </div>
         </div>
     </div>
 
      <div class="row">
         <div class="col-sm-12 submit">   
-            <button type="submit" class="button" name="action" value="ajout">Send</button>   
+            <button type="submit" class="button" name="action" value="modif">Send</button>   
         </div>
     </div>
 
