@@ -1,4 +1,20 @@
 <div class="row">
+    <div><a href="?page=admin_categorie_ajout">Nouvelle catégorie</a></div>
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <?php
+        require('apps/admin_categorie_ajout.php');
+        ?>
+        
+    </table>
+</div>
+
+<div class="row">
 	<p>
 		<?= htmlentities ($ligne['id']) ?>
 	</p>
@@ -7,4 +23,9 @@
 		<?= htmlentities ($ligne['nom']) ?>
 		<?= htmlentities ($ligne['description']) ?>
 	</p>
+
+	<?php
+	    require('apps/admin_souscategories.php');
+	?>
+
 </div>
