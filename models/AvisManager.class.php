@@ -75,9 +75,10 @@ class AvisManager
 
     $avis->setContenu( $data['contenu'] );
     $avis->setDate( $data['date'] );
+    $avis->setNote( $data['note'] );
 
-    $request = "INSERT INTO avis (contenu, 'date') 
-            VALUES('" . $contenu . "', '" . $date . "')";
+    $request = "INSERT INTO avis (contenu, 'date', note) 
+            VALUES('" . $contenu . "', '" . $date . "', '" . $note . "'' )";
 
     $res = mysqli_query( $this->link, $request );
         
@@ -108,9 +109,10 @@ class AvisManager
         if ($id) 
         {// true si > 0
             $contenu                = mysqli_real_escape_string( $this->link, $avis->getContenu());
-            $date             		= mysqli_real_escape_string( $this->link, $avis->getDate()); 
+            $date             		= mysqli_real_escape_string( $this->link, $avis->getDate());
+            $note                   = mysqli_real_escape_string( $this->link, $avis->getNote()); 
 
-			$request = "UPDATE avis SET contenu='" . $contenu . "', date='" . $date . "', WHERE id=" . $id;
+			$request = "UPDATE avis SET contenu='" . $contenu . "', date='" . $date . "', note='" . $note . "', WHERE id=" . $id;
             if ( $res )
                 return $this->findById( $id );
             else
