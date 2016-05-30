@@ -110,11 +110,22 @@ class PanierManager
             $quantite       = mysqli_real_escape_string( $this->link, $panier->getQuantite() );
             $poids          = mysqli_real_escape_string( $this->link, $panier->getPoids() );
 
+            // table panier
             $request = "UPDATE panier SET id_utilisateur='".$id_utilisateur."',date='".$date."',status='".$status."',prix='".$prix."',
                                            quantite='".$quantite."',poids='".$poids."' WHERE id=".$id;
             $res = mysqli_query( $this->link, $request );
             if ( $res )
+            {
+                "DELETE FROM liaison_panier_produit WHERE liaison_panier_produit.id_panier=$id";
+                $count = 0;
+                $max = sizeof($panier->produits);
+                while ($count < $max)
+                {
+                    "INSERT liaison_panier_produit (id_produit, id_panier) VALUES()";
+                    $count++;
+                }
                 return $this->findById( $id );
+            }
             else
                 throw new Exception ("Internal server error");
         }

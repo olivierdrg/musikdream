@@ -17,6 +17,8 @@ class Produit {
     private $poids;
     private $actif;
 
+    private $avis;
+
     public function getId() {
         return $this->id;
     }
@@ -93,9 +95,9 @@ class Produit {
     
     public function setDescription( $description ) {
         if ( strlen( $description ) < 3 ) 
-            throw new Exception ("Réference trop courte (< 4)");
+            throw new Exception ("description trop courte (< 3)");
         else if ( strlen( $description ) > 1023 )
-            throw new Exception ("Réference trop longue (> 1023)");            
+            throw new Exception ("description trop longue (> 1023)");            
 
         $this->description = $description;
     }
@@ -109,8 +111,8 @@ class Produit {
 
     public function setNom( $nom ) {
         if ( strlen( $nom ) < 3 ) 
-            throw new Exception ("Nom trop court (< 4)");
-        else if ( strlen( $description ) > 31 )
+            throw new Exception ("Nom trop court (< 3)");
+        else if ( strlen( $nom ) > 31 )
             throw new Exception ("Nom trop long (> 31)"); 
 
         $this->nom = $nom;

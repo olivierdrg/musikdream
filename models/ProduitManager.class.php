@@ -10,7 +10,18 @@ class ProduitManager {
     public function __construct( $link ) {
         $this->link = $link;
     }
-
+    public function findByPanier(Panier $panier)
+    {
+        $id = $panier->getId();
+        $list = [];
+        $request = 'SELECT * FROM produit
+            INNER JOIN liaison_panier_produit ON liaison_panier_produit.id_produit=produit.id
+            WHERE liaison_panier_produit.id_panier='.$id;
+        $res = mysqli_query( $this->link, $request );
+        while ( $produit = mysqli_fetch_object( $res, 'Produit' ) )
+            $list[] = $produit;
+        return $list;
+    }
     public function findAll() {
 
         //print_r(get_declared_classes());
@@ -98,6 +109,7 @@ class ProduitManager {
 
 
     public function update( Produit $produit ) { // type-hinting
+        var_dump( $produit );
         $id = $produit->getId();
 
         if ( $id ) {// true si > 0
@@ -122,9 +134,9 @@ class ProduitManager {
     }
 
     public function remove( Produit $produit ) {
-        $id = $utilisateur->getId();
+        $id = $produit->getId();
 
-        if ( $id ) {// true si > 0
+        if ( $id ) {
         
             $request = "DELETE FROM produit WHERE id=" . $id;
             $res = mysqli_query( $this->link, $request );
