@@ -14,9 +14,27 @@ class Panier {
     private $poids;
     private $type;
 
+    private $produits;// pas stocké directement dans la db -> calculé et par défaut == NULL
+
+    private $link;// propriété extérieure != DB
+
     //...
 
+    public function __construct($link)
+    {
+        $this->link = $link;
+    }
     // Getter/Setter | Accesseur/Mutateur | Accessor/Mutator
+    public function getProduits()
+    {
+        // $this->produits => null
+        if ($this->produits === null)
+        {
+            $manager = new ProduitManager($this->link);
+            $this->produits = $manager->findByPanier($this);
+        }
+        return $this->produits;
+    }
 
     public function getId() {
         return $this->id;
@@ -45,8 +63,28 @@ class Panier {
         return $this->poids;
     }
 
-
-
+    // $this->produits => array
+    public function addProduit(Produit $produit)
+    {
+        if ($this->produits === null)
+            $this->getProduits();
+        $this->produits[] = $produits;
+    }
+    public function removeProduit(Produit $produit)
+    {
+        if ($this->produits === null)
+            $this->getProduits();
+        $count = 0;
+        $max = sizeof($this->produits);
+        while ($count < $max)
+        {
+            if ($this->produits[$count]->getId() == $produit->getId())
+            {
+                // supprimer $this->produits[$count]
+            }
+            $count++;
+        }
+    }
     public function setDate( $date ) {
         // if ( strlen( $date ) < 3 ) 
         //     throw new Exception ("Date trop courte (< 4)");
@@ -84,5 +122,4 @@ class Panier {
         $this->poids = $poids;
     }
 }
-
 ?>
