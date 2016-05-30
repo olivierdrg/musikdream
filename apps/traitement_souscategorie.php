@@ -1,13 +1,14 @@
 <?php
 
-if (isset( $_SESSION['login']) ) {
+if ( isset( $_POST['action'] ) ) {
+    
+    if ($_POST['action'] == 'ajout')  {
 
-    if (isset( $_SESSION['admin'] ) && $_SESSION['admin'] == 1) {
         $manager = new SousCategorieManager( $link );
         try {
-            $sous_categorie = $manager->create( $_POST );//l'admin peut créer une sous-catégorie
+            $sous_categorie = $manager->create( $_POST );//l'admin peut créer une catégorie
 
-            header('Location: index.php?page=admin_categories');
+            header('Location: index.php?page=admin_souscategories');
             exit;
         }
 
@@ -16,12 +17,20 @@ if (isset( $_SESSION['login']) ) {
         }
     }
 
-    if (isset( $_SESSION['admin'] ) && $_SESSION['admin'] == 1) {
+    if ( $_POST['action'] == 'modif' ) {
+
         $manager = new SousCategorieManager( $link );
         try {
-            $sous_categorie = $manager->update( $_POST );//l'admin peut modifier une sous-catégorie
+            $id =  $_POST['id'];
+            $sous_categorie = $manager->findById( $id );
 
-            header('Location: index.php?page=admin_categories');
+            $sous_categorie->setNom( $_POST['photo'] );
+            $sous_categorie->setPoids( $_POST['nom'] );
+            $sous_categorie->setActif( $_POST['description'] );
+
+            $sous_categorie = $manager->update( $_POST );//l'admin peut modifier une catégorie
+
+            header('Location: index.php?page=admin_souscategories');
             exit;
         }
 
@@ -30,20 +39,22 @@ if (isset( $_SESSION['login']) ) {
         }
     }
 
-    if (isset( $_SESSION['admin'] ) && $_SESSION['admin'] == 1) {
-        $manager = new SousCategorieManager( $link );
-        try {
-            $sous_categorie = $manager->remove( $_POST );//l'admin peut supprimer une sous-catégorie
+    if ( $_POST['action'] == 'supp' ) {
+        if ( isset( $_POST['id'] ) ) {
 
-            header('Location: index.php?page=admin_categories');
+        try {
+            $manager = new SousCategorieManager( $link );
+            $sous_categorie = $manager->remove( $_POST );//l'admin peut supprimer une catégorie
+
+            header('Location: index.php?page=admin_souscategories');
             exit;
         }
 
         catch (Exception $exception) {
             $error = $exception->getMessage();
         }
+        }
     }
-
 }
 
 ?>
