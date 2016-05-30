@@ -18,6 +18,22 @@
 	<p>
 		<?= htmlentities ($ligne['id']) ?>
 	</p>
+
+	<div><a href="?page=admin_souscategorie_modif">Modifier la catégorie</a></div>
+	    <table>
+	        <tr>
+	            <td></td>
+	            <td></td>
+	            <td></td>
+	        </tr>
+
+	        <?php
+	        require('apps/admin_categorie_modif.php');
+	        ?>
+	        
+	    </table>
+	</div>
+
 	<img src="<?= $ligne['photo'] ?>">
 	<p>
 		<?= htmlentities ($ligne['nom']) ?>
