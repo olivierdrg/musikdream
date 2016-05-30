@@ -26,13 +26,19 @@
         'logout',
         'register',
         'admin',
+        'admin_liste_produit',
+        'admin_ajout_produit',
     );
 
     $access_traitement = array(      
-        'login'     =>'utilisateur',
-        'logout'    =>'utilisateur',
-        'register'  =>'utilisateur',
-        'admin'     =>'admin',
+        'login'                 => 'utilisateur',
+        'logout'                => 'utilisateur',
+        'register'              => 'utilisateur',
+        'admin'                 => 'admin',
+        'admin_ajout_produit'   => 'produit',
+        'admin_modif_produit'   => 'produit',
+        'admin_supp_produit'    => 'produit',
+        'admin_cache_produit'   => 'produit',
     );
 
     if ( isset( $_GET['page'] ) ) {
@@ -41,8 +47,8 @@
         }
     }
 
-    if ( isset($access_traitement[$page]) ) {
-        require("apps/traitement_" . $access_traitement[$page] . ".php");
+    if ( isset( $access_traitement[$page] ) ) {
+        require('apps/traitement_' . $access_traitement[$page] . '.php' );
     }
 
     require('apps/skel.php');
