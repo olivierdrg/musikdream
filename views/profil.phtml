@@ -1,0 +1,74 @@
+<form method="POST" class="register-form" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="row">
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" name="nom" value="<?= htmlentities( $utilisateur->getNom() ) ?>">
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="row">
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" name="prenom" value="<?= htmlentities( $utilisateur->getPrenom() ) ?>">
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="row">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" value="<?= htmlentities( $utilisateur->getEmail() ) ?>"> 
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="row">
+                <label for="date_naissance">Date_naissance</label>
+                <input type="date" id="date_naissance" name="date_naissance" value="<?= htmlentities( $utilisateur->getDateNaissance() ) ?>"> 
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="row">
+                <label for="telephone">Telephone</label>
+                <input type="text" id="telephone" name="telephone" value="<?= htmlentities( $utilisateur->getTelephone() ) ?>">
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="row">
+                <label for="sexe">Sexe</label>
+                <input type="text" id="sexe" name="sexe" value="<?= htmlentities( $utilisateur->getSexe() ) ?>">
+            </div>
+        </div>
+    </div>    
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="row">
+                <label for="telephone">Telephone</label>
+                <input type="text" id="telephone" name="telephone" value="<?= htmlentities( $utilisateur->getTelephone() ) ?>">
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="row">
+                <label for="sexe">Sexe</label>
+                <input type="text" id="sexe" name="sexe" value="<?= htmlentities( $utilisateur->getSexe() ) ?>">
+            </div>
+        </div>
+    </div>    
+
+
+
+
+
+    <div class="row">
+        <div class="col-sm-12 submit">   
+            <button type="submit" class="button" name="action" value="update">Mettre à jour</button>   
+        </div>
+    </div>
+
+</form>
