@@ -27,6 +27,11 @@
         'register',
         'profil',
         'admin',
+        'admin_categories',
+        'admin_categorie_ajout',
+        'admin_categorie_modif',
+        'admin_souscategorie_ajout',
+        'admin_souscategorie_modif',
         'admin_produits',
         'admin_produit_ajout',
         'admin_produit_modif',
@@ -34,16 +39,21 @@
     );
 
     $access_traitement = array(      
-        'login'                 => 'utilisateur',
-        'logout'                => 'utilisateur',
-        'register'              => 'utilisateur',
-        'profil'                => 'utilisateur',
-        'update'                => 'utilisateur',
-        'admin'                 => 'admin',
-        'admin_produits'        => 'produit',
-        'admin_produit_ajout'   => 'produit',
-        'admin_produit_modif'   => 'produit',
-        'admin_produit_cache'   => 'produit',
+        'login'                     => 'utilisateur',
+        'logout'                    => 'utilisateur',
+        'register'                  => 'utilisateur',
+        'profil'                    => 'utilisateur',
+        'update'                    => 'utilisateur',
+        'admin'                     => 'admin',
+        'admin_categories'          => 'categorie',
+        'admin_categorie_ajout'     => 'categorie',
+        'admin_categorie_modif'     => 'categorie',
+        'admin_souscategorie_ajout' => 'souscategorie',
+        'admin_souscategorie_modif' => 'souscategorie',
+        'admin_produits'            => 'produit',
+        'admin_produit_ajout'       => 'produit',
+        'admin_produit_modif'       => 'produit',
+        'admin_produit_cache'       => 'produit',
     );
 
     if ( isset( $_GET['page'] ) ) {
