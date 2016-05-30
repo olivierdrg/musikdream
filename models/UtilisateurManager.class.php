@@ -1,8 +1,7 @@
 <?php
 // models/UtilisateurManager.class.php
 
-class UtilisateurManager
-{
+class UtilisateurManager {
     private $link;
 
     // Liste des fonctions magiques en php : http://php.net/manual/fr/language.oop5.magic.php
@@ -149,4 +148,3 @@ class UtilisateurManager
 
 }
 ?>
-
