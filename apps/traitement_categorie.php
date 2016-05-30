@@ -7,7 +7,7 @@ if (isset( $_SESSION['login']) ) {
         try {
             $categorie = $manager->create( $_POST );//l'admin peut créer une catégorie
 
-            header('Location: index.php?page=admin_categories');
+            header('Location: index.php?page=admin_categories_ajout');
             exit;
         }
 
@@ -21,7 +21,7 @@ if (isset( $_SESSION['login']) ) {
         try {
             $categorie = $manager->update( $_POST );//l'admin peut modifier une catégorie
 
-            header('Location: index.php?page=admin_categories');
+            header('Location: index.php?page=admin_categories_modif');
             exit;
         }
 
