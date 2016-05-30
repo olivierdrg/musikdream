@@ -55,12 +55,14 @@
 
     	public function setDate( $date) 
     	{
-    	  require $date("m/d/Y H\hi");
+    	  $date = date("m/d/Y H\hi");
 
     	 $this->date = $date;
 		}
 
 		public function setNote( $note )
+		{
 		$this->note = $note;
+		}
 }
 ?>
