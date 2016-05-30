@@ -45,26 +45,91 @@
                 <input type="text" id="sexe" name="sexe" value="<?= htmlentities( $utilisateur->getSexe() ) ?>">
             </div>
         </div>
+    </div>
+        <hr>
+    <div class="row">
+        <h2>Adresse de facturation</h2>
+        <div class="col-sm-6">
+            <div class="row">
+                <label for="designation">Designation</label>
+                <input type="text" id="designation" name="designation" value="">
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="row">
+                <label for="rue">Rue</label>
+                <input type="text" id="rue" name="rue" value="">
+            </div>
+        </div>
     </div>    
     <div class="row">
         <div class="col-sm-6">
             <div class="row">
-                <label for="telephone">Telephone</label>
-                <input type="text" id="telephone" name="telephone" value="<?= htmlentities( $utilisateur->getTelephone() ) ?>">
+                <label for="cp">Code postal</label>
+                <input type="text" id="cp" name="cp" value="">
             </div>
         </div>
         <div class="col-sm-6">
             <div class="row">
-                <label for="sexe">Sexe</label>
-                <input type="text" id="sexe" name="sexe" value="<?= htmlentities( $utilisateur->getSexe() ) ?>">
+                <label for="ville">Ville</label>
+                <input type="text" id="ville" name="ville" value="">
             </div>
         </div>
     </div>    
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="row">
+                <label for="pays">Pays</label>
+                <input type="text" id="pays" name="pays" value="">
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="row">
+                <label for="type">Adresse de livraison idem que l'adresse de facturation</label>
+                <input type="checkbox" id="type" name="type" value="" checked>
+            </div>
+        </div>
+    </div>    
+    <hr>
+    <div class="row">
+        <h2>Adresse de livraison</h2>
+        <div class="col-sm-6">
+            <div class="row">
+                <label for="designation">Designation</label>
+                <input type="text" id="designation" name="designation" value="">
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="row">
+                <label for="rue">Rue</label>
+                <input type="text" id="rue" name="rue" value="">
+            </div>
+        </div>
+    </div>    
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="row">
+                <label for="cp">Code postal</label>
+                <input type="text" id="cp" name="cp" value="">
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="row">
+                <label for="ville">Ville</label>
+                <input type="text" id="ville" name="ville" value="">
+            </div>
+        </div>
+    </div>    
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="row">
+                <label for="pays">Pays</label>
+                <input type="text" id="pays" name="pays" value="">
+            </div>
+        </div>
 
-
-
-
-
+    </div>    
+    <hr>
     <div class="row">
         <div class="col-sm-12 submit">   
             <button type="submit" class="button" name="action" value="update">Mettre à jour</button>   
