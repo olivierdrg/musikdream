@@ -25,8 +25,7 @@
         'login',
         'logout',
         'register',
-        'admin',
-        'admin_produit_liste',
+        'admin_produits',
         'admin_produit_ajout',
     );
 
@@ -34,7 +33,6 @@
         'login'                 => 'utilisateur',
         'logout'                => 'utilisateur',
         'register'              => 'utilisateur',
-        'admin'                 => 'admin',
         'admin_produit_ajout'   => 'produit',
         'admin_produit_modif'   => 'produit',
         'admin_produit_supp'    => 'produit',
