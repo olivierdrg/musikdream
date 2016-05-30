@@ -57,9 +57,9 @@
         'admin_produit_ajout'       => 'produit',
         'admin_produit_modif'       => 'produit',
         'admin_produit_cache'       => 'produit',
-        'admin_avisliste',          => 'avis',
-        'admin_avis_ajout',         => 'avis',
-        'admin_avis_modif',         => 'avis',
+        'admin_avisliste'           => 'avis',
+        'admin_avis_ajout'          => 'avis',
+        'admin_avis_modif'          => 'avis',
     );
 
     if ( isset( $_GET['page'] ) ) {
