@@ -1,8 +1,40 @@
 <div class="row">
+    <div><a href="?page=admin_souscategorie_ajout">Nouvelle sous-catégorie</a></div>
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <?php
+        require('apps/admin_souscategorie_ajout.php');
+        ?>
+        
+    </table>
+</div>
+
+<div class="row">
 	<p>
 		<?= htmlentities ($ligne['id']) ?>
 		<?= htmlentities ($ligne['id_categorie']) ?>
 	</p>
+
+	<div><a href="?page=admin_souscategorie_modif">Modifier la sous-catégorie</a></div>
+	    <table>
+	        <tr>
+	            <td></td>
+	            <td></td>
+	            <td></td>
+	        </tr>
+
+	        <?php
+	        require('apps/admin_souscategorie_modif.php');
+	        ?>
+	        
+	    </table>
+	</div>
+
 	<img src="<?= $ligne['photo'] ?>">
 	<p>
 		<?= htmlentities ($ligne['nom']) ?>

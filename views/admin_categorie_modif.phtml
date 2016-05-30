@@ -1,0 +1,35 @@
+<form method="POST" class="register-form" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="row">
+                <label for="photo">Photo</label>
+                <input type="text" id="photo" name="photo" value="<?= htmlentities( $photo ) ?>">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="row">
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" name="nom" value="<?= htmlentities( $nom ) ?>">
+            </div>
+        </div>
+    </div> 
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="row">
+                <label for="description">Description</label>
+                <input type="text" id="description" name="description" value="<?= htmlentities( $description ) ?>">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 submit">   
+            <button type="submit" class="button" name="action" value="modif">Modifier</button>   
+        </div>
+    </div>
+
+</form>

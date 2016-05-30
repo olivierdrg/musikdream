@@ -35,9 +35,9 @@
         'login'                 => 'utilisateur',
         'logout'                => 'utilisateur',
         'register'              => 'utilisateur',
+        'admin_produits'        => 'produit',
         'admin_produit_ajout'   => 'produit',
         'admin_produit_modif'   => 'produit',
-        'admin_produit_supp'    => 'produit',
         'admin_produit_cache'   => 'produit',
     );
 
