@@ -10,6 +10,27 @@ class AdresseManager
         $this->link = $link;
     }
 
+
+
+    public function findFacturationByUser(Utilisateur $user)
+    {
+        $id = $user->getId();
+        $request = "SELECT * FROM adresse WHERE id_utilisateur = " . $id." AND type=0";
+        $res = mysqli_query( $this->link, $request );
+        $adresse = mysqli_fetch_object( $res, "Adresse" );
+        return $adresse;
+    }
+
+    public function findLivraisonByUser(Utilisateur $user)
+    {
+        $id = $user->getId();
+        $request = "SELECT * FROM adresse WHERE id_utilisateur = " . $id." AND type=1";
+        $res = mysqli_query( $this->link, $request );
+        $adresse = mysqli_fetch_object( $res, "Adresse" );
+        return $adresse;
+    }
+
+
     public function findAll() {
         $list = [];
         $request = "SELECT * FROM adresse";

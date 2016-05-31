@@ -27,8 +27,9 @@ class Adresse {
     }
 
     public function getDesignation() {
-        return $this->designation;
+            return $this->designation;
     }
+
     public function getRue() {
         return $this->rue;
     }
@@ -59,7 +60,7 @@ class Adresse {
         $this->designation = $designation;
     }
 
-    public function setPrenom( $rue ) {
+    public function setRue( $rue ) {
         if ( strlen( $rue ) < 3 ) 
             throw new Exception ("Nom de rue trop court (< 4)");
         else if ( strlen( $rue ) > 63 )
@@ -69,7 +70,7 @@ class Adresse {
     }
 
     public function setCp( $cp ) {
-        if ( strlen( $rue ) != 5 )
+        if ( strlen( $cp ) != 5 )
             throw new Exception ("Code postal invalide");
 
         $this->cp = $cp;
@@ -93,7 +94,7 @@ class Adresse {
         $this->pays = $pays;
     }
 
-    public function setType( $type ) {
+    public function setTypeAdresse( $type ) {
         $this->type = $type;
     }
 }

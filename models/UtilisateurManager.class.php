@@ -9,11 +9,19 @@ class UtilisateurManager {
         $this->link = $link;
     }
 
+
+    // public function findByAdresseFact() {
+
+
+
+    // }
+
+
     public function findAll() {
         $list = [];
         $request = "SELECT * FROM utilisateur";
         $res = mysqli_query( $this->link, $request );
-        while ($utilisateur = mysqli_fetch_object( $res, "Utilisateur" ) )
+        while ($utilisateur = mysqli_fetch_object( $res, "Utilisateur" , [$this->link]) )
             $list[] = $utilisateur;
         return $list;
     }
@@ -22,7 +30,7 @@ class UtilisateurManager {
         $id = intval( $id );
         $request = "SELECT * FROM utilisateur WHERE id = " . $id;
         $res = mysqli_query( $this->link, $request );
-        $utilisateur = mysqli_fetch_object( $res, "Utilisateur" );
+        $utilisateur = mysqli_fetch_object( $res, "Utilisateur" , [$this->link]);
         return $utilisateur;
     }  
 
@@ -32,7 +40,7 @@ class UtilisateurManager {
 
     public function create( $data ) {
 
-        $utilisateur = new Utilisateur();
+        $utilisateur = new Utilisateur($this->link);
 
         if ( !isset( $data['nom'] ) ) throw new Exception ("Nom manquant");
         if ( !isset( $data['prenom'] ) ) throw new Exception ("Prénom manquant");
@@ -101,7 +109,7 @@ class UtilisateurManager {
     }  
 
     public function login( $data ) {  
-        $utilisateur = new Utilisateur();
+        $utilisateur = new Utilisateur($this->link);
 
         
         if ( !isset( $data['mot_passe'] ) ) throw new Exception ("Mot de passe manquant");
@@ -123,26 +131,6 @@ class UtilisateurManager {
         }
     }
 
-    // public function profil( $id ) {  
-
-    //     $utilisateur = $utilisateur->getById();
-
-    //     if ($id) {// true si > 0
-    //         $liste = [
-    //             $nom            => mysqli_real_escape_string( $this->link, $utilisateur->getNom()),
-    //             $prenom         => mysqli_real_escape_string( $this->link, $utilisateur->getPrenom()),
-    //             $email          => mysqli_real_escape_string( $this->link, $utilisateur->getEmail()),
-    //             $date_naissance => mysqli_real_escape_string( $this->link, $utilisateur->getDateNaissance()),
-    //             $telephone      => mysqli_real_escape_string( $this->link, $utilisateur->getTelephone()),
-                
-    //         ];
-    //         return $liste;
-    //     }
-    //     else
-    //         throw new Exception ("Internal server error");
-    // }
-
-    
 
     public function update( Utilisateur $utilisateur ) { // type-hinting
         $id = $utilisateur->getId();
@@ -154,11 +142,13 @@ class UtilisateurManager {
             $mot_passe          = mysqli_real_escape_string( $this->link, $utilisateur->getMotPasse());
             $date_naissance     = mysqli_real_escape_string( $this->link, $utilisateur->getDateNaissance());
             $telephone          = mysqli_real_escape_string( $this->link, $utilisateur->getTelephone());
+            $sexe               = mysqli_real_escape_string( $this->link, $utilisateur->getSexe());
             $login              = mysqli_real_escape_string( $this->link, $utilisateur->getLogin());
 
             $request = "UPDATE utilisateur SET  nom='" . $nom . "', prenom='" . $prenom . "', email='" . $email . "', 
                                                 mot_passe='" . $mot_passe . "', date_naissance='" . $date_naissance . "',
-                                                telephone='" . $telephone . "', login='" . $login . "' WHERE id=" . $id;
+                                                telephone='" . $telephone . "', sexe='".$sexe."',
+                                                login='" . $login . "' WHERE id=" . $id;
 
             $res = mysqli_query( $this->link, $request );
             if ( $res )
