@@ -24,6 +24,7 @@
     $access = array(
         'categories',
         'sous_categories',
+        'produits',
         'login',
         'logout',
         'register',
