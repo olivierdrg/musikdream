@@ -18,10 +18,12 @@
     define( 'JS_PATH', LIB . 'js/' );
     
 
-    $page = 'home';
+    $page = 'categories';
     $error = '';
 
     $access = array(
+        'categories',
+        'sous_categories',
         'login',
         'logout',
         'register',
