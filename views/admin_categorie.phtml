@@ -1,24 +1,23 @@
-<tr>
-    <td><?= $categorie->getPhoto() ?></td>
-    <td><?= $categorie->getNom() ?></td>
-    <td><?= $categorie->getDescription() ?></td>
+<div class="row">
 
-    <td>
-        <form method="POST" class="register-form">
-            <input type="hidden" name="id" value="?page=admin_categorie_modif&id=<?= $categorie->getId() ?>">
-            <button type="submit" class="button" name="action" value="modif">Modifier</button>
-        </form>
-
-
-
-
-        <a href="?page=admin_categorie_modif&id=<?= $categorie->getId() ?>">Modifier</a></td>
-    <td>
-        <form method="POST" class="register-form">
-            <input type="hidden" name="id" value="<?= htmlentities( $categorie->getId() ) ?>">
-            <button type="submit" class="button" name="action" value="supp">Supprimer</button>
-        </form>
-    </td>
+    <table>
+        <h2>Catégorie</h2>
+        <tr>
+            <td><?= $categorie->getPhoto() ?></td>
+            <td><?= $categorie->getNom() ?></td>
+            <td><?= $categorie->getDescription() ?></td>
+            <td>
+                <a href="?page=admin_categorie_modif&id=<?= $categorie->getId() ?>">Modifier</a></td>
+            <td>
+                <form method="POST" class="register-form">
+                    <input type="hidden" name="id" value="<?= htmlentities( $categorie->getId() ) ?>">
+                    <button type="submit" class="button" name="action" value="supp">Supprimer</button>
+                </form>
+            </td>
+        </tr>
+    </table>
     
+    <h4>Sous-catégorie</h4>
+
+</div>
     <?php require('apps/admin_souscategories.php'); ?>
-</tr>

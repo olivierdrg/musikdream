@@ -8,5 +8,9 @@
             $error = $exception->getMessage();
         }
     }
+    $sexe = [
+                '0' => ['checked',''],
+                '1' => ['','checked']
+             ];
 	require('views/profil.phtml');
 ?>

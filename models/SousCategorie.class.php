@@ -31,14 +31,17 @@ class SousCategorie {
     
 
 
+    public function setIdCategorie( $id_categorie ) {
+        $id_categorie = intval( $id_categorie );           
+        $this->id_categorie = $id_categorie;
+    }
+
     public function setPhoto( $photo ) {
         if ( filter_var( $photo['photo']['value'], FILTER_VALIDATE_URL ) == false )
             throw new Exception ("Ajouter l'URL de l'image");            
 
         $this->photo = $photo;
     }
-
-
 
     public function setNom( $nom ) {
         if ( strlen( $nom ) < 3 ) 
@@ -48,8 +51,6 @@ class SousCategorie {
 
         $this->nom = $nom;
     }
-
-
 
     public function setDescription( $description ) {
         if ( strlen( $description ) < 10 ) 

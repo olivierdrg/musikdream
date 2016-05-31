@@ -18,9 +18,45 @@ class Utilisateur {
     private $actif;
     private $login;
 
+    private $adresseFacturation;
+    private $adresseLivraison;
+
+    private $link;// propriété extérieure != DB
+
     //...
 
+    public function __construct($link)
+    {
+        $this->link = $link;
+    }
+
     // Getter/Setter | Accesseur/Mutateur | Accessor/Mutator
+
+    // public function getAdresseFacturation() {
+    //     return $this->adresseFacturation;
+    // }
+
+    public function getAdresseFacturation()
+    {
+        // $this->produits => null
+        if ($this->adresseFacturation === null)
+        {
+            $manager = new AdresseManager($this->link);
+            $this->adresseFacturation = $manager->findFacturationByUser($this);
+        }
+        return $this->adresseFacturation;
+    }
+
+    public function getAdresseLivraison()
+    {
+        // $this->produits => null
+        if ($this->adresseLivraison === null)
+        {
+            $manager = new AdresseManager($this->link);
+            $this->adresseLivraison = $manager->findLivraisonByUser($this);
+        }
+        return $this->adresseLivraison;
+    }
 
     public function getId() {
         return $this->id;
@@ -69,6 +105,8 @@ class Utilisateur {
         return $this->login;
     }
     
+
+
     // public function getAdresses() {
     //     return $this->;
     
@@ -111,10 +149,10 @@ class Utilisateur {
     }
 
     public function setTelephone( $telephone ) {
-        // if ( strlen( $telephone ) != 10 ) 
-        //     throw new Exception ("Téléphone incorrect");
-        // else if ( $telephone[0] != '0' )
-        //     throw new Exception ("Téléphone incorrect");            
+        if ( strlen( $telephone ) != 10 ) 
+            throw new Exception ("Téléphone incorrect");
+        else if ( $telephone[0] != '0' )
+            throw new Exception ("Téléphone incorrect");            
 
         $this->telephone = $telephone;
     }

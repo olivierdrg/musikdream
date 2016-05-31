@@ -4,10 +4,7 @@
             <div class="row">
                 <label for="categorie">Catégorie</label>
                 <select id="id_categorie" name="id_categorie">
-                    <option value="<?= htmlentities( $id_categorie ) ?>">"<?= htmlentities( $nom ) ?>"</option>
-                    <option value="<?= htmlentities( $id_categorie ) ?>">"<?= htmlentities( $nom ) ?>"</option>
-                    <option value="<?= htmlentities( $id_categorie ) ?>">"<?= htmlentities( $nom ) ?>"</option>
-                    <option value="<?= htmlentities( $id_categorie ) ?>">"<?= htmlentities( $nom ) ?>"</option>
+                    <?php require('apps/select_categorie.php'); ?>
                 </select>
             </div>
         </div>
