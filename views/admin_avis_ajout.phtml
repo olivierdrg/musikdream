@@ -1,0 +1,22 @@
+<form method="POST" class="register-form" enctype="multipart/form-data">
+<div class="row">
+    <div class="col-md-2"> 
+        <label for="note">Note</label>
+            <input type="text" id="note" name="note" value="<?= htmlentities ($avis->getNote()) ?>">
+    </div>
+    <div class="col-md-2">Titre avis</div>
+</div>
+    <p><?= htmlentities ($avis->getContenu()) ?></p>
+<div class="row">
+    <div class="col-md-2">
+        <?= htmlentities ($avis->getIdUtilisateur()) ?>
+    </div>
+    <div class="col-md-2">    
+        <?= htmlentities ($date = date("m/d/Y H\hi") ) ?>
+    </div>
+</div>
+
+
+    
+
+    
