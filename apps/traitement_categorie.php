@@ -24,9 +24,9 @@ if ( isset( $_POST['action'] ) ) {
             $id =  $_POST['id'];
             $categorie = $manager->findById( $id );
 
-            $categorie->setNom( $_POST['photo'] );
-            $categorie->setPoids( $_POST['nom'] );
-            $categorie->setActif( $_POST['description'] );
+            $categorie->setPhoto( $_POST['photo'] );
+            $categorie->setNom( $_POST['nom'] );
+            $categorie->setDescription( $_POST['description'] );
 
             $categorie = $manager->update( $_POST );//l'admin peut modifier une catégorie
 
