@@ -1,1 +1,1 @@
-<option value="<?= $sous_categorie->getId(); ?>" <?= $sous_categorie->selected( $sous_categorie->getId(), $produit->getIdSousCategorie() ); ?>><?= $sous_categorie->getNom(); ?></option>
+<option value="<?= $sous_categorie->getId(); ?>" <?= $sous_categorie->selected( $sous_categorie->getId(), $current ); ?>><?= $sous_categorie->getNom(); ?></option>
