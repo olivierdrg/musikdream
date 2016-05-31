@@ -6,7 +6,7 @@
             <button type="submit" class="button" name="action" value="supp">Supprimer</button>
         </form>
     </td>
-    <td><?= htmlentities( $produit->getidSousCategorie() ) ?></td>
+    <td><?= htmlentities( $produit->getSousCategorie()->getNom() ) ?></td>
     <td><?= htmlentities( $produit->getReference() ) ?></td>
     <td><?= htmlentities( $produit->getStock() ) ?></td>
     <td><?= htmlentities( $produit->getPrixHt() ) ?></td>
