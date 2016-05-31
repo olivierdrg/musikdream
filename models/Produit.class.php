@@ -16,15 +16,30 @@ class Produit {
     private $nom;
     private $poids;
     private $actif;
+    private $sous_categorie;
+    private $link;
 
     private $avis;
+
+    public function __construct( $link ) {
+        $this->link = $link;
+    }
 
     public function getId() {
         return $this->id;
     }
 
-    public function getidSousCategorie() {
+    public function getIdSousCategorie() {
         return $this->id_sous_categorie;
+    }
+
+    public function getSousCategorie() {
+        $id = $this->getIdSousCategorie();
+
+        $manager = new SousCategorieManager( $this->link );
+        $this->sous_categorie = $manager->findById( $id );
+
+        return $this->sous_categorie;
     }
 
     public function getReference() {
