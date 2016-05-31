@@ -1,15 +1,16 @@
 <?php
-    $id  				= '';
-    $id_categorie		= '';
-    $photo              = '';
-    $nom                = '';
-    $description        = '';
 
-    if ( isset( $_POST['id'] ) ) $id = $_POST['id'];
-    if ( isset( $_POST['id_categorie'] ) ) $id_categorie = $_POST['id_categorie'];
-    if ( isset( $_POST['photo'] ) ) $photo = $_POST['photo']; 
-    if ( isset( $_POST['nom'] ) ) $nom = $_POST['nom'];
-    if ( isset( $_POST['description'] ) ) $description = $_POST['description'];   
+    $manager = new SousCategorieManager( $link );
 
-    require('views/admin_souscategorie.phtml');
+    $sous_categories = $manager->findByCategory($categorie->getId());
+
+    $j = 0;
+    $countSousCateg = count( $sous_categories );
+    while ( $j < $countSousCateg ) {
+        $sous_categorie = $sous_categories[$j];
+        
+        require('views/admin_souscategorie.phtml');
+
+        $j++;
+    }
 ?>

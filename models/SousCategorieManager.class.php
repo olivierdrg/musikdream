@@ -19,6 +19,14 @@ class SousCategorieManager
         return $list;
     }
 
+    public function findByCategory( $id_category ) {
+        $id_category = intval( $id_category );
+        $request = "SELECT * FROM sous_categorie WHERE id_categorie = " . $id_category;
+        $res = mysqli_query( $this->link, $request );
+        while ($sous_categorie = mysqli_fetch_object( $res, "SousCategorie" ) )
+            $list[] = $sous_categorie;
+        return $list;
+    }  
 
 
     public function findById( $id ) {
@@ -28,6 +36,7 @@ class SousCategorieManager
         $sous_categorie = mysqli_fetch_object( $res, "SousCategorie" );
         return $sous_categorie;
     }  
+
 
 
 
@@ -41,21 +50,20 @@ class SousCategorieManager
 
         $sous_categorie = new SousCategorie();
 
-        if ( !isset( $data['id_categorie'] ) ) throw new Exception ("Sous-catégorie manquante");
+        if ( !isset( $data['id_categorie'] ) ) throw new Exception ("Catégorie manquante");
         if ( !isset( $data['photo'] ) ) throw new Exception ("Photo de la sous-catégorie manquante");
         if ( !isset( $data['nom'] ) ) throw new Exception ("Nom de la sous-catégorie manquant");
         if ( !isset( $data['description'] ) ) throw new Exception ("Description de la sous-catégorie manquante");
 
         $sous_categorie->setIdCategorie( $data['id_categorie'] );
-        $sous_categorie->setNom( $data['photo'] );
-        $sous_categorie->setPrenom( $data['nom'] );
-        $sous_categorie->setMotPasse( $data['description'];
+        $sous_categorie->setPhoto( $data['photo'] );
+        $sous_categorie->setNom( $data['nom'] );
+        $sous_categorie->setDescription( $data['description'] );
 
-        $id_categorie    = mysqli_real_escape_string( $this->link, $sous_categorie->getPhoto() );
+        $id_categorie    = mysqli_real_escape_string( $this->link, $sous_categorie->getIdCategorie() );
         $photo           = mysqli_real_escape_string( $this->link, $sous_categorie->getPhoto() );
         $nom             = mysqli_real_escape_string( $this->link, $sous_categorie->getNom() );
         $description     = mysqli_real_escape_string( $this->link, $sous_categorie->getDescription() );
-
         $request = "INSERT INTO sous_categorie (id_categorie, photo, nom, description) 
             VALUES('" . $id_categorie . "', '" . $photo . "', '" . $nom . "', '" . $description . "')";
 

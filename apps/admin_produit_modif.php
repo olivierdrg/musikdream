@@ -5,7 +5,7 @@
         $manager = new ProduitManager( $link );
 
         $produit = $manager->findById( $id );
-        //$produit->getActif()
+
         require('views/admin_produit_modif.phtml');
     }
     

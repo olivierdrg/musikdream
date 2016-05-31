@@ -10,25 +10,26 @@ class ProduitManager {
     public function __construct( $link ) {
         $this->link = $link;
     }
-    public function findByPanier(Panier $panier)
-    {
+
+    public function findByPanier(Panier $panier) {
         $id = $panier->getId();
         $list = [];
         $request = 'SELECT * FROM produit
             INNER JOIN liaison_panier_produit ON liaison_panier_produit.id_produit=produit.id
             WHERE liaison_panier_produit.id_panier='.$id;
         $res = mysqli_query( $this->link, $request );
-        while ( $produit = mysqli_fetch_object( $res, 'Produit' ) )
+        while ( $produit = mysqli_fetch_object( $res, 'Produit', array( $this->link ) ) )
             $list[] = $produit;
         return $list;
     }
+
     public function findAll() {
 
         //print_r(get_declared_classes());
         $list = [];
         $request = 'SELECT * FROM produit';
         $res = mysqli_query( $this->link, $request );
-        while ( $produit = mysqli_fetch_object( $res, 'Produit' ) )
+        while ( $produit = mysqli_fetch_object( $res, 'Produit', array( $this->link ) ) )
             $list[] = $produit;
         return $list;
     }
@@ -37,7 +38,7 @@ class ProduitManager {
         $id = intval( $id );
         $request = 'SELECT * FROM produit WHERE id = ' . $id;
         $res = mysqli_query( $this->link, $request );
-        $produit = mysqli_fetch_object( $res, 'Produit' );
+        $produit = mysqli_fetch_object( $res, 'Produit', array( $this->link ) );
         return $produit;
     }  
 
@@ -73,7 +74,7 @@ class ProduitManager {
         $produit->setActif( $data['actif'] );
 
 
-        $id_sous_categorie  = mysqli_real_escape_string( $this->link, $produit->getidSousCategorie() );
+        $id_sous_categorie  = mysqli_real_escape_string( $this->link, $produit->getIdSousCategorie() );
         $reference          = mysqli_real_escape_string( $this->link, $produit->getReference() );
         $stock              = mysqli_real_escape_string( $this->link, $produit->getStock() );
         $prix_ht            = mysqli_real_escape_string( $this->link, $produit->getPrixHt() );
@@ -113,7 +114,7 @@ class ProduitManager {
         $id = $produit->getId();
 
         if ( $id ) {// true si > 0
-            $id_sous_categorie  = mysqli_real_escape_string( $this->link, $produit->getidSousCategorie() );
+            $id_sous_categorie  = mysqli_real_escape_string( $this->link, $produit->getIdSousCategorie() );
             $reference          = mysqli_real_escape_string( $this->link, $produit->getReference() );
             $stock              = mysqli_real_escape_string( $this->link, $produit->getStock() );
             $prix_ht            = mysqli_real_escape_string( $this->link, $produit->getPrixHt() );

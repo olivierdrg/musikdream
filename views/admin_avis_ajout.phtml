@@ -1,0 +1,32 @@
+<form method="POST" class="register-form" enctype="multipart/form-data">
+	<div class="row">
+	    <div class="col-md-2"> 
+	        <label for="note">Note</label>
+	            <input type="text" id="note" name="note" value="<?= htmlentities ( $Note ) ?>">
+	    </div>
+	    <div class="col-md-2">Titre avis</div>
+	</div>
+
+		<label for="pseudo">Avis</label>
+		<input type="text" id="contenu" name="contenu" value="<?= htmlentities ( $Contenu ) ?>">
+	    
+	<div class="row">
+	    <div class="col-md-2">
+	        <label for="pseudo">Pseudo</label>
+	                <input type="text" id="pseudo" name="pseudo" value="<?= htmlentities ( $IdUtilisateur ) ?>">
+		</div>
+	    <div class="col-md-2">    
+	        <?= htmlentities ($date = date("m/d/Y H\hi") ) ?>
+	    </div>
+	</div>
+	<div class="row">
+        <div class="col-sm-12 submit">   
+            <button type="submit" class="button" name="action" value="ajout">Ajouter un commentaire</button>   
+        </div>
+    </div>
+</form>
+
+
+    
+
+    

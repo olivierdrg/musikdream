@@ -2,12 +2,9 @@
     <div class="row">
         <div class="col-sm-6">
             <div class="row">
-                <label for="sous_categorie">Sous Catagorie</label>
+                <label for="sous_categorie">Sous Catégorie</label>
                 <select id="id_sous_categorie" name="id_sous_categorie">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
+                    <?php require('apps/select_souscategorie.php'); ?>
                 </select>
         </div>
         <div class="col-sm-6">
@@ -79,7 +76,8 @@
         <div class="col-sm-6">
             <div class="row">
                 <label for="actif">Actif</label>
-                <input type="text" id="actif" name="actif" value="<?= htmlentities( $actif ) ?>"> 
+                Oui<input type="radio" id="actif" name="actif" value="1" checked > 
+                Non<input type="radio" name="actif" value="0"> 
             </div>
         </div>
     </div>

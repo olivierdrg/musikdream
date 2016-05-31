@@ -6,14 +6,14 @@
             <button type="submit" class="button" name="action" value="supp">Supprimer</button>
         </form>
     </td>
-    <td><?= $produit->getidSousCategorie() ?></td>
-    <td><?= $produit->getReference() ?></td>
-    <td><?= $produit->getStock() ?></td>
-    <td><?= $produit->getPrixHt() ?></td>
-    <td><?= $produit->getTva() ?></td>
-    <td><?= $produit->getDescription() ?></td>
-    <td><?= $produit->getPhoto() ?></td>
-    <td><?= $produit->getNom() ?></td>
-    <td><?= $produit->getPoids() ?></td>
-    <td><?= $produit->getActif() ?></td>
+    <td><?= htmlentities( $produit->getSousCategorie()->getNom() ) ?></td>
+    <td><?= htmlentities( $produit->getReference() ) ?></td>
+    <td><?= htmlentities( $produit->getStock() ) ?></td>
+    <td><?= htmlentities( $produit->getPrixHt() ) ?></td>
+    <td><?= htmlentities( $produit->getTva() ) ?></td>
+    <td><?= htmlentities( $produit->getDescription() ) ?></td>
+    <td><?= htmlentities( $produit->getPhoto() ) ?></td>
+    <td><?= htmlentities( $produit->getNom() ) ?></td>
+    <td><?= htmlentities( $produit->getPoids() ) ?></td>
+    <td><?= htmlentities( $produit->getActif() ) ?></td>
 </tr>

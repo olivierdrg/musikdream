@@ -2,30 +2,28 @@
 	if ( isset( $_GET['id'] ) ) 
 	{
 		$id = $_GET['id'];
-
-	    $query = 'SELECT * FROM avis WHERE id_avis = ' . $id;
-		$res = mysqli_query( $link, $query );
-		$ligne = mysqli_fetch_assoc( $res ); 
+ 
+        $avis = $manager->findByIdAvis($_POST['id_avis']);
 
 		$form = array(
         'success'       => true,
         'message'       => '',
         'id-utilisateur' => array(
-            'value' => $ligne['id-utilisateur'],
+            'value' => htmlentities ($avis->getIdUtilisateur()),
             'class' => '',
         ),
         'success'       => true,
         'message'       => '',
         'id_produit' => array(
-            'value' => $ligne['id_produit'],
+            'value' => htmlentities ($avis->getIdProduit()),
             'class' => '',
         ),
         'contenu' => array(
-            'value' => htmlentities( $ligne['contenu'] ),
+            'value' => htmlentities ($avis->getContenu()),
             'class' => '',
         ), 	
         'note' => array(
-            'value' => htmlentities( $ligne['note'] ),
+            'value' => htmlentities ($avis->getNote()),
             'class' => '',
         
         )
