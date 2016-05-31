@@ -1,4 +1,8 @@
 <tr>
+    <td><?= $sous_categorie->getPhoto() ?></td>
+    <td><?= $sous_categorie->getNom() ?></td>
+    <td><?= $sous_categorie->getDescription() ?></td>
+
     <td><a href="?page=admin_souscategorie_modif&id=<?= $sous_categorie->getId() ?>">Modifier</a></td>
     <td>
         <form method="POST" class="register-form">
@@ -6,8 +10,5 @@
             <button type="submit" class="button" name="action" value="supp">Supprimer</button>
         </form>
     </td>
-    <td><?= $sous_categorie->getIdCategorie() ?></td>
-    <td><?= $sous_categorie->getPhoto() ?></td>
-    <td><?= $sous_categorie->getNom() ?></td>
-    <td><?= $sous_categorie->getDescription() ?></td>
+
 </tr>
