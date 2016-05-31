@@ -10,9 +10,9 @@
         $sous_categorie = $list[$i];
         $current = '';
 
-        if ( isset( $categorie ) ) $current = $categorie->getIdSousCategorie();
+        if ( isset( $produit ) ) $current = $produit->getIdSousCategorie();
         require('views/select_souscategorie.phtml');
-        
+
         $i++;
     } 
 
