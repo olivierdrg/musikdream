@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col-md-2">
+        <?= htmlentities ($avis->getNote()) ?>
+    </div>
+    <div class="col-md-2">
+        <a href="views/admin_avis.phtml">Titre avis</a>
+    </div>
+     <p><?= htmlentities ($avis->getContenu()) ?></p>
+    <div class="col-md-2">
+        <?= htmlentities ($avis->getIdUtilisateur()) ?>
+    </div>
+    <div class="col-md-2">    
+        <?= htmlentities ($date = date("m/d/Y H\hi") ) ?>
+    </div>
+        <?php require('apps/admin_avis.php'); ?>
+</div>
