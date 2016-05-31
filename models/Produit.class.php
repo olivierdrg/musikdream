@@ -128,7 +128,10 @@ class Produit {
         $this->actif = $actif;
     }
 
-
+    public function checked( $checked, $current ) {
+        if ( $checked == $current ) return 'checked';
+            else return '';
+    }
     
 }
 

@@ -5,10 +5,7 @@
             <div class="row">
                 <label for="sous_categorie">Sous Catagorie</label>
                 <select id="id_sous_categorie" name="id_sous_categorie">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
+                    <?php require('apps/select_souscategorie.php'); ?>
                 </select>
         </div>
         <div class="col-sm-6">
@@ -80,8 +77,8 @@
         <div class="col-sm-6">
             <div class="row">
                 <label for="actif">Actif</label>
-                Oui<input type="radio" id="actif" name="actif" value="1"> 
-                Non<input type="radio" name="actif" value="0">                 
+                Oui<input type="radio" id="actif" name="actif" value="1" <?= $produit->checked( '1', $produit->getActif() )?>>
+                Non<input type="radio" name="actif" value="0" <?= $produit->checked( '0', $produit->getActif() )?>>
             </div>
         </div>
     </div>

@@ -49,7 +49,7 @@ class SousCategorieManager
         $sous_categorie->setIdCategorie( $data['id_categorie'] );
         $sous_categorie->setPhoto( $data['photo'] );
         $sous_categorie->setNom( $data['nom'] );
-        $sous_categorie->setDescription( $data['description'];
+        $sous_categorie->setDescription( $data['description'] );
 
         $id_categorie    = mysqli_real_escape_string( $this->link, $sous_categorie->getIdCategorie() );
         $photo           = mysqli_real_escape_string( $this->link, $sous_categorie->getPhoto() );
