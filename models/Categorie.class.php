@@ -55,6 +55,11 @@ class Categorie {
         $this->description = $description;
     }
     
+    public function selected( $selected, $current ) {
+        if ( $selected == $current ) return 'selected';
+            else return '';
+    }
+
 }
 
 ?>

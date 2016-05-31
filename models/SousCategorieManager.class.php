@@ -41,7 +41,7 @@ class SousCategorieManager
 
         $sous_categorie = new SousCategorie();
 
-        if ( !isset( $data['id_categorie'] ) ) throw new Exception ("Sous-catégorie manquante");
+        if ( !isset( $data['id_categorie'] ) ) throw new Exception ("Catégorie manquante");
         if ( !isset( $data['photo'] ) ) throw new Exception ("Photo de la sous-catégorie manquante");
         if ( !isset( $data['nom'] ) ) throw new Exception ("Nom de la sous-catégorie manquant");
         if ( !isset( $data['description'] ) ) throw new Exception ("Description de la sous-catégorie manquante");
@@ -55,7 +55,6 @@ class SousCategorieManager
         $photo           = mysqli_real_escape_string( $this->link, $sous_categorie->getPhoto() );
         $nom             = mysqli_real_escape_string( $this->link, $sous_categorie->getNom() );
         $description     = mysqli_real_escape_string( $this->link, $sous_categorie->getDescription() );
-
         $request = "INSERT INTO sous_categorie (id_categorie, photo, nom, description) 
             VALUES('" . $id_categorie . "', '" . $photo . "', '" . $nom . "', '" . $description . "')";
 

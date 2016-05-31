@@ -1,14 +1,20 @@
-<tr>
-    <td><?= $sous_categorie->getPhoto() ?></td>
-    <td><?= $sous_categorie->getNom() ?></td>
-    <td><?= $sous_categorie->getDescription() ?></td>
+<div class="row">
 
-    <td><a href="?page=admin_souscategorie_modif&id=<?= $sous_categorie->getId() ?>">Modifier</a></td>
-    <td>
-        <form method="POST" class="register-form">
-            <input type="hidden" name="id" value="<?= htmlentities( $sous_categorie->getId() ) ?>">
-            <button type="submit" class="button" name="action" value="supp">Supprimer</button>
-        </form>
-    </td>
+    <table>
+        <h4>Sous-catégories</h4>
+        <tr>
+            <td><?= $sous_categorie->getPhoto() ?></td>
+            <td><?= $sous_categorie->getNom() ?></td>
+            <td><?= $sous_categorie->getDescription() ?></td>
+            <td>
+                <a href="?page=admin_souscategorie_modif&id=<?= $sous_categorie->getId() ?>">Modifier</a></td>
+            <td>
+                <form method="POST" class="register-form">
+                    <input type="hidden" name="id" value="<?= htmlentities( $sous_categorie->getId() ) ?>">
+                    <button type="submit" class="button" name="action" value="supp">Supprimer</button>
+                </form>
+            </td>
+        </tr>
+    </table>
 
-</tr>
+</div>

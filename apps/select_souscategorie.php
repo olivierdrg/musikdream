@@ -9,7 +9,7 @@
     while ( $i < $count ) {
         $sous_categorie = $list[$i];
         $current = '';
-        if ( isset( $produit ) ) $current = $produit->getIdSousCategorie();
+        if ( isset( $categorie ) ) $current = $categorie->getIdSousCategorie();
         require('views/select_souscategorie.phtml');
         $i++;
     } 
