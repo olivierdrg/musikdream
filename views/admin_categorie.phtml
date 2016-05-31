@@ -1,7 +1,7 @@
 <div class="row">
 
     <table>
-        <h2>Catégories</h2>
+        <h2>Catégorie</h2>
         <tr>
             <td><?= $categorie->getPhoto() ?></td>
             <td><?= $categorie->getNom() ?></td>
@@ -15,7 +15,9 @@
                 </form>
             </td>
         </tr>
-            <?php require('apps/admin_souscategories.php'); ?>
     </table>
+    
+    <h4>Sous-catégorie</h4>
 
 </div>
+    <?php require('apps/admin_souscategories.php'); ?>

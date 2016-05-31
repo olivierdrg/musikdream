@@ -9,8 +9,10 @@
     while ( $i < $count ) {
         $categorie = $list[$i];
         $current = '';
+        
         if ( isset( $produit ) ) $current = $produit->getIdCategorie();
         require('views/select_categorie.phtml');
+        
         $i++;
     } 
 
