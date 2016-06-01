@@ -27,6 +27,14 @@ class PanierManager
         return $panier;
     }  
 
+    // public function findByPanier( $id_utilisateur) {
+    //     // $status = intval( $status );
+    //     $request = "SELECT * FROM panier WHERE id_utilisateur= " . $id_utilisateur;
+    //     $res = mysqli_query( $this->link, $request );
+    //     $panier = mysqli_fetch_object( $res, "Panier" , [$this->link]);
+    //     return $panier;
+    // }  
+
     public function findByIdUtilisateur( $id_utilisateur ) {
         $id_utilisateur = intval( $id_utilisateur );
         $request = "SELECT * FROM panier WHERE id_utilisateur = " . $id_utilisateur;
@@ -42,6 +50,8 @@ class PanierManager
         $panier = mysqli_fetch_object( $res, "Panier" , [$this->link]);
         return $panier;
     }  
+
+
 
 
     public function getById( $id ) {
