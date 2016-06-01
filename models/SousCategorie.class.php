@@ -7,7 +7,13 @@ class SousCategorie {
     private $photo;
     private $nom;
     private $description;
+    private $link;
 
+    private $categorie;
+
+    public function __construct( $link ) {
+        $this->link = $link;
+    }
 
     public function getId() {
         return $this->id;
@@ -29,7 +35,13 @@ class SousCategorie {
         return $this->description;
     }
     
+    public function getCategorie() {
 
+        $manager = new CategorieManager( $this->link );
+        $this->categorie = $manager->findById( $this->id_categorie );
+
+        return $this->categorie;
+    }
 
     public function setIdCategorie( $id_categorie ) {
         $id_categorie = intval( $id_categorie );           

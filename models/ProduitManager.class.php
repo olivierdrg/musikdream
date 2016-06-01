@@ -42,6 +42,16 @@ class ProduitManager {
         return $produit;
     }  
 
+    public function findBySousCategorie(SousCategorie $sous_categorie ) {
+        $list = [];
+        $id = $sous_categorie->getId();
+        $request = 'SELECT * FROM produit WHERE id_sous_categorie = ' . $id;
+        $res = mysqli_query( $this->link, $request );
+        while ( $produit = mysqli_fetch_object( $res, 'Produit', array( $this->link ) ) )
+            $list[] = $produit;
+        return $list;
+    } 
+
     public function getById( $id ) {
         return $this->findById( $id );
     }
