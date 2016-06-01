@@ -1,25 +1,29 @@
 <!-- <div class="container"> -->
-	<h3><?=htmlentities( $produit->getNom() ) ?></h3>
-	<div>
-		Référence : <?=htmlentities( $produit->getReference() ) ?>
-	</div>
-	<div>
-		
+
+<div class="panel panel-default">
+	<div class="panel-body">
+
 		<img class="pull-right" src="<?=htmlentities( $produit->getPhoto() ) ?>">
-	</div>
-	<div>
-		Stock : <?=htmlentities( $produit->getStock() ) ?> pièces
-	</div>
-	<div>
-		description
-		<p>
-			<?=htmlentities( $produit->getdescription() ) ?>
-		</p>
-		poids : <?=htmlentities( $produit->getPoids() ) ?>
-	</div>
-	<div>
+		<h3><?=htmlentities( $produit->getNom() ) ?></h3>
+		<div>
+			Référence : <?=htmlentities( $produit->getReference() ) ?>
+		</div>
 
+		<div>
+			Stock : <?=htmlentities( $produit->getStock() ) ?> pièces
+		</div>
+		<div>
+			description
+			<p>
+				<?=htmlentities( $produit->getdescription() ) ?>
+			</p>
+			poids : <?=htmlentities( $produit->getPoids() ) ?>
+		</div>
+		<form action="">
+			<input type='hidden' name="page" value='panier'>
+			<button type="submit" name="action" class="btn btn-success btn-xs pull" value="acheter">Enlever du panier</button>
+		</form>
 	</div>
-	<div>
 
-	</div>
+
+</div>
