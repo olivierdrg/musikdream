@@ -14,7 +14,7 @@ class PanierManager
         $list = [];
         $request = "SELECT * FROM panier";
         $res = mysqli_query( $this->link, $request );
-        while ($panier = mysqli_fetch_object( $res, "Panier" ) )
+        while ($panier = mysqli_fetch_object( $res, "Panier" , [$this->link]) )
             $list[] = $panier;
         return $list;
     }
@@ -23,7 +23,7 @@ class PanierManager
         $id = intval( $id );
         $request = "SELECT * FROM panier WHERE id = " . $id;
         $res = mysqli_query( $this->link, $request );
-        $panier = mysqli_fetch_object( $res, "Panier" );
+        $panier = mysqli_fetch_object( $res, "Panier" , [$this->link]);
         return $panier;
     }  
 
@@ -31,7 +31,7 @@ class PanierManager
         $id_utilisateur = intval( $id_utilisateur );
         $request = "SELECT * FROM panier WHERE id_utilisateur = " . $id_utilisateur;
         $res = mysqli_query( $this->link, $request );
-        $panier = mysqli_fetch_object( $res, "Panier" );
+        $panier = mysqli_fetch_object( $res, "Panier" , [$this->link]);
         return $panier;
     }  
 
@@ -39,7 +39,7 @@ class PanierManager
         $status = intval( $status );
         $request = "SELECT * FROM panier WHERE status = " . $status;
         $res = mysqli_query( $this->link, $request );
-        $panier = mysqli_fetch_object( $res, "Panier" );
+        $panier = mysqli_fetch_object( $res, "Panier" , [$this->link]);
         return $panier;
     }  
 
@@ -50,7 +50,7 @@ class PanierManager
 
     public function create( $data ) {
 
-        $panier = new Panier();
+        $panier = new Panier($this->link);
 
         if ( !isset( $data['id_utilisateur'] ) ) throw new Exception ("id_utilisateur manquante");
         if ( !isset( $data['date'] ) ) throw new Exception ("Date manquant");
