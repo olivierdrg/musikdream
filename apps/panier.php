@@ -1,7 +1,4 @@
 <?php
-// var_dump($page);
-// panier.php
-// var_dump($_SESSION['id']);
 
 if (isset($_SESSION['id']))
 
@@ -14,13 +11,10 @@ if (isset($_SESSION['id']))
     }
     else{
     	$error = "Votre panier est vide";
-        // header('Location: index.php?page=home');
-        // exit;
     }
 }
 else{
 	$error = "Pour visualiser votre panier vous devez être connecté";
-
 }
 
 

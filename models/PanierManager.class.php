@@ -43,7 +43,6 @@ class PanierManager
         return $panier;
     }  
 
-
     public function getById( $id ) {
         return $this->findById( $id );
     }

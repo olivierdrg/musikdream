@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Mar 31 Mai 2016 à 14:34
+-- Généré le: Mer 01 Juin 2016 à 13:47
 -- Version du serveur: 5.6.28-0ubuntu0.14.04.1
 -- Version de PHP: 5.5.9-1ubuntu4.14
 
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `sous_categorie` (
   `description` varchar(1023) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_categorie` (`id_categorie`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
 
 --
 -- Contenu de la table `sous_categorie`
@@ -46,15 +46,15 @@ INSERT INTO `sous_categorie` (`id`, `id_categorie`, `photo`, `nom`, `description
 (3, 2, 'public/images/djembe.png', 'Saxophones', 'Tous les saxophones'),
 (4, 2, 'public/images/djembe.png', 'Trompettes', 'Toutes les trompettes'),
 (5, 2, 'public/images/djembe.png', 'Clarinettes', 'Toutes les clarinettes'),
-(6, 3, 'public/images/djembe.png', 'Batteries électriques', 'Toutes les batteries électriques'),
+(6, 3, 'public/images/djembe.png', 'Batteries electriques', 'Toutes les batteries electriques'),
 (7, 3, 'public/images/djembe.png', 'Batteries acoustiques', 'Toutes les batteries acoustiques'),
 (8, 3, 'public/images/djembe.png', 'Percussions', 'Toutes les percussions'),
-(9, 4, 'public/images/djembe.png', 'Pianos numériques', 'Tous les pianos numériques'),
-(10, 4, 'public/images/djembe.png', 'Pianos à queue', 'Tous les pianos à queue'),
-(11, 4, 'public/images/djembe.png', 'Synthétiseurs', 'Tous les synthétiseurs'),
+(9, 4, 'public/images/djembe.png', 'Pianos numeriques', 'Tous les pianos numeriques'),
+(10, 4, 'public/images/djembe.png', 'Pianos a queue', 'Tous les pianos a queue'),
+(11, 4, 'public/images/djembe.png', 'Synthetiseurs', 'Tous les synthetiseurs'),
 (12, 4, 'public/images/djembe.png', 'Orgues', 'Tous les orgues'),
 (13, 5, 'public/images/djembe.png', 'Pieds et supports', 'Tous les pieds et supports'),
-(14, 5, 'public/images/djembe.png', 'Câbles et casques', 'Tous les câbles et casques'),
+(14, 5, 'public/images/djembe.png', 'Cables et casques', 'Tous les cables et casques'),
 (15, 5, 'public/images/djembe.png', 'Accordeurs et métronomes', 'Tous les accordeurs et métronomes');
 
 --
