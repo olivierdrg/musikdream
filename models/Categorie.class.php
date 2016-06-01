@@ -7,6 +7,19 @@ class Categorie {
     private $nom;
     private $description;
 
+    private $sous_categories;
+
+    private $link;
+
+    public function __construct( $link ) {
+        $this->link = $link;
+    }
+
+    public function getSousCategories() {
+        $manager = new SousCategorieManager( $this->link );
+        $this->sous_categories = $manager->findByCategory( $this );
+        return $this->sous_categories;
+    }
 
     public function getId() {
         return $this->id;

@@ -14,7 +14,7 @@ class CategorieManager
         $list = [];
         $request = "SELECT * FROM categorie";
         $res = mysqli_query( $this->link, $request );
-        while ($categorie = mysqli_fetch_object( $res, "Categorie" ) )
+        while ($categorie = mysqli_fetch_object( $res, "Categorie", array( $this->link ) ) )
             $list[] = $categorie;
         return $list;
     }
@@ -25,7 +25,7 @@ class CategorieManager
         $id = intval( $id );
         $request = "SELECT * FROM categorie WHERE id = " . $id;
         $res = mysqli_query( $this->link, $request );
-        $categorie = mysqli_fetch_object( $res, "Categorie" );
+        $categorie = mysqli_fetch_object( $res, "Categorie", array( $this->link ) );
         return $categorie;
     }  
 
