@@ -9,19 +9,46 @@
 			Référence : <?=htmlentities( $produit->getReference() ) ?>
 		</div>
 
-		<div>
-			Stock : <?=htmlentities( $produit->getStock() ) ?> pièces
-		</div>
+
 		<div>
 			description
 			<p>
 				<?=htmlentities( $produit->getdescription() ) ?>
 			</p>
-			poids : <?=htmlentities( $produit->getPoids() ) ?>
+			poids : <?=htmlentities( $produit->getPoids() ) ?>kg
+		</div>
+		<div>
+			En stock : <?=htmlentities( $produit->getStock() ) ?> pièces
+		</div>
+		<div>
+			<h5>Prix HT : <?=htmlentities( $produit->getPrixHt() ) ?> €<h5>
+		</div>
+
+		
+		<div class="pull-left">
+			nombre de produits : 
 		</div>
 		<form action="">
+			<select name="quantite" class="pull-left">
+				<option value=1>1</option>
+				<option value=2>2</option>
+				<option value=3>3</option>
+				<option value=4>4</option>
+				<option value=5>5</option>
+				<option value=6>6</option>
+				<option value=7>7</option>
+				<option value=8>8</option>
+				<option value=9>9</option>
+				<option value=10>10</option>
+			</select>
+			<button type="submit" name="action" class="btn btn-warning btn-xs pull-left"value="panier_modif">
+				Modifier mon panier
+			</button>
+
 			<input type='hidden' name="page" value='panier'>
-			<button type="submit" name="action" class="btn btn-success btn-xs pull" value="acheter">Enlever du panier</button>
+			<button type="submit" name="action" class="btn btn-warning btn-xs pull-right"value="acheter">
+				Retirer ce produit du panier
+			</button>
 		</form>
 	</div>
 
