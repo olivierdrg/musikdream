@@ -1,24 +1,27 @@
 <div class="header">
     <nav class="navbar navbar-inverse">
         <img class ="banniere" src= "public/images/banniere1c.jpeg"/>
-        <h1 class="musik_dream">MusikDream</h1>
+        <h1 class="musik_dream">Musikdream</h1>
         <div class="row">                        
-            <div class="col-sm-12 col-md-8">
+            <div class="col-sm-12">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="index.php">Catégories</a></li>
-                    <li><a href="index.php?page=logout">Logout</a></li>
-                    <li class="divider-vertical"></li>
-                        <li class="dropdown">
-                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">Admin<b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="index.php?page=admin_categories">Catégories</a></li>
-                                <li><a href="index.php?page=admin_produits">Produits</a></li>
-                                <li><a href="index.php?page=admin_avisliste">Avis</a></li>
-                            </ul>
-                        </li>
                 </ul>
-                 <p>Bonjour <?= htmlentities( $_SESSION['login']) ?></p><a href="?page=profil">Modifier mon profil</a>
-             </div>      
+                <ul class="nav navbar-nav pull-right">
+                    <li class="bonjour"><a>Bonjour <?= htmlentities( $_SESSION['login']) ?></a></li>
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">Admin<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.php?page=admin_categories">Catégories</a></li>
+                            <li><a href="index.php?page=admin_produits">Produits</a></li>
+                            <li><a href="index.php?page=admin_avisliste">Avis</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="?page=profil">Modifier mon profil</a></li>
+                    <li><a href="index.php?page=logout">Se déconnecter</a></li>
+                    <img class ="panier" src= "public/images/panierb.png"/>
+                </ul>
+            </div>    
         </div>
     </nav>   
 </div>
