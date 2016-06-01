@@ -136,7 +136,7 @@ class AvisManager
         }
     }
 
-    public function remove(Avis $avis ) 
+    public function removeByProduit(Avis $avis ) 
     {
         $id_produit = $avis->getIdProduit();
 
@@ -152,7 +152,7 @@ class AvisManager
         }
     }
 
-    public function remove(Avis $avis ) 
+    public function removeByUtilisateur(Avis $avis ) 
     {
         $id_utilisateur = $avis->getIdUtilisateur();
 
