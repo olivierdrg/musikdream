@@ -18,10 +18,13 @@
     define( 'JS_PATH', LIB . 'js/' );
     
 
-    $page = 'home';
+    $page = 'categories';
     $error = '';
 
     $access = array(
+        'categories',
+        'sous_categories',
+        'produits',
         'login',
         'logout',
         'register',
@@ -36,6 +39,7 @@
         'admin_produit_ajout',
         'admin_produit_modif',
         'admin_produit_cache',
+        'admin_avis',
         'admin_avisliste',
         'admin_avis_ajout',
         'admin_avis_modif',
@@ -57,6 +61,7 @@
         'admin_produit_ajout'       => 'produit',
         'admin_produit_modif'       => 'produit',
         'admin_produit_cache'       => 'produit',
+        'admin_avis'                => 'avis',
         'admin_avisliste'           => 'avis',
         'admin_avis_ajout'          => 'avis',
         'admin_avis_modif'          => 'avis',

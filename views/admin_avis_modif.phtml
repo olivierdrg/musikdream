@@ -1,7 +1,10 @@
-<div>
-	<form method="post" action="" enctype="multipart/form-data">
+<form method="post" action="" enctype="multipart/form-data">
 		<input type="hidden" name="id_avis" value="<?= $avis->getId()?>">
 		<textarea name="contenu"><?= htmlentities ($avis->getContenu())?></textarea>
-	    <Input type="submit" name="modifier" value="Modifier mon avis">
-	</form>
-</div>
+	    <input type="submit" name="modifier" value="Modifier mon avis">
+	    <div class="row">
+        	<div class="col-sm-12 submit">   
+            	<button type="submit" class="button" name="action" value="modif">Modifier</button>   
+       		 </div>
+    	</div>
+</form>

@@ -1,9 +1,9 @@
 <div class="row">
 
     <table>
-        <h2>Catégorie</h2>
+        <h2><?= $categorie->getNom() ?></h2>
         <tr>
-            <td><?= $categorie->getPhoto() ?></td>
+            <td><img src="<?= $categorie->getPhoto() ?>" alt="<?= $categorie->getNom() ?>"/></td>
             <td><?= $categorie->getNom() ?></td>
             <td><?= $categorie->getDescription() ?></td>
             <td>
@@ -16,8 +16,6 @@
             </td>
         </tr>
     </table>
-    
-    <h4>Sous-catégorie</h4>
 
 </div>
     <?php require('apps/admin_souscategories.php'); ?>
