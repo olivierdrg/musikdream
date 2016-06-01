@@ -1,27 +1,34 @@
 <div class="container">
 	<div class="row">
-		<h2>mon panier</h2>
+		<h4>mon panier</h4>
 	</div>
 	<div class="col-sm-8">
-		ici les produits du panier
 		<?php require('apps/panier_produit.php'); ?>
 	</div>
 
 	<div class="col-sm-4">
-		<div>
-			Date : 25/04/2016
-		</div>
-		<div>
-			Status : En traitement
-		</div>
-		<div>
-			Quantité : 5 produits dans votre panier
-		</div>
-		<div>
-			Prix : 124.52€
-		</div>
-		<div>
-			Poids : 20kg
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				Etat de votre panier
+			</div>
+			<div class="panel-body">
+				<div>
+					5 produits dans votre panier
+				</div>
+				<div>
+					Date : 25/04/2016
+				</div>
+				<div>
+					Status : En traitement
+				</div>
+
+				<div>
+					Prix total : 124.52€
+				</div>
+				<div>
+					Poids total : 20kg
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

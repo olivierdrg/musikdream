@@ -1,24 +1,21 @@
 <!-- <div class="container"> -->
-	<h3>Nom du produit
-	<?php //htmlentities( $panier->getNomProduitByUtilisateur() ) ?>
-	</h3>
-	<!--     $panier -> getProduits() -> getNom()                           -->
+	<h3><?=htmlentities( $produit->getNom() ) ?></h3>
 	<div>
-		Référence : ijsdk210
+		Référence : <?=htmlentities( $produit->getReference() ) ?>
 	</div>
 	<div>
-		photo du produit
-		<img src="">
+		
+		<img class="pull-right" src="<?=htmlentities( $produit->getPhoto() ) ?>">
 	</div>
 	<div>
-		Stock : 10 pièces
+		Stock : <?=htmlentities( $produit->getStock() ) ?> pièces
 	</div>
 	<div>
 		description
 		<p>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab eum voluptas deserunt facilis aperiam aliquam minima rerum mollitia, est illum molestiae dolorum explicabo, sunt voluptatum itaque. Provident fuga quas, nihil.
+			<?=htmlentities( $produit->getdescription() ) ?>
 		</p>
-		poids : 21.5kg
+		poids : <?=htmlentities( $produit->getPoids() ) ?>
 	</div>
 	<div>
 

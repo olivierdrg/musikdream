@@ -9,9 +9,4 @@
         require('views/panier_produit.phtml');
         $count++;
     }
-
-    // $author = $avis->getAuthor();
-    // $login = $author->getLogin();
-
-    // $login = $avis->getAuthor()->getLogin();
 ?>
