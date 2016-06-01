@@ -25,7 +25,7 @@ if ( isset( $_POST['action'] ) )
         $manager = new AvisManager( $link );// $link => $this->link
         try 
         {
-            $avis = $manager->/*modif*/( $_POST );
+            $avis = $manager->edit( $_POST );
 
             header('Location: index.php?page=admin_avis');
             exit;
@@ -37,9 +37,7 @@ if ( isset( $_POST['action'] ) )
         }
     }
 
-    if ( $_POST['action'] == 'admin_supp_avis' )
-    	$manager = new AvisManager( $link );// $link => $this->link
-        try 
+    if ( $_POST['action'] == 'admin_supp_avis' ) 
     {
         $manager = new AvisManager( $link );// $link => $this->link
         try 
