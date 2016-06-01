@@ -1,3 +1,10 @@
+*::after, *::before {
+    box-sizing: border-box;
+}
+*::after, *::before {
+    box-sizing: border-box;
+}
+
 @backColor : #262626;
 @linkColor : #D98926;
 @textcolor : #787676;
@@ -6,8 +13,7 @@
 
 body {
   background-color: @backColor;  
- max-width: 1000px;
- margin: 0 auto;
+  margin: 0 auto;
   color: @textcolor;
 }
 
@@ -48,3 +54,29 @@ hr {
 	border-radius:45% 45% 100% 100%;*/
 	/*box-shadow: 3px 3px 3px black;
 }*/
+
+.container .text-muted {
+    margin: 20px 0;
+}
+.text-muted {
+    color: #777;
+    text-align: center;
+}
+
+.bonjour a:hover { 
+	color: none;
+}
+
+
+.navbar {
+	border: none;
+}
+
+.footer {
+	background-color: #000;
+	padding: 10px;
+}
+
+.panier {
+	margin-top: -45px;
+}
