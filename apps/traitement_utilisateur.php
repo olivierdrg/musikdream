@@ -1,4 +1,8 @@
 <?php
+        // var_dump($_POST['action']);
+        // var_dump($_POST);
+
+
 if ( isset( $_POST['action'] ) ) {
     
     if ($_POST['action'] == 'register') {
@@ -33,7 +37,7 @@ if ( isset( $_POST['action'] ) ) {
 
 
     if ( $_POST['action'] == 'update' ) {
-
+        // var_dump($_POST);
         // -----------------------------------------------
         // traitement de l'utilisateur
         // -----------------------------------------------
@@ -93,24 +97,32 @@ if ( isset( $_POST['action'] ) ) {
         // -----------------------------------------------
         $manager = new AdresseManager($link);
         try {
-
             // chercher la feuille adresse à modifier
-            // $adresse = $manager->findFacturationByUser( $_SESSION['id'] );
             $adresse = $manager->findLivraisonByUser( $utilisateur );
 
+            if(isset($_POST['typeIdem']) && $_POST['typeIdem'] == 'idem'){
+                // ici les setter pour modifier les données de la feuille adresse de facturation
+                $adresse -> setDesignation($_POST['designation']);
+                $adresse -> setRue($_POST['rue']);
+                $adresse -> setCp($_POST['cp']);
+                $adresse -> setVille($_POST['ville']);
+                $adresse -> setPays($_POST['pays']);
+                $adresse -> setTypeAdresse('1');
+            }
+            else{
+                // ici les setter pour modifier les données de la feuille adresse de livraison
+                $adresse -> setDesignation($_POST['designation1']);
+                $adresse -> setRue($_POST['rue1']);
+                $adresse -> setCp($_POST['cp1']);
+                $adresse -> setVille($_POST['ville1']);
+                $adresse -> setPays($_POST['pays1']);
+                $adresse -> setTypeAdresse('1');
+            }
 
-            // ici les setter pour modifier les données de la feuille
-            $adresse -> setDesignation($_POST['designation1']);
-            $adresse -> setRue($_POST['rue1']);
-            $adresse -> setCp($_POST['cp1']);
-            $adresse -> setVille($_POST['ville1']);
-            $adresse -> setPays($_POST['pays1']);
-            $adresse -> setTypeAdresse('1');
-
-            // sauvegarder adresse, replacer la feuille à son endroit et retour à la home
+            // sauvegarder adresse, replacer la feuille à son endroit et retour à la page home
             $manager -> update($adresse);
-            header('Location: index.php?page=profil');
-            exit;
+            // header('Location: index.php?page=profil');
+            // exit;
         }
 
         catch (Exception $exception) {

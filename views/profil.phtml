@@ -95,8 +95,8 @@
     </div>    
     <hr>
     <div class="row">
+        <input type="checkbox" id="typeIdem" name="typeIdem" value="idem" onclick="this.form.submit()">
         <label for="typeIdem">Adresse de livraison idem que l'adresse de facturation</label>
-        <input type="checkbox" id="typeIdem" name="typeIdem">
     </div>
     <div class="row">
 
@@ -145,7 +145,8 @@
     <hr>
     <div class="row">
         <div class="col-sm-12 submit">   
-            <button type="submit" class="button" name="action" value="update">Mettre à jour</button>   
+            <input type="hidden" name="action" value="update">
+            <button type="submit" class="button">Mettre à jour</button>   
         </div>
     </div>
 
