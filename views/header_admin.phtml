@@ -7,18 +7,18 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="index.php">Catégories</a></li>
                     <li><a href="index.php?page=logout">Logout</a></li>
-                    <li>Admin
-                        <ul>
-                            <li><a href="index.php?page=admin_categories">Catégories</a></li>
-                            <li><a href="index.php?page=admin_produits">Produits</a></li>
-                            <li><a href="index.php?page=admin_avislit">Avis</a></li>
-                        </ul>
-                    </li>
+                    <li class="divider-vertical"></li>
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">Admin<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="index.php?page=admin_categories">Catégories</a></li>
+                                <li><a href="index.php?page=admin_produits">Produits</a></li>
+                                <li><a href="index.php?page=admin_avisliste">Avis</a></li>
+                            </ul>
+                        </li>
                 </ul>
-                <p>Bonjour <?= htmlentities( $_SESSION['login']) ?></p>
-                <a href="?page=profil">Modifier mon profil</a>
-
-            </div>      
+                 <p>Bonjour <?= htmlentities( $_SESSION['login']) ?></p><a href="?page=profil">Modifier mon profil</a>
+             </div>      
         </div>
     </nav>   
 </div>
