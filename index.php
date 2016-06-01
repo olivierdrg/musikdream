@@ -23,7 +23,7 @@
 
     $access = array(
         'categories',
-        'sous_categories',
+        'souscategories',
         'produits',
         'detail_produit',
         'login',
@@ -70,6 +70,7 @@
         'admin_avisliste'           => 'avis',
         'admin_avis_ajout'          => 'avis',
         'admin_avis_modif'          => 'avis',
+        'detail_produit'            => 'panier'
     );
 
     if ( isset( $_GET['page'] ) ) {
