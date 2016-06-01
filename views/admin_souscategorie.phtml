@@ -1,6 +1,8 @@
 <table>
+
+    <h4><?= $sous_categorie->getNom() ?></h4>
     <tr>
-        <td><?= $sous_categorie->getPhoto() ?></td>
+        <td><img src="<?= $sous_categorie->getPhoto() ?>" alt="<?= $sous_categorie->getNom() ?>"/></td>
         <td><?= $sous_categorie->getNom() ?></td>
         <td><?= $sous_categorie->getDescription() ?></td>
         <td>
