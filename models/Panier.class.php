@@ -44,22 +44,22 @@ class Panier {
         return $this->id_utilisateur;
     }
 
-    public function getDesignation() {
+    public function getDate() {
         return $this->date;
     }
-    public function getRue() {
+    public function getStatus() {
         return $this->status;
     }
 
-    public function getCp() {
+    public function getPrix() {
         return $this->prix;
     }
 
-    public function getVille() {
+    public function getQuantite() {
         return $this->quantite;
     }
 
-    public function getPays() {
+    public function getPoids() {
         return $this->poids;
     }
 
