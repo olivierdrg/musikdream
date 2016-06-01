@@ -1,0 +1,19 @@
+<div class="col-sm-12">
+ 
+    <?= htmlentities( $produit->getSousCategorie()->getNom() ) ?>
+    <?= htmlentities( $produit->getReference() ) ?>
+    <?= htmlentities( $produit->getStock() ) ?>
+    <?= htmlentities( $produit->getPrixHt() ) ?>
+    <?= htmlentities( $produit->getTva() ) ?>
+    <?= htmlentities( $produit->getDescription() ) ?>
+    <img src="<?= $produit->getPhoto() ?>" alt="<?= $produit->getNom() ?>">
+    <?= htmlentities( $produit->getNom() ) ?>
+    <?= htmlentities( $produit->getPoids() ) ?>
+    <?= htmlentities( $produit->getActif() ) ?>
+    <form method="POST" class="register-form" enctype="multipart/form-data">
+        <input type="hidden" name="id_produit" value="<?= htmlentities( $produit->getId() ) ?>">
+        <button type="submit" class="button" name="action" value="ajout">Ajouter au panier</button> 
+    </form>
+
+
+</div>
