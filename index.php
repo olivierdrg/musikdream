@@ -25,6 +25,7 @@
         'categories',
         'sous_categories',
         'produits',
+        'detail_produit',
         'login',
         'logout',
         'register',
