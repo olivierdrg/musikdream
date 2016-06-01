@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Ven 27 Mai 2016 à 13:43
+-- Généré le: Mer 01 Juin 2016 à 15:53
 -- Version du serveur: 5.5.47-0ubuntu0.14.04.1
 -- Version de PHP: 5.5.9-1ubuntu4.14
 
@@ -37,7 +37,17 @@ CREATE TABLE IF NOT EXISTS `adresse` (
   `type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0 adresse de facturation  1 adresse de livraison',
   PRIMARY KEY (`id`),
   KEY `id_utilisateur` (`id_utilisateur`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+--
+-- Contenu de la table `adresse`
+--
+
+INSERT INTO `adresse` (`id`, `id_utilisateur`, `designation`, `rue`, `cp`, `ville`, `pays`, `type`) VALUES
+(1, 1, 'Bat B', 'rue du cygne1', '67841', 'Urmatt', 'France', 0),
+(2, 1, 'Bat B', 'rue du cygne', '67841', 'Urmatt', 'France', 1),
+(3, 2, '', '', '', '', '', 0),
+(4, 2, '', '', '', '', '', 1);
 
 -- --------------------------------------------------------
 
@@ -69,7 +79,18 @@ CREATE TABLE IF NOT EXISTS `categorie` (
   `nom` varchar(31) NOT NULL,
   `description` varchar(1023) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+
+--
+-- Contenu de la table `categorie`
+--
+
+INSERT INTO `categorie` (`id`, `photo`, `nom`, `description`) VALUES
+(1, 'public/images/cordes.png', 'Cordes', 'Categorie des instruments a cordes'),
+(2, 'public/images/vents.png', 'Vents', 'Categorie des instruments a vents'),
+(3, 'public/images/batteries.png', 'Batteries', 'Categorie des instruments de percussions'),
+(4, 'public/images/claviers.png', 'Claviers', 'Categorie des instruments a touches'),
+(5, 'public/images/accessoires.png', 'Accessoires', 'Categorie des accessoires');
 
 -- --------------------------------------------------------
 
@@ -85,7 +106,16 @@ CREATE TABLE IF NOT EXISTS `liaison_panier_produit` (
   PRIMARY KEY (`id`),
   KEY `id_panier` (`id_panier`),
   KEY `id_produit` (`id_produit`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+--
+-- Contenu de la table `liaison_panier_produit`
+--
+
+INSERT INTO `liaison_panier_produit` (`id`, `id_panier`, `id_produit`, `quantite`) VALUES
+(2, 1, 11, 1),
+(3, 1, 23, 2),
+(4, 1, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -97,13 +127,20 @@ CREATE TABLE IF NOT EXISTS `panier` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `id_utilisateur` int(10) unsigned NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `status` varchar(15) NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '0',
   `prix` float NOT NULL,
   `quantite` int(3) NOT NULL,
   `poids` float NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_utilisateur` (`id_utilisateur`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Contenu de la table `panier`
+--
+
+INSERT INTO `panier` (`id`, `id_utilisateur`, `date`, `status`, `prix`, `quantite`, `poids`) VALUES
+(1, 1, '2016-06-01 09:38:13', 0, 21.5, 3, 20);
 
 -- --------------------------------------------------------
 
@@ -125,7 +162,28 @@ CREATE TABLE IF NOT EXISTS `produit` (
   `actif` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1 actif  0 inactif',
   PRIMARY KEY (`id`),
   KEY `id_sous_categorie` (`id_sous_categorie`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
+
+--
+-- Contenu de la table `produit`
+--
+
+INSERT INTO `produit` (`id`, `id_sous_categorie`, `reference`, `stock`, `prix_ht`, `tva`, `description`, `photo`, `nom`, `poids`, `actif`) VALUES
+(1, 4, 'MD-12346', 30, 3299, 20, 'Gerd Dowids BZ Series GL 72 Bb-Trumpet', 'public/images/trompette.png', 'Trompette Gerd Dowids', 850, 1),
+(2, 3, 'MD-23456', 25, 4599, 20, 'Selmer Tenor Reference 54 SE-TR54L', 'public/images/saxophone.png', 'Saxophone Selmer Tenor', 1200, 1),
+(3, 1, 'MD-34567', 15, 1799, 20, 'Fender AM Elite Tele Thinline MN NAT', 'public/images/guitarelectrique.png', 'Guitare electrique Fender', 1600, 1),
+(4, 2, 'MD-45678', 8, 2699, 20, 'Music Man Bongo 6 Stealth Black', 'public/images/basselectrique.png', 'Basse electrique Music Man', 1900, 1),
+(5, 5, 'MD-65478', 23, 1899, 20, 'Schreiber D-26 Bb-Clarinet', 'public/images/clarinette.png', 'Clarinette Schreiber modele D', 860, 1),
+(11, 7, 'MD-69824', 4, 2399, 20, 'Pearl Export Double Bass Kit - Black', 'public/images/batterieaccoustique.png', 'Batterie accoustique Pearl', 9000, 1),
+(12, 6, 'MD-96542', 2, 3499, 20, 'Roland TD-30K V-Drum Set', 'public/images/batterielectrique.png', 'Batterie electrique Roland', 6500, 1),
+(13, 11, 'MD-78524', 6, 3299, 20, 'Access Virus Ti2 Keyboard', 'public/images/synthetiseur.png', 'Synthetiseur Korg Access Virus', 3400, 1),
+(14, 12, 'MD-30254', 4, 3899, 20, 'Hammond SK2 Double SDRF 203545', 'public/images/orgue.png', 'Orgue numerique Hammond Classik', 5400, 1),
+(15, 9, 'MD-98547', 3, 3199, 20, 'Yamaha CVP-701 B', 'public/images/pianonumerique.png', 'Piano numerique Yamaha Concert', 3950, 1),
+(21, 10, 'MD-19564', 1, 13999, 20, 'Kawai GL 30 E/P Grand Piano', 'public/images/pianoqueue.png', 'Piano a queue Kawai studio', 312000, 1),
+(22, 8, 'MD-65254', 5, 1349, 20, 'LP Galaxy Professional Conga Set', 'public/images/congas.png', 'Congas Serie Pro LP Galaxy', 7000, 1),
+(23, 14, 'MD-425687', 25, 3.5, 20, 'Pro Snake Patch Angled Jack 0,15 m', 'public/images/cable.png', 'Cable connectique Jack court', 250, 1),
+(24, 13, 'MD-78542', 3, 219, 20, 'K&M 17534 Guardian 3+1 Translucent', 'public/images/support.png', 'Support multi guitare K&M pro', 2300, 1),
+(25, 15, 'MD-46325', 12, 59, 20, 'Boss TU-3', 'public/images/accordeur.png', 'Accordeur pro guitare et basse', 159, 1);
 
 -- --------------------------------------------------------
 
@@ -141,7 +199,28 @@ CREATE TABLE IF NOT EXISTS `sous_categorie` (
   `description` varchar(1023) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_categorie` (`id_categorie`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
+
+--
+-- Contenu de la table `sous_categorie`
+--
+
+INSERT INTO `sous_categorie` (`id`, `id_categorie`, `photo`, `nom`, `description`) VALUES
+(1, 1, 'public/images/djembe.png', 'Guitares', 'Toutes les guitares'),
+(2, 1, 'public/images/djembe.png', 'Basses', 'Toutes les basses'),
+(3, 2, 'public/images/djembe.png', 'Saxophones', 'Tous les saxophones'),
+(4, 2, 'public/images/djembe.png', 'Trompettes', 'Toutes les trompettes'),
+(5, 2, 'public/images/djembe.png', 'Clarinettes', 'Toutes les clarinettes'),
+(6, 3, 'public/images/djembe.png', 'Batteries electriques', 'Toutes les batteries electriques'),
+(7, 3, 'public/images/djembe.png', 'Batteries acoustiques', 'Toutes les batteries acoustiques'),
+(8, 3, 'public/images/djembe.png', 'Percussions', 'Toutes les percussions'),
+(9, 4, 'public/images/djembe.png', 'Pianos numeriques', 'Tous les pianos numeriques'),
+(10, 4, 'public/images/djembe.png', 'Pianos a queue', 'Tous les pianos a queue'),
+(11, 4, 'public/images/djembe.png', 'Synthetiseurs', 'Tous les synthetiseurs'),
+(12, 4, 'public/images/djembe.png', 'Orgues', 'Tous les orgues'),
+(13, 5, 'public/images/djembe.png', 'Pieds et supports', 'Tous les pieds et supports'),
+(14, 5, 'public/images/djembe.png', 'Cables et casques', 'Tous les cables et casques'),
+(15, 5, 'public/images/djembe.png', 'Accordeurs et métronomes', 'Tous les accordeurs et métronomes');
 
 -- --------------------------------------------------------
 
@@ -163,16 +242,15 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `actif` tinyint(1) NOT NULL DEFAULT '1',
   `login` varchar(31) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Contenu de la table `utilisateur`
 --
 
 INSERT INTO `utilisateur` (`id`, `nom`, `prenom`, `email`, `mot_passe`, `date_inscription`, `admin`, `date_naissance`, `telephone`, `sexe`, `actif`, `login`) VALUES
-(1, '', '', '', '$2y$08$zIcbDRqqtIZlX/wKYQ/w2eMAQUvS8JaIvrzC8qheJG1B7xfCCTuru', '2016-05-27 09:55:38', 0, '0000-00-00 00:00:00', '', 0, 1, ''),
-(2, 'noms', 'prenom', 'email@fre.fr', '$2y$08$1fmr7ykqjx7JKxgw7kVFQONWGwrtN02EQNGcmuKgw4h116iAtIRmu', '2016-05-27 10:03:13', 0, '2016-06-25 22:00:00', '0123546789', 0, 1, 'login'),
-(3, 'nomgggg', 'prenom', 'email@df.fd', '$2y$08$4cg7JA0jtX3kIWhM9yzrNuNd7C6y6PYD8F3gVWJmpJ4qKB.j1qWb2', '2016-05-27 11:16:52', 0, '2016-06-25 22:00:00', '0134564478', 0, 1, 'login');
+(1, 'Sonntag', 'Patrick', 'pat@pat.fr', '$2y$08$wv53UupxsUkp.rVAUgR6Juhxu6CiG4pKJc4rm/KH3y/KXP/ipU7yy', '2016-05-27 11:57:23', 0, '0000-00-00 00:00:00', '0123456789', 1, 1, 'pat'),
+(2, 'admin', 'admin', 'admin@admin.fr', '$2y$08$JDQXcRVskBI/bcpWdXZt3e/Tp3U3p4/6j680LYXkYNl/XTukAJoKm', '2016-05-30 13:13:57', 1, '0000-00-00 00:00:00', '0123456789', 0, 1, 'admin');
 
 --
 -- Contraintes pour les tables exportées
