@@ -69,20 +69,22 @@ class AvisManager
 
     if ( !isset( $data['contenu'] ) ) throw new Exception ("Contenu manquant");
     // if ( !isset( $data['date'] ) ) throw new Exception ("Date manquante");
+    if ( !isset( $data['titre'] ) ) throw new Exception ("Titre manquant");
 
     $utilisateur = $_SESSION['id'];
     $produit = 1;
 
-
+    $avis->setTitre( $data['titre'] );
     $avis->setContenu( $data['contenu'] );
     // $avis->setDate( $data['date'] );
     $avis->setNote( $data['note'] );
 
+    $titre = $avis->getTitre();
     $contenu = $avis->getContenu();
     $note = $avis->getNote();
 
-    $request = "INSERT INTO avis (contenu, note, id_produit, id_utilisateur) 
-            VALUES('" . $contenu . "', '" . $note . "', '".$utilisateur."', '".$produit."' )";
+    $request = "INSERT INTO avis (titre, contenu, note, id_produit, id_utilisateur) 
+            VALUES('" . $titre . "', '" . $contenu . "', '" . $note . "', '".$utilisateur."', '".$produit."' )";
 
     $res = mysqli_query( $this->link, $request );
         
@@ -112,11 +114,12 @@ class AvisManager
 
         if ($id) 
         {// true si > 0
+            $titre                  = mysqli_real_escape_string( $this->link, $avis->getTitre());
             $contenu                = mysqli_real_escape_string( $this->link, $avis->getContenu());
             $date             		= mysqli_real_escape_string( $this->link, $avis->getDate());
             $note                   = mysqli_real_escape_string( $this->link, $avis->getNote()); 
 
-			$request = "UPDATE avis SET contenu='" . $contenu . "', date='" . $date . "', note='" . $note . "', WHERE id=" . $id;
+			$request = "UPDATE avis SET titre='" . $titre . "', contenu='" . $contenu . "', date='" . $date . "', note='" . $note . "', WHERE id=" . $id;
             if ( $res )
                 return $this->findById( $id );
             else

@@ -11,6 +11,20 @@ class ProduitManager {
         $this->link = $link;
     }
 
+    // public function findByPanierQuantite(Panier $panier) {
+    //     $id = $panier->getId();
+    //     $list = [];
+    //     $request = 'SELECT * FROM produit
+    //         INNER JOIN liaison_panier_produit ON liaison_panier_produit.id_produit=produit.id
+    //         WHERE liaison_panier_produit.id_panier='.$id;
+    //     $res = mysqli_query( $this->link, $request );
+
+        
+    //     while ( $produit = mysqli_fetch_object( $res, 'Produit', array( $this->link ) ) )
+    //         $list[] = $produit;
+    //     return $list;
+    // }
+
     public function findByPanier(Panier $panier) {
         $id = $panier->getId();
         $list = [];

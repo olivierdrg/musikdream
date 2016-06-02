@@ -20,8 +20,10 @@
 		</div>
 		<div>
 			<h5>
-				Prix TTC : <?=$prix?> €<br>
-				dont TVA : <?=number_format($tva, 2, '.', '')?> €
+				<strong>
+					Prix TTC : <?=$prix?> €<br>
+					dont TVA : <?=number_format($tva, 2, '.', '')?> €
+				</strong>
 			<h5>
 		</div>
 
@@ -29,14 +31,22 @@
 		<div class="pull-left">
 			nombre de produits :&nbsp
 		</div>
-		<!-- <?=var_dump($panier->getQuantite())?>; -->
-		<!-- <?=var_dump($option_selected)?>; -->
+
 		<form action="">
 			<select name="quantite_produit" class="pull-left">
-				<option value=1 <?=$option_selected[$panier->getQuantite()][0] ?>>1</option>
-				<option value=2 <?=$option_selected[$panier->getQuantite()][1] ?>>2</option>
-				<option value=3 <?=$option_selected[$panier->getQuantite()][2] ?>>3</option>
-				<option value=4 <?=$option_selected[$panier->getQuantite()][3] ?>>4</option>
+				<option value=1 <?=$option_selected[$quantite][0] ?>>1</option>
+				<option value=2 <?=$option_selected[$quantite][1] ?>>2</option>
+				<option value=3 <?=$option_selected[$quantite][2] ?>>3</option>
+				<option value=4 <?=$option_selected[$quantite][3] ?>>4</option>
+				<option value=5 <?=$option_selected[$quantite][4] ?>>5</option>
+				<option value=6 <?=$option_selected[$quantite][5] ?>>6</option>
+				<option value=7 <?=$option_selected[$quantite][6] ?>>7</option>
+				<option value=8 <?=$option_selected[$quantite][7] ?>>8</option>
+				<option value=9 <?=$option_selected[$quantite][8] ?>>9</option>
+
+
+
+
 			</select>
 
 			<input type='hidden' name="page" value='panier'>

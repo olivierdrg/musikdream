@@ -1,20 +1,20 @@
 <div class="col-sm-12">
- 
-    <?= htmlentities( $produit->getSousCategorie()->getNom() ) ?>
-    <?= htmlentities( $produit->getReference() ) ?>
-    <?= htmlentities( $produit->getStock() ) ?>
-    <?= htmlentities( $produit->getPrixHt() ) ?>
-    <?= htmlentities( $produit->getTva() ) ?>
-    <?= htmlentities( $produit->getDescription() ) ?>
-    <img src="<?= $produit->getPhoto() ?>" alt="<?= $produit->getNom() ?>">
-    <?= htmlentities( $produit->getNom() ) ?>
-    <?= htmlentities( $produit->getPoids() ) ?>
-    <?= htmlentities( $produit->getActif() ) ?>
-    <form method="POST" class="register-form" enctype="multipart/form-data">
-        <input type="hidden" name="id" value="<?= htmlentities( $produit->getId() ) ?>">
-        <button type="submit" class="button" name="action" value="ajout">Ajouter au panier</button> 
-    </form>
-
-
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <img class="pull-right" src="<?= $produit->getPhoto() ?>" alt="<?= $produit->getNom() ?>">
+            <h3><?= htmlentities( $produit->getNom() ) ?></h3>
+            <p>Sous catégorie : <?= htmlentities( $produit->getSousCategorie()->getNom() ) ?></p>
+            <p>Référence : <?= htmlentities( $produit->getReference() ) ?></p>
+            <p>En stock : <?= htmlentities( $produit->getStock() ) ?></p>
+            <p>Prix HT : <?= htmlentities( $produit->getPrixHt() ) ?> €</p>
+            <p>Prix TTC : <?= htmlentities( $produit->getPrixTtc() ) ?> € dont <?= htmlentities( $produit->getTvaValue() ) ?> € de tva</p>
+            <p>Description : <?= htmlentities( $produit->getDescription() ) ?></p>
+            <p>Poids : <?= htmlentities( $produit->getPoidsKg() ) ?> Kg</p> 
+            <form method="POST" class="register-form" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="<?= htmlentities( $produit->getId() ) ?>">
+                <button type="submit" class="btn btn-warning btn-xs pull-left" name="action" value="ajout">Ajouter au panier</button> 
+            </form>
+        </div>
+    </div>
 
 </div>

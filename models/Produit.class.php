@@ -18,6 +18,7 @@ class Produit {
     private $actif;
     private $sous_categorie;
     private $link;
+    private $quantite;
 
     private $avis;
 
@@ -49,12 +50,20 @@ class Produit {
         return $this->stock;
     }
 
+    public function getPrixTtc() {
+        return ( $this->tva / 100 ) * $this->prix_ht + $this->prix_ht;
+    }
+
     public function getPrixHt() {
         return $this->prix_ht;
     }
 
     public function getTva() {
         return $this->tva;
+    }
+
+    public function getTvaValue() {
+        return ( $this->tva / 100 ) * $this->prix_ht;
     }
 
     public function getDescription() {
@@ -73,10 +82,17 @@ class Produit {
         return $this->poids;
     }
 
+    public function getPoidsKg() {
+        return number_format( ( $this->poids / 1000 ), 2, '.', '' );
+    }
+
     public function getActif() {
         return $this->actif;
     }
     
+    public function getQuantite() {
+        return $this->quantite;
+    }    
     public function setIdSousCategorie( $id_sous_categorie ) {
         $this->id_sous_categorie = $id_sous_categorie;
     }
