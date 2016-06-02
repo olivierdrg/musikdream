@@ -11,28 +11,19 @@
 				Etat de votre panier
 			</div>
 			<div class="panel-body">
-				<div>
-					5 produits dans votre panier
-				</div>
-				<div>
-					Date : 25/04/2016
-				</div>
-				<div>
-					Status : En traitement
-				</div>
+					<?=htmlentities( $panier->getQuantite() ) ?> produits dans votre panier<br>
+					Date : <?=htmlentities( $panier->getDate() ) ?><br>
 
-				<div>
-					Prix total : 124.52€
-				</div>
-				<div>
-					Poids total : 20kg
-				</div>
+
+					Prix total : <?=htmlentities( $panier->getPrix() ) ?>€ TTC<br>
+					Poids total : <?=htmlentities( $panier->getPoids() ) ?>kg<br>
+					<em>(Status : <?=htmlentities( $panier->getStatus() ) ?>)</em><br>
 			</div>
 		</div>
 
 		<form action="">
 			<input type='hidden' name="page" value='panier'>
-			<button type="submit" name="action" class="btn btn-success" value="acheter">A la caisse</button>
+			<button type="submit" name="action" class="btn btn-success pull-right" value="acheter">Passer à la caisse</button>
 		</form>
 
 	</div>

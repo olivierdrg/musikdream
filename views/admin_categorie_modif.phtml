@@ -3,7 +3,7 @@
         <div class="col-sm-6">
             <div class="row">
                 <label for="photo">Photo</label>
-                <input type="text" id="photo" name="photo" value="<?= htmlentities( $photo ) ?>">
+                <input type="text" id="photo" name="photo" value="<?= htmlentities( $categorie->getPhoto() ) ?>">
             </div>
         </div>
     </div>
@@ -12,7 +12,7 @@
         <div class="col-sm-6">
             <div class="row">
                 <label for="nom">Nom</label>
-                <input type="text" id="nom" name="nom" value="<?= htmlentities( $nom ) ?>">
+                <input type="text" id="nom" name="nom" value="<?= htmlentities( $categorie->getNom() ) ?>">
             </div>
         </div>
     </div> 
@@ -21,7 +21,7 @@
         <div class="col-sm-6">
             <div class="row">
                 <label for="description">Description</label>
-                <input type="text" id="description" name="description" value="<?= htmlentities( $description ) ?>">
+                <input type="text" id="description" name="description" value="<?= htmlentities( $categorie->getDescription() ) ?>">
             </div>
         </div>
     </div>
