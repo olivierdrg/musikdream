@@ -5,7 +5,6 @@
 		private $id;
 		private $id_utilisateur;
 		private $id_produit;
-		private $titre;
 		private $contenu;
 		private $date;
 		private $note;
@@ -26,11 +25,7 @@
 		{
 			return $this->id_produit;
 		}
-		public function getTitre() 
-		{
-			return $this->titre;
-		}
-
+		
 		public function getContenu() 
 		{
 			return $this->contenu;
@@ -47,16 +42,6 @@
 		}
 
 
-
-		public function setTitre( $titre ) 
-		{
-        if ( strlen( $titre ) < 10 ) 
-            throw new Exception ("Titre trop court (< 5)");
-        else if ( strlen( $titre ) > 300 )
-            throw new Exception ("Titre trop long (> 30)");            
-
-        $this->titre = $titre;
-    	}
 
 		public function setContenu( $contenu ) 
 		{
