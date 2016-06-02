@@ -3,8 +3,8 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Mer 01 Juin 2016 à 15:53
--- Version du serveur: 5.5.47-0ubuntu0.14.04.1
+-- Généré le: Jeu 02 Juin 2016 à 14:54
+-- Version du serveur: 5.6.28-0ubuntu0.14.04.1
 -- Version de PHP: 5.5.9-1ubuntu4.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -37,17 +37,7 @@ CREATE TABLE IF NOT EXISTS `adresse` (
   `type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0 adresse de facturation  1 adresse de livraison',
   PRIMARY KEY (`id`),
   KEY `id_utilisateur` (`id_utilisateur`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
-
---
--- Contenu de la table `adresse`
---
-
-INSERT INTO `adresse` (`id`, `id_utilisateur`, `designation`, `rue`, `cp`, `ville`, `pays`, `type`) VALUES
-(1, 1, 'Bat B', 'rue du cygne1', '67841', 'Urmatt', 'France', 0),
-(2, 1, 'Bat B', 'rue du cygne', '67841', 'Urmatt', 'France', 1),
-(3, 2, '', '', '', '', '', 0),
-(4, 2, '', '', '', '', '', 1);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -102,20 +92,11 @@ CREATE TABLE IF NOT EXISTS `liaison_panier_produit` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `id_panier` int(10) unsigned NOT NULL,
   `id_produit` int(10) unsigned NOT NULL,
-  `quantite` int(3) NOT NULL,
+  `quantite` int(3) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   KEY `id_panier` (`id_panier`),
   KEY `id_produit` (`id_produit`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
-
---
--- Contenu de la table `liaison_panier_produit`
---
-
-INSERT INTO `liaison_panier_produit` (`id`, `id_panier`, `id_produit`, `quantite`) VALUES
-(2, 1, 11, 1),
-(3, 1, 23, 2),
-(4, 1, 2, 1);
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
 
 -- --------------------------------------------------------
 
@@ -128,19 +109,19 @@ CREATE TABLE IF NOT EXISTS `panier` (
   `id_utilisateur` int(10) unsigned NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `status` tinyint(1) NOT NULL DEFAULT '0',
-  `prix` float NOT NULL,
-  `quantite` int(3) NOT NULL,
-  `poids` float NOT NULL,
+  `prix` float NOT NULL DEFAULT '0',
+  `quantite` int(3) NOT NULL DEFAULT '0',
+  `poids` float NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `id_utilisateur` (`id_utilisateur`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Contenu de la table `panier`
 --
 
 INSERT INTO `panier` (`id`, `id_utilisateur`, `date`, `status`, `prix`, `quantite`, `poids`) VALUES
-(1, 1, '2016-06-01 09:38:13', 0, 21.5, 3, 20);
+(7, 2, '2016-06-02 10:45:57', 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -206,21 +187,21 @@ CREATE TABLE IF NOT EXISTS `sous_categorie` (
 --
 
 INSERT INTO `sous_categorie` (`id`, `id_categorie`, `photo`, `nom`, `description`) VALUES
-(1, 1, 'public/images/djembe.png', 'Guitares', 'Toutes les guitares'),
-(2, 1, 'public/images/djembe.png', 'Basses', 'Toutes les basses'),
-(3, 2, 'public/images/djembe.png', 'Saxophones', 'Tous les saxophones'),
-(4, 2, 'public/images/djembe.png', 'Trompettes', 'Toutes les trompettes'),
-(5, 2, 'public/images/djembe.png', 'Clarinettes', 'Toutes les clarinettes'),
-(6, 3, 'public/images/djembe.png', 'Batteries electriques', 'Toutes les batteries electriques'),
-(7, 3, 'public/images/djembe.png', 'Batteries acoustiques', 'Toutes les batteries acoustiques'),
+(1, 1, 'public/images/guitarelectrique.png', 'Guitares', 'Toutes les guitares'),
+(2, 1, 'public/images/basselectrique.png', 'Basses', 'Toutes les basses'),
+(3, 2, 'public/images/saxophone.png', 'Saxophones', 'Tous les saxophones'),
+(4, 2, 'public/images/trompette.png', 'Trompettes', 'Toutes les trompettes'),
+(5, 2, 'public/images/clarinette.png', 'Clarinettes', 'Toutes les clarinettes'),
+(6, 3, 'public/images/batterielectrique.png', 'Batteries electriques', 'Toutes les batteries electriques'),
+(7, 3, 'public/images/batterieaccoustique.png', 'Batteries acoustiques', 'Toutes les batteries acoustiques'),
 (8, 3, 'public/images/djembe.png', 'Percussions', 'Toutes les percussions'),
-(9, 4, 'public/images/djembe.png', 'Pianos numeriques', 'Tous les pianos numeriques'),
-(10, 4, 'public/images/djembe.png', 'Pianos a queue', 'Tous les pianos a queue'),
-(11, 4, 'public/images/djembe.png', 'Synthetiseurs', 'Tous les synthetiseurs'),
-(12, 4, 'public/images/djembe.png', 'Orgues', 'Tous les orgues'),
-(13, 5, 'public/images/djembe.png', 'Pieds et supports', 'Tous les pieds et supports'),
-(14, 5, 'public/images/djembe.png', 'Cables et casques', 'Tous les cables et casques'),
-(15, 5, 'public/images/djembe.png', 'Accordeurs et métronomes', 'Tous les accordeurs et métronomes');
+(9, 4, 'public/images/pianonumerique.png', 'Pianos numeriques', 'Tous les pianos numeriques'),
+(10, 4, 'public/images/pianoqueue.png', 'Pianos a queue', 'Tous les pianos a queue'),
+(11, 4, 'public/images/synthetiseur.png', 'Synthetiseurs', 'Tous les synthetiseurs'),
+(12, 4, 'public/images/orgue.png', 'Orgues', 'Tous les orgues'),
+(13, 5, 'public/images/support.png', 'Pieds et supports', 'Tous les pieds et supports'),
+(14, 5, 'public/images/cable.png', 'Cables et casques', 'Tous les cables et casques'),
+(15, 5, 'public/images/accordeur.png', 'Accordeurs et metronomes', 'Tous les accordeurs et metronomes');
 
 -- --------------------------------------------------------
 
@@ -242,15 +223,15 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `actif` tinyint(1) NOT NULL DEFAULT '1',
   `login` varchar(31) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Contenu de la table `utilisateur`
 --
 
 INSERT INTO `utilisateur` (`id`, `nom`, `prenom`, `email`, `mot_passe`, `date_inscription`, `admin`, `date_naissance`, `telephone`, `sexe`, `actif`, `login`) VALUES
-(1, 'Sonntag', 'Patrick', 'pat@pat.fr', '$2y$08$wv53UupxsUkp.rVAUgR6Juhxu6CiG4pKJc4rm/KH3y/KXP/ipU7yy', '2016-05-27 11:57:23', 0, '0000-00-00 00:00:00', '0123456789', 1, 1, 'pat'),
-(2, 'admin', 'admin', 'admin@admin.fr', '$2y$08$JDQXcRVskBI/bcpWdXZt3e/Tp3U3p4/6j680LYXkYNl/XTukAJoKm', '2016-05-30 13:13:57', 1, '0000-00-00 00:00:00', '0123456789', 0, 1, 'admin');
+(2, 'oli', 'oli', 'oli@oli.fr', '$2y$08$ZblZSAaBXhgRJMYqgomqtucV2rnhgcLgjYnIxshyFHKGtyuXnh5NO', '2016-05-27 11:54:01', 1, '0000-00-00 00:00:00', '1', 0, 1, 'oli'),
+(3, 'olo', 'olo', 'olo@olo.fr', '$2y$08$s1CmJVh5THI9FKkwTFCYJO9kZHV5ZxH9vfTu4Moc.7NAWzwjqvBJO', '2016-06-01 13:00:16', 0, '0000-00-00 00:00:00', '0112234525', 0, 1, 'olo');
 
 --
 -- Contraintes pour les tables exportées
