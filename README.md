@@ -1,2 +1,2 @@
 # musikdream
-Le numéro 1 de la vente en ligne d'instruments de musique.
+L'avant-dernier numéro de la vente en ligne d'instruments de musique.
