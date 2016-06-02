@@ -16,7 +16,7 @@
                 $panier->addProduit( $produit );
                 $panier_manager->update( $panier );
 
-                header('Location: index.php?page=categories');
+                header('Location: index.php?page=panier');
                 exit;            
             }
 

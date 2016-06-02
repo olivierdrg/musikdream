@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Jeu 02 Juin 2016 à 14:50
+-- Généré le: Jeu 02 Juin 2016 à 14:54
 -- Version du serveur: 5.6.28-0ubuntu0.14.04.1
 -- Version de PHP: 5.5.9-1ubuntu4.14
 
@@ -121,7 +121,7 @@ CREATE TABLE IF NOT EXISTS `panier` (
 --
 
 INSERT INTO `panier` (`id`, `id_utilisateur`, `date`, `status`, `prix`, `quantite`, `poids`) VALUES
-(7, 2, '2016-06-02 10:45:57', 0, 88374, 0, 79950);
+(7, 2, '2016-06-02 10:45:57', 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -201,7 +201,7 @@ INSERT INTO `sous_categorie` (`id`, `id_categorie`, `photo`, `nom`, `description
 (12, 4, 'public/images/orgue.png', 'Orgues', 'Tous les orgues'),
 (13, 5, 'public/images/support.png', 'Pieds et supports', 'Tous les pieds et supports'),
 (14, 5, 'public/images/cable.png', 'Cables et casques', 'Tous les cables et casques'),
-(15, 5, 'public/images/accordeur.png', 'Accordeurs et métronomes', 'Tous les accordeurs et métronomes');
+(15, 5, 'public/images/accordeur.png', 'Accordeurs et metronomes', 'Tous les accordeurs et metronomes');
 
 -- --------------------------------------------------------
 
