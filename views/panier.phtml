@@ -12,12 +12,11 @@
 			</div>
 			<div class="panel-body">
 					<?=htmlentities( $panier->getQuantite() ) ?> produits dans votre panier<br>
-					Date : <?=htmlentities( $panier->getDate() ) ?><br>
-
-
-					Prix total : <?=htmlentities( $panier->getPrix() ) ?>€ TTC<br>
-					Poids total : <?=htmlentities( $panier->getPoids() ) ?>kg<br>
+					Prix total TTC : <?=htmlentities( $panier->getPrix() ) ?> €<br>
+					Poids total : <?=htmlentities( $panier->getPoids() ) ?> kg<br>
 					<em>(Status : <?=htmlentities( $panier->getStatus() ) ?>)</em><br>
+					<em>(Date : <?=htmlentities( $panier->getDate() ) ?>)</em><br>
+					<em>(prix total : <?=number_format($prix_total, 2, '.', '')?>)</em><br>
 			</div>
 		</div>
 
