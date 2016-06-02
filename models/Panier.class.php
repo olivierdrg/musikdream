@@ -66,10 +66,11 @@ class Panier {
     // $this->produits => array
     public function addProduit(Produit $produit)
     {
-        if ($this->produits === null)
+        if ( $this->produits === null )
             $this->getProduits();
-        $this->produits[] = $produits;
+        $this->produits[] = $produit;
     }
+
     public function removeProduit(Produit $produit)
     {
         if ($this->produits === null)
@@ -85,6 +86,11 @@ class Panier {
             $count++;
         }
     }
+
+    public function setIdUtilisateur() {
+        return $this->id_utilisateur;
+    }
+
     public function setDate( $date ) {
         // if ( strlen( $date ) < 3 ) 
         //     throw new Exception ("Date trop courte (< 4)");
