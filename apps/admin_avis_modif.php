@@ -18,6 +18,10 @@
             'value' => htmlentities ($avis->getIdProduit()),
             'class' => '',
         ),
+        'titre' => array(
+            'value' => htmlentities ($avis->getTitre()),
+            'class' => '',
+        ),
         'contenu' => array(
             'value' => htmlentities ($avis->getContenu()),
             'class' => '',
@@ -30,4 +34,6 @@
     );
     require('views/admin_avis_modif.phtml');
 	}
+
+    
 ?>
