@@ -49,12 +49,20 @@ class Produit {
         return $this->stock;
     }
 
+    public function getPrixTtc() {
+        return ( $this->tva / 100 ) * $this->prix_ht + $this->prix_ht;
+    }
+
     public function getPrixHt() {
         return $this->prix_ht;
     }
 
     public function getTva() {
         return $this->tva;
+    }
+
+    public function getTvaValue() {
+        return ( $this->tva / 100 ) * $this->prix_ht;
     }
 
     public function getDescription() {
@@ -71,6 +79,10 @@ class Produit {
 
     public function getPoids() {
         return $this->poids;
+    }
+
+    public function getPoidsKg() {
+        return number_format( ( $this->poids / 1000 ), 2, '.', '' );
     }
 
     public function getActif() {

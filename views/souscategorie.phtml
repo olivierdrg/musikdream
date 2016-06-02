@@ -1,6 +1,12 @@
 <div class="col-sm-12">
-    <a href="?page=produits&id_sous_categorie=<?= $sous_categorie->getId() ?>">
-        <img src="<?= $sous_categorie->getPhoto() ?>" alt="<?= $sous_categorie->getNom() ?>">
-        <p><?= $sous_categorie->getNom() ?></p>
-    </a>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <?= htmlentities( $sous_categorie->getNom() ) ?>
+        </div>
+        <div class="panel-body text-center">
+            <a href="?page=produits&id_sous_categorie=<?= $sous_categorie->getId() ?>">
+                <img src="<?= $sous_categorie->getPhoto() ?>" alt="<?= $sous_categorie->getNom() ?>">
+            </a>
+        </div>
+    </div>        
 </div>
