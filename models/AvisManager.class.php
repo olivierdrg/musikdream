@@ -68,17 +68,21 @@ class AvisManager
         $avis = new Avis();
 
     if ( !isset( $data['contenu'] ) ) throw new Exception ("Contenu manquant");
-    if ( !isset( $data['date'] ) ) throw new Exception ("Date manquante");
+    // if ( !isset( $data['date'] ) ) throw new Exception ("Date manquante");
 
-
+    $utilisateur = $_SESSION['id'];
+    $produit = 1;
 
 
     $avis->setContenu( $data['contenu'] );
-    $avis->setDate( $data['date'] );
+    // $avis->setDate( $data['date'] );
     $avis->setNote( $data['note'] );
 
-    $request = "INSERT INTO avis (contenu, 'date', note) 
-            VALUES('" . $contenu . "', '" . $date . "', '" . $note . "'' )";
+    $contenu = $avis->getContenu();
+    $note = $avis->getNote();
+
+    $request = "INSERT INTO avis (contenu, note, id_produit, id_utilisateur) 
+            VALUES('" . $contenu . "', '" . $note . "', '".$utilisateur."', '".$produit."' )";
 
     $res = mysqli_query( $this->link, $request );
         

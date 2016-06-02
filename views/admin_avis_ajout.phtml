@@ -2,26 +2,25 @@
 	<div class="row">
 	    <div class="col-md-2"> 
 	        <label for="note">Note</label>
-	            <input type="text" id="note" name="note" value="<?= htmlentities ( $Note ) ?>">
+	            <input type="text" id="note" name="note" value="<?= htmlentities ( $note ) ?>">
 	    </div>
-	    <div class="col-md-2">Titre avis</div>
-	</div>
-
-		<label for="pseudo">Avis</label>
-		<input type="text" id="contenu" name="contenu" value="<?= htmlentities ( $Contenu ) ?>">
-	    
-	<div class="row">
+	    <div class="col-md-2">
+			<label for="titre">Titre</label>
+				<input type="text" id="titre" name="titre">
+		</div>
+		<div class="col-md-2">
+			<label for="pseudo">Contenu</label>
+				<input type="text" id="contenu" name="contenu" value="<?= htmlentities ( $contenu ) ?>">
+		</div>
 	    <div class="col-md-2">
 	        <label for="pseudo">Pseudo</label>
-	                <input type="text" id="pseudo" name="pseudo" value="<?= htmlentities ( $IdUtilisateur ) ?>">
+	                <input type="text" id="id_utilisateur" name="id_utilisateur" value="<?= htmlentities ( $id_utilisateur ) ?>">
 		</div>
 	    <div class="col-md-2">    
 	        <?= htmlentities ($date = date("m/d/Y H\hi") ) ?>
 	    </div>
-	</div>
-	<div class="row">
-        <div class="col-sm-12 submit">   
-            <button type="submit" class="button" name="action" value="ajout">Ajouter un commentaire</button>   
+		<div class="col-sm-12 submit">   
+            <button type="submit" class="button" name="action" value="admin_ajout_avis"><a href="?page=admin_avis">Publier</a></button>   
         </div>
     </div>
 </form>

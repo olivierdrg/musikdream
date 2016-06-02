@@ -1,16 +1,17 @@
 <div class="row">
-    <div class="col-md-2">
-       <a href="#">Note</a>
+    <div><a href="?page=admin_avis_ajout">Nouvel avis</a>
     </div>
-    <div class="col-md-2">
-        <a href="views/admin_avis.phtml">Titre avis</a>
-    </div>
-     <a href="#">Contenu</a>
-    <div class="col-md-2">
-        <a href="#">Avis</a>
-    </div>
-    <div class="col-md-2">    
-        <?= htmlentities ($date = date("m/d/Y H\hi") ) ?>
-    </div>
-        <?php require('apps/admin_avis.php'); ?>
+        <div class="col-md-2">
+           <p>Note</p>
+        </div>
+        <div class="col-md-2">
+            <p>Titre avis</p>
+        </div>
+         <p>Contenu</p>
+        <div class="col-md-2">
+            <p>Avis</p>
+        </div>
+        <div class="col-md-2">    
+            <?= htmlentities ($date = date("m/d/Y H\hi") ) ?>
+        </div>
 </div>
