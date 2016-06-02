@@ -9,6 +9,7 @@
 @linkColor : #D98926;
 @textcolor : #787676;
 @footerColor : #212121;
+
 @media-size : 992px;
 
 body {
@@ -64,11 +65,6 @@ hr {
     text-align: center;
 }
 
-.bonjour a:hover {
-	/* none ???? */ 
-	color: none;
-}
-
 .navbar {
 	border: none;
 	background-color: #080808;
@@ -88,11 +84,13 @@ hr {
 .panier {
 	opacity: 0.7;
 	margin-top: -45px;
+
+	&:hover {
+		opacity: 1;
+	}	
 }
 
-.panier:hover {
-	opacity: 1;
-}
+
 
 
 
@@ -151,11 +149,11 @@ hr {
 	box-shadow: 0px 0px 20px #929095;
 	border-radius: 50%;
 	transition: all 0.4s;
-}
 
-.cat1:hover img, .cat2:hover img, .cat3:hover img, .cat4:hover img, .cat5:hover img{
-	transform: scale(1.2);
-	transition: all 0.8s;
+	img {
+		transform: scale(1.2);
+		transition: all 0.8s;
+	}	
 }
 
 .texte_categorie{
