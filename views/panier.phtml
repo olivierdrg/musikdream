@@ -12,7 +12,7 @@
 			</div>
 			<div class="panel-body">
 					<?=htmlentities( $panier->getQuantite() ) ?> produits dans votre panier<br>
-					Prix total TTC : <?=htmlentities( $panier->getPrix() ) ?> €<br>
+					<strong>Prix total TTC : <?=$prix?> €</strong><br>
 					Poids total : <?=htmlentities( $panier->getPoids() ) ?> kg<br>
 					<em>(Status : <?=htmlentities( $panier->getStatus() ) ?>)</em><br>
 					<em>(Date : <?=htmlentities( $panier->getDate() ) ?>)</em><br>

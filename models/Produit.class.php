@@ -18,6 +18,7 @@ class Produit {
     private $actif;
     private $sous_categorie;
     private $link;
+    private $quantite;
 
     private $avis;
 
@@ -89,6 +90,9 @@ class Produit {
         return $this->actif;
     }
     
+    public function getQuantite() {
+        return $this->quantite;
+    }    
     public function setIdSousCategorie( $id_sous_categorie ) {
         $this->id_sous_categorie = $id_sous_categorie;
     }

@@ -1,16 +1,11 @@
 <div class="row">
-    <div><a href="?page=admin_avis_ajout">Nouvel avis</a>
-    </div>
         <div class="col-md-2">
            <?= $avis->getNote() ?>
         </div>
         <div class="col-md-2">
-            <p>Titre avis</p>
+            <p><?= $avis->getTitre() ?></p>
         </div>
-         <p>Contenu</p>
-        <div class="col-md-2">
-            <p>Avis</p>
-        </div>
+         <p><?= $avis->getContenu() ?></p>
         <div class="col-md-2">    
             <?= htmlentities ($date = date("m/d/Y H\hi") ) ?>
         </div>
