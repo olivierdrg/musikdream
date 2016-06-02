@@ -9,7 +9,6 @@ if ( isset( $_POST['action'] ) )
         try 
         {
             $avis = $manager->create( $_POST );
-
             header('Location: index.php?page=admin_liste_avis');
             exit;
         }

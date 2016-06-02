@@ -1,25 +1,54 @@
 <!-- <div class="container"> -->
-	<h3><?=htmlentities( $produit->getNom() ) ?></h3>
-	<div>
-		Référence : <?=htmlentities( $produit->getReference() ) ?>
-	</div>
-	<div>
-		
+
+<div class="panel panel-default">
+	<div class="panel-body">
+
 		<img class="pull-right" src="<?=htmlentities( $produit->getPhoto() ) ?>">
-	</div>
-	<div>
-		Stock : <?=htmlentities( $produit->getStock() ) ?> pièces
-	</div>
-	<div>
-		description
-		<p>
-			<?=htmlentities( $produit->getdescription() ) ?>
-		</p>
-		poids : <?=htmlentities( $produit->getPoids() ) ?>
-	</div>
-	<div>
+		<h3><?=htmlentities( $produit->getNom() ) ?></h3>
+		<div>
+			Référence : <?=htmlentities( $produit->getReference() ) ?>
+		</div>
+		<div>
+			description
+			<p>
+				<?=htmlentities( $produit->getdescription() ) ?>
+			</p>
+			poids : <?=$poids ?> kg
+		</div>
+		<div>
+			En stock : <?=htmlentities( $produit->getStock() ) ?> pièces
+		</div>
+		<div>
+			<h5>
+				Prix TTC : <?=$prix?> €<br>
+				dont TVA : <?=number_format($tva, 2, '.', '')?> €
+			<h5>
+		</div>
 
-	</div>
-	<div>
+		
+		<div class="pull-left">
+			nombre de produits :&nbsp
+		</div>
+		<!-- <?=var_dump($panier->getQuantite())?>; -->
+		<!-- <?=var_dump($option_selected)?>; -->
+		<form action="">
+			<select name="quantite_produit" class="pull-left">
+				<option value=1 <?=$option_selected[$panier->getQuantite()][0] ?>>1</option>
+				<option value=2 <?=$option_selected[$panier->getQuantite()][1] ?>>2</option>
+				<option value=3 <?=$option_selected[$panier->getQuantite()][2] ?>>3</option>
+				<option value=4 <?=$option_selected[$panier->getQuantite()][3] ?>>4</option>
+			</select>
 
+			<input type='hidden' name="page" value='panier'>
+			<button type="submit" name="action" class="btn btn-warning btn-xs pull-left"value="panier_modif">
+				Modifier mon panier
+			</button>
+
+			<button type="submit" name="action" class="btn btn-warning btn-xs pull-right"value="retirer">
+				Retirer ce produit du panier
+			</button>
+		</form>
 	</div>
+
+
+</div>

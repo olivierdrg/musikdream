@@ -1,7 +1,6 @@
-<div class="container">
-	<div class="row">
-		<h4>mon panier</h4>
-	</div>
+<div class="">
+	
+ 	<h3>Mon panier</h3>
 	<div class="col-sm-8">
 		<?php require('apps/panier_produit.php'); ?>
 	</div>
@@ -12,24 +11,20 @@
 				Etat de votre panier
 			</div>
 			<div class="panel-body">
-				<div>
-					5 produits dans votre panier
-				</div>
-				<div>
-					Date : 25/04/2016
-				</div>
-				<div>
-					Status : En traitement
-				</div>
-
-				<div>
-					Prix total : 124.52€
-				</div>
-				<div>
-					Poids total : 20kg
-				</div>
+					<?=htmlentities( $panier->getQuantite() ) ?> produits dans votre panier<br>
+					Prix total TTC : <?=htmlentities( $panier->getPrix() ) ?> €<br>
+					Poids total : <?=htmlentities( $panier->getPoids() ) ?> kg<br>
+					<em>(Status : <?=htmlentities( $panier->getStatus() ) ?>)</em><br>
+					<em>(Date : <?=htmlentities( $panier->getDate() ) ?>)</em><br>
+					<em>(prix total : <?=number_format($prix_total, 2, '.', '')?>)</em><br>
 			</div>
 		</div>
+
+		<form action="">
+			<input type='hidden' name="page" value='panier'>
+			<button type="submit" name="action" class="btn btn-success pull-right" value="acheter">Passer à la caisse</button>
+		</form>
+
 	</div>
 </div>
 

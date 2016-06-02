@@ -1,6 +1,6 @@
-<div class="col-sm-12">
+<div class="cat<?=($i+1)?>">
     <a href="?page=souscategories&id_categorie=<?= $categorie->getId() ?>">
         <img src="<?= $categorie->getPhoto() ?>" alt="<?= $categorie->getNom() ?>">
-        <p><?= $categorie->getNom() ?></p>
+        	<?= $categorie->getNom() ?>
     </a>
 </div>
