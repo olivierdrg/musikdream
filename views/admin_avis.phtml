@@ -1,15 +1,19 @@
 <div class="row">
-        <div class="col-md-2">
-           <?= $avis->getNote() ?>
-        </div>
-        <div class="col-md-2">
-            <p><?= $avis->getTitre() ?></p>
-        </div>
-         <p><?= $avis->getContenu() ?></p>
-        <div class="col-md-2">    
+    <div class="col-md-2">
+       <?= $avis->getNote() ?>
+    </div>
+    <div class="col-md-2">
+        <p><?= $avis->getTitre() ?></p>
+    </div>
+</div>
+<div class="row">
+    <p class="col-md-8"><?= $avis->getContenu() ?></p>
+</div>
+<div class="row">
+    <div class="col-md-2">    
             <?= htmlentities ($date = date("m/d/Y H\hi") ) ?>
-        </div>
-        <div class="col-sm-12 submit">   
-            <button type="submit" class="button" name="action" value="ajout"><a href="?page=admin_avis_modif">Supprimer</a></button>   
-        </div>
+    </div>
+    <div class="col-sm-8 submit">   
+         <button type="submit" class="button" name="action" value="ajout"><a href="?page=admin_avis_modif">Supprimer</a></button>   
+     </div>
 </div>
