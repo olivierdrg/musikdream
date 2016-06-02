@@ -78,9 +78,7 @@ class PanierManager
 
         $panier->setIdUtilisateur( $id_utilisateur );
 
-        $id_utilisateur = intval( $this->link, $panier->getIdUtilisateur() );
-
-        $request = "INSERT INTO panier (id_utilisateur) VALUES( '".$id_utilisateur."')";
+        $request = "INSERT INTO panier (id_utilisateur) VALUES( '" . $id_utilisateur . "')";
 
         $res = mysqli_query( $this->link, $request );
         
