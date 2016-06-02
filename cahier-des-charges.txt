@@ -1,0 +1,45 @@
+<?php
+/*
+utilisateurs
+nom, prenom, email, mot de passe, date inscription, admin, date naissance, telephone, actif, sexe, login
+login -> email + password => redirection home
+register => redirection login
+
+produits
+reference, stock, prix/u HT, tva, description, photo, nom, poids/u, id_sous_category, actif
+une page / produit
+
+categories
+nom, description
+
+sous_categories
+nom, description, id_category
+
+avis
+id_author, contenu, date, id_produit, note
+Un avis se donne sur la page du produit uniquement si la personne est connectée et si elle a déjà acheté le produit
+
+panier
+id_user, date, status, prix, nbr_produits, poids
+Lors de la validation du panier, on choisis une adresse de livraison et/ou facturation + vérifier le numéro de CB
+On ajoute au panier sur la page d'un produit
+Une page dédiée au panier doit existeret permettre de le modifier/valider
+
+adresses
+nom, numéro, rue, ville, code_postal, pays, id_user, type
+S'affiche sur une page profil utilisateur
+Cette page est privée
+
+link_panier_produit
+id_panier, id_produit, quantité
+table de liaison pour ajouter des produits à un panier
+
+L'administrateur peut :
+gérer les catégories (creation/suppression/modification)
+gérer les sous-catégories (creation/suppression/modification)
+gérer les produits (creation/dissimulation/modification/stock)
+afficher des statistiques (bonus)
+valider les paniers
+modérer les avis (supprimer)
+*/
+?>
