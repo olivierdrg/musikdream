@@ -11,9 +11,10 @@
     <?= htmlentities( $produit->getPoids() ) ?>
     <?= htmlentities( $produit->getActif() ) ?>
     <form method="POST" class="register-form" enctype="multipart/form-data">
-        <input type="hidden" name="id_produit" value="<?= htmlentities( $produit->getId() ) ?>">
+        <input type="hidden" name="id" value="<?= htmlentities( $produit->getId() ) ?>">
         <button type="submit" class="button" name="action" value="ajout">Ajouter au panier</button> 
     </form>
+
 
 
 </div>
