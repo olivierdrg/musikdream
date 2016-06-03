@@ -14,7 +14,7 @@ class ProduitManager {
     public function findByPanier(Panier $panier) {
         $id = $panier->getId();
         $list = [];
-        $request = 'SELECT produit.* FROM produit
+        $request = 'SELECT produit.*, liaison_panier_produit.quantite FROM produit
             INNER JOIN liaison_panier_produit ON liaison_panier_produit.id_produit=produit.id
             WHERE liaison_panier_produit.id_panier=' . $id;
 

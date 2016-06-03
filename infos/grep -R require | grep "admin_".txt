@@ -1,1 +1,0 @@
-grep -R require | grep "admin_"
