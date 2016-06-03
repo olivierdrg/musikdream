@@ -21,7 +21,7 @@
 		<div>
 			<h5>
 				<strong>
-					Prix TTC : <?=$prix?> €<br>
+					Prix unitaire TTC : <?=$prix?> €<br>
 					dont TVA : <?=number_format($tva, 2, '.', '')?> €
 				</strong>
 			<h5>
@@ -50,11 +50,11 @@
 			</select>
 
 			<input type='hidden' name="page" value='panier'>
-			<button type="submit" name="action" class="btn btn-warning btn-xs pull-left"value="panier_modif">
+			<!-- <button type="submit" name="action" class="btn btn-warning btn-xs pull-left"value="panier_modif">
 				Modifier mon panier
-			</button>
-
-			<button type="submit" name="action" class="btn btn-warning btn-xs pull-right"value="retirer">
+			</button> -->
+			
+			<button type="submit" name="action" class="btn btn-warning btn-xs pull-right" value="retirer">
 				Retirer ce produit du panier
 			</button>
 		</form>
