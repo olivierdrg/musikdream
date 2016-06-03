@@ -1,3 +1,8 @@
+<p>
+    <a href="?page=categories">Catégorie</a> <?= htmlentities( $produit->getSouscategorie()->getCategorie()->getNom() ) ?> >
+    <a href="?page=souscategories&id_categorie=<?= htmlentities( $produit->getSouscategorie()->getCategorie()->getId() ) ?>">Sous Catégorie</a> <?= htmlentities( $produit->getSouscategorie()->getNom() ) ?> >
+     <a href="?page=produits&id_sous_categorie=<?= htmlentities( $produit->getSouscategorie()->getId() ) ?>">Produit</a> <?= htmlentities( $produit->getNom() ) ?> >    
+</p
 <div class="row">
     <div class="col-sm-12">
         <div class="panel panel-default">
