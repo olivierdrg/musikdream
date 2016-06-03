@@ -25,7 +25,7 @@ class PanierManager
         $res = mysqli_query( $this->link, $request );
         $panier = mysqli_fetch_object( $res, "Panier" , [$this->link]);
         return $panier;
-    }  
+    }
 
     public function findByIdUtilisateur( $id_utilisateur ) {
         $id_utilisateur = intval( $id_utilisateur );
@@ -33,7 +33,7 @@ class PanierManager
         $res = mysqli_query( $this->link, $request );
         $panier = mysqli_fetch_object( $res, "Panier" , [$this->link]);
         return $panier;
-    }  
+    }
 
     public function findByStatus( $status ) {
         $status = intval( $status );
@@ -41,32 +41,21 @@ class PanierManager
         $res = mysqli_query( $this->link, $request );
         $panier = mysqli_fetch_object( $res, "Panier" , [$this->link]);
         return $panier;
-    }  
+    }
 
     public function getById( $id ) {
         return $this->findById( $id );
     }
-    
+
     public function getCurrent() {
         $id = $_SESSION['id'];
         $request = 'SELECT * FROM panier WHERE id_utilisateur = ' . $id . ' AND status = 0';
         $res = mysqli_query( $this->link, $request );
-       
+
         if ( mysqli_num_rows( $res )  == 0 ) {
             $this->create( $id );
         } else {
             $panier = mysqli_fetch_object( $res, "Panier", [$this->link] );
-            
-            $produit_manager = new ProduitManager( $this->link );
-
-            $request = 'SELECT * FROM liaison_panier_produit WHERE id_panier = ' . $panier->getId();
-
-            $res = mysqli_query( $this->link, $request );
-            while ( $liaison = mysqli_fetch_object( $res ) ) {
-                $produit = $produit_manager->findById( $liaison->id_produit );
-                
-                $panier->addProduit( $produit );
-            }
 
             return $panier;
         }
@@ -81,52 +70,48 @@ class PanierManager
         $request = "INSERT INTO panier (id_utilisateur) VALUES( '" . $id_utilisateur . "')";
 
         $res = mysqli_query( $this->link, $request );
-        
+
         // Si la requete s'est bien passée
         if ( $res ) {
             $id = mysqli_insert_id( $this->link );
-            
+
             // si c'est bon id > 0
             if ( $id ) {
                 $panier = $this->findById( $id );
-                return $panier;    
+                return $panier;
             }
             else// Sinon
-                throw new Exception ("Internal server error");                
+                throw new Exception ("Internal server error");
         }
         else// Sinon
             throw new Exception ("Internal server error");
-                
-    }    
+
+    }
 
     public function update( Panier $panier ) { // hinting
         $id = $panier->getId();
 
         if ( $id ) {
-            $id_utilisateur = mysqli_real_escape_string( $this->link, $panier->getIdUtilisateur() );
-            $date           = mysqli_real_escape_string( $this->link, $panier->getDate() );
-            $status         = mysqli_real_escape_string( $this->link, $panier->getstatus() );
-            $prix           = mysqli_real_escape_string( $this->link, $panier->getPrix() );
-            $quantite       = mysqli_real_escape_string( $this->link, $panier->getQuantite() );
-            $poids          = mysqli_real_escape_string( $this->link, $panier->getPoids() );
+            $produit    = 0;
+            $prix       = 0;
+            $poids      = 0;
 
+            $i          = 0;
+            $produits   = $panier->getProduits();
+            $count      = count( $produits );
 
-            $i = 0;
-            $produits = $panier->getProduits();
-            $count = count( $produits );
-     
             while( $i < $count ) {
                 $produit = $produits[$i];
-                $prix += $produit->getPrixHt();
-                $quantite++;
-                $poids += $produit->getPoids();
+
+                $prix       += $produit->getPrixHt();
+                $quantite   += 1;//$produit->getQuantite();
+                $poids      += $produit->getPoids();
 
                 $i++;
             }
 
             // table panier
-            $request = "UPDATE panier SET id_utilisateur ='" . $id_utilisateur ."',date='" . $date . "',status='" . $status . "',prix='" . $prix . "',
-                                           quantite='" . $quantite . "',poids='" . $poids . "' WHERE id=" . $id;
+            $request = "UPDATE panier SET prix='" . $prix . "', quantite='" . $quantite . "', poids='" . $poids . "' WHERE id=" . $id;
 
             $res = mysqli_query( $this->link, $request );
             if ( $res ) {
@@ -135,9 +120,9 @@ class PanierManager
                 $res = mysqli_query( $this->link, $request );
 
                 $i = 0;
-                $produits = $panier->getProduits();
+
                 $count = count( $produits );
-              
+
                 while ($i < $count) {
                     $produit = $produits[$i];
 
@@ -158,7 +143,7 @@ class PanierManager
         $id = $panier->getId();
 
         if ( $id ) {// tdate si > 0
-        
+
             $request = "DELETE FROM panier WHERE id=" . $id;
             $res = mysqli_query( $this->link, $request );
             if ( $res )
@@ -166,7 +151,6 @@ class PanierManager
             else
                 throw new Exception ("Internal server error");
         }
-    }  
+    }
 }
 ?>
-

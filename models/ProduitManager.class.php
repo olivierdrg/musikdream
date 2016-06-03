@@ -11,29 +11,18 @@ class ProduitManager {
         $this->link = $link;
     }
 
-    // public function findByPanierQuantite(Panier $panier) {
-    //     $id = $panier->getId();
-    //     $list = [];
-    //     $request = 'SELECT * FROM produit
-    //         INNER JOIN liaison_panier_produit ON liaison_panier_produit.id_produit=produit.id
-    //         WHERE liaison_panier_produit.id_panier='.$id;
-    //     $res = mysqli_query( $this->link, $request );
-
-        
-    //     while ( $produit = mysqli_fetch_object( $res, 'Produit', array( $this->link ) ) )
-    //         $list[] = $produit;
-    //     return $list;
-    // }
-
     public function findByPanier(Panier $panier) {
         $id = $panier->getId();
         $list = [];
-        $request = 'SELECT * FROM produit
+        $request = 'SELECT produit.* FROM produit
             INNER JOIN liaison_panier_produit ON liaison_panier_produit.id_produit=produit.id
-            WHERE liaison_panier_produit.id_panier='.$id;
+            WHERE liaison_panier_produit.id_panier=' . $id;
+
         $res = mysqli_query( $this->link, $request );
-        while ( $produit = mysqli_fetch_object( $res, 'Produit', array( $this->link ) ) )
+        while ( $produit = mysqli_fetch_object( $res, 'Produit', array( $this->link ) ) ) {
             $list[] = $produit;
+        }
+
         return $list;
     }
 
@@ -54,7 +43,7 @@ class ProduitManager {
         $res = mysqli_query( $this->link, $request );
         $produit = mysqli_fetch_object( $res, 'Produit', array( $this->link ) );
         return $produit;
-    }  
+    }
 
     public function findBySousCategorie(SousCategorie $sous_categorie ) {
         $list = [];
@@ -64,7 +53,7 @@ class ProduitManager {
         while ( $produit = mysqli_fetch_object( $res, 'Produit', array( $this->link ) ) )
             $list[] = $produit;
         return $list;
-    } 
+    }
 
     public function getById( $id ) {
         return $this->findById( $id );
@@ -79,12 +68,12 @@ class ProduitManager {
         if ( !isset( $data['stock'] ) ) throw new Exception ("stock manquant");
         if ( !isset( $data['prix_ht'] ) ) throw new Exception ("Prix ht manquant");
         if ( !isset( $data['tva'] ) ) throw new Exception ("Tva manquante");
-        if ( !isset( $data['description'] ) ) throw new Exception ("Déscription manquante" ); 
-        if ( !isset( $data['photo'] ) ) throw new Exception ("Photo manquante");     
-        if ( !isset( $data['nom'] ) ) throw new Exception ("Nom manquant");  
-        if ( !isset( $data['poids'] ) ) throw new Exception ("Poids manquant");  
-        if ( !isset( $data['actif'] ) ) throw new Exception ("Actif manquant");              
-    
+        if ( !isset( $data['description'] ) ) throw new Exception ("Déscription manquante" );
+        if ( !isset( $data['photo'] ) ) throw new Exception ("Photo manquante");
+        if ( !isset( $data['nom'] ) ) throw new Exception ("Nom manquant");
+        if ( !isset( $data['poids'] ) ) throw new Exception ("Poids manquant");
+        if ( !isset( $data['actif'] ) ) throw new Exception ("Actif manquant");
+
 
         $produit->setIdSousCategorie( $data['id_sous_categorie'] );
         $produit->setReference( $data['reference'] );
@@ -109,27 +98,27 @@ class ProduitManager {
         $poids              = mysqli_real_escape_string( $this->link, $produit->getPoids() );
         $actif              = mysqli_real_escape_string( $this->link, $produit->getActif() );
 
-        $request = "INSERT INTO produit (id_sous_categorie, reference, stock, prix_ht, tva, description, photo, nom, poids, actif ) 
+        $request = "INSERT INTO produit (id_sous_categorie, reference, stock, prix_ht, tva, description, photo, nom, poids, actif )
             VALUES('" . $id_sous_categorie . "', '" . $reference . "', '" . $stock . "', '" . $prix_ht . "', '" . $tva . "', '" . $description . "', '" . $photo . "', '" . $nom . "', '" . $poids . "', '" . $actif . "')";
 
         $res = mysqli_query( $this->link, $request );
-        
+
         // Si la requete s'est bien passée
         if ( $res ) {
             $id = mysqli_insert_id( $this->link );
-            
+
             // si c'est bon id > 0
             if ( $id ) {
                 $utilisateur = $this->findById( $id );
-                return $utilisateur;    
+                return $utilisateur;
             }
             else// Sinon
-                throw new Exception ("Internal server error");                
+                throw new Exception ("Internal server error");
         }
         else// Sinon
             throw new Exception ("Internal server error");
-                
-    }    
+
+    }
 
 
 
@@ -162,7 +151,7 @@ class ProduitManager {
         $id = $produit->getId();
 
         if ( $id ) {
-        
+
             $request = "DELETE FROM produit WHERE id=" . $id;
             $res = mysqli_query( $this->link, $request );
             if ( $res )
@@ -170,7 +159,7 @@ class ProduitManager {
             else
                 throw new Exception ("Internal server error");
         }
-    }  
+    }
 
 }
 ?>
