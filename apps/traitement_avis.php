@@ -2,7 +2,7 @@
 if ( isset( $_POST['action'] ) ) 
 {
     
-    if ($_POST['action'] == 'admin_ajout_avis') 
+    if ($_POST['action'] == 'avis_ajout') 
     {
 
         $manager = new AvisManager( $link );// $link => $this->link
@@ -23,7 +23,7 @@ if ( isset( $_POST['action'] ) )
         }
     }
 
-    if ( $_POST['action'] == 'admin_modif_avis' ) 
+    if ( $_POST['action'] == 'avis_modif' ) 
     {
         $manager = new AvisManager( $link );// $link => $this->link
         try 
@@ -33,7 +33,7 @@ if ( isset( $_POST['action'] ) )
             $avis->setNote($_POST['note']);
             $manager->update( $avis );
 
-            header('Location: index.php?page=admin_avis');
+            header('Location: index.php?page=avis');
             exit;
         }
 
@@ -51,7 +51,7 @@ if ( isset( $_POST['action'] ) )
             $avis = $manager->findById($_POST['id_avis']);
             $manager->delete( $avis );
 
-            header('Location: index.php?page=admin_avis');
+            header('Location: index.php?page=avis');
             exit;
         }
 

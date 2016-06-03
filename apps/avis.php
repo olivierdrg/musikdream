@@ -5,7 +5,7 @@
 	$count = count( $avisliste );
     while ( $i < $count ) {
     	$avis = $avisliste[$i];
-    	require('views/admin_avis.phtml');
+    	require('views/avis.phtml');
     	$i++;
 	}
     

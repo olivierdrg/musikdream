@@ -28,7 +28,7 @@
         
         )
     );
-    require('views/admin_avis_modif.phtml');
+    require('views/avis_modif.phtml');
 	}
 
     
