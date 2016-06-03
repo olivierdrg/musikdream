@@ -2,7 +2,7 @@
 
 <div class="panel panel-default">
 	<div class="panel-body">
-
+		<?=var_dump($produit->getQuantite());?>
 		<img class="pull-right" src="<?=htmlentities( $produit->getPhoto() ) ?>">
 		<h3><?=htmlentities( $produit->getNom() ) ?></h3>
 		<div>
@@ -49,10 +49,13 @@
 
 			</select>
 
+			<input type='hidden' name="idProduit" value='<?=$produit->getId();?>'>
+			<input type='hidden' name="idPanier" value='<?=$panier->getId();?>'>
 			<input type='hidden' name="page" value='panier'>
-			<!-- <button type="submit" name="action" class="btn btn-warning btn-xs pull-left"value="panier_modif">
+
+			<button type="submit" name="action" class="btn btn-warning btn-xs pull-left"value="modif">
 				Modifier mon panier
-			</button> -->
+			</button>
 			
 			<button type="submit" name="action" class="btn btn-warning btn-xs pull-right" value="retirer">
 				Retirer ce produit du panier
