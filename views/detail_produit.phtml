@@ -5,7 +5,7 @@
 </p
 <div class="row">
     <div class="col-sm-12">
-        <div class="panel panel-default">
+        <div class="cadre_produit panel panel-default">
             <div class="panel-body">
                 <img class="pull-right" src="<?= $produit->getPhoto() ?>" alt="<?= $produit->getNom() ?>">
                 <h3><?= htmlentities( $produit->getNom() ) ?></h3>
@@ -18,7 +18,7 @@
                 <p>Poids : <?= htmlentities( $produit->getPoidsKg() ) ?> Kg</p> 
                 <form action="index.php?page=panier_ajout" method="POST" class="register-form" enctype="multipart/form-data">
                     <input type="hidden" name="id" value="<?= intval( $produit->getId() ) ?>">
-                    <button type="submit" class="btn btn-warning btn-xs pull-left" name="action" value="ajout">Ajouter au panier</button> 
+                    <button type="submit" class="bouton btn btn-warning btn-xs pull-left" name="action" value="ajout">Ajouter au panier</button> 
                 </form>
             </div>
         </div>
