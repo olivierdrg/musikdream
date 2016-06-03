@@ -13,7 +13,8 @@
                     <li class="bonjour"><a>Bonjour <?= htmlentities( $_SESSION['login']) ?></a></li>
                     <li><a href="?page=profil">Modifier mon profil</a></li>
                     <li><a href="index.php?page=logout">Se déconnecter</a></li>
-                    <a href="?page=panier" title="Voir mon panier" alt="Voir mon panier"><img class ="panier" src= "public/images/panierb.png"/></a>
+                    <li class="quantite_panier"><?=htmlentities( $panier->getQuantite() ) ?></li>
+                    <li><a href="?page=panier" title="Voir mon panier" alt="Voir mon panier"><img class ="panier" src= "public/images/panier.png"/></a></li>
                 </ul>
             </div>    
         </div>     
