@@ -1,7 +1,4 @@
 <?php
-    $manager = new CategorieManager( $link );
-
-    $categories = $manager->findAll();
 
     $i = 0;
     $count = count( $categories );

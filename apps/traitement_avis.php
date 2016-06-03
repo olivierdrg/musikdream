@@ -8,8 +8,12 @@ if ( isset( $_POST['action'] ) )
         $manager = new AvisManager( $link );// $link => $this->link
         try 
         {
-            $avis = $manager->create( $_POST );
-            header('Location: index.php?page=admin_liste_avis');
+            $produitManager = new ProduitManager($link);
+            $produit = $produitManager->findById($_POST['id_produit']);
+            $utilisateurManager = new UtilisateurManager($link);
+            $utilisateur = $utilisateurManager->findById($_SESSION['id']);
+            $avis = $manager->create( $_POST, $produit, $utilisateur);
+            header('Location: index.php?page=detail_produit&id_produit='.$produit->getId());
             exit;
         }
 
@@ -24,7 +28,10 @@ if ( isset( $_POST['action'] ) )
         $manager = new AvisManager( $link );// $link => $this->link
         try 
         {
-            $avis = $manager->edit( $_POST );
+            $avis = $manager->findById($_POST['id_avis']);
+            $avis->setContenu($_POST['contenu']);
+            $avis->setNote($_POST['note']);
+            $manager->update( $avis );
 
             header('Location: index.php?page=admin_avis');
             exit;
@@ -41,7 +48,8 @@ if ( isset( $_POST['action'] ) )
         $manager = new AvisManager( $link );// $link => $this->link
         try 
         {
-            $avis = $manager->delete( $_POST );
+            $avis = $manager->findById($_POST['id_avis']);
+            $manager->delete( $avis );
 
             header('Location: index.php?page=admin_avis');
             exit;

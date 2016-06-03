@@ -44,7 +44,7 @@ if ( isset( $_POST['action'] ) ) {
 
         try {
             $manager = new SousCategorieManager( $link );
-            $sous_categorie = $manager->remove( $_POST );//l'admin peut supprimer une catégorie
+            $sous_categorie = $manager->remove( $_POST );//l'admin peut supprimer une catégorie -- PASCAL
 
             header('Location: index.php?page=admin_souscategories');
             exit;

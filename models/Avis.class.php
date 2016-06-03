@@ -9,6 +9,34 @@
 		private $date;
 		private $note;
 
+		private $utilisateur;// NULL
+		private $produit;
+
+		private $link;
+
+		public function __construct( $link ) {
+	        $this->link = $link;
+	    }
+
+	    public function getUtilisateur()
+	    {
+	    	if ($this->utilisateur === null)
+	    	{
+	    		$manager = new UtilisateurManager($this->link);
+	    		$this->utilisateur = $manager->findById($this->id_utilisateur);
+	    	}
+	    	return $this->utilisateur;
+	    }
+	    public function getProduit()
+	    {
+	    	if ($this->produit === null)
+	    	{
+	    		$manager = new ProduitManager($this->link);
+	    		$this->produit = $manager->findById($this->id_produit);
+	    	}
+	    	return $this->produit;
+	    }
+
 		// Getter/Setter | Accesseur/Mutateur | Accessor/Mutator
 
 		public function getId() 

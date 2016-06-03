@@ -20,6 +20,7 @@ class Utilisateur {
 
     private $adresseFacturation;
     private $adresseLivraison;
+    private $panier;
 
     private $link;// propriété extérieure != DB
 
@@ -36,6 +37,15 @@ class Utilisateur {
     //     return $this->adresseFacturation;
     // }
 
+    public function getPanier()
+    {
+        if ($this->panier === null)
+        {
+            $manager = new PanierManager($this->link);
+            $this->panier = $manager->findByUtilisateur($this);
+        }
+        return $this->panier;
+    }
     public function getAdresseFacturation()
     {
         // $this->produits => null

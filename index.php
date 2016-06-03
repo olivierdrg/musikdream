@@ -70,7 +70,7 @@
         'admin_avisliste'           => 'avis',
         'admin_avis_ajout'          => 'avis',
         'admin_avis_modif'          => 'avis',
-        'detail_produit'            => 'panier'
+        'detail_produit'            => 'avis'
     );
 
     if ( isset( $_GET['page'] ) ) {
@@ -83,6 +83,13 @@
         require('apps/traitement_' . $access_traitement[$page] . '.php' );
     }
 
-    require('apps/skel.php');
+    if (isset($_GET['ajax']))
+    {
+        $accessAjax = ['panier'];
+        $pageAjax = 'panier';
+        require('apps/'.$pageAjax.'.php');
+    }
+    else
+        require('apps/skel.php');
 
 ?>

@@ -16,8 +16,11 @@ class Categorie {
     }
 
     public function getSousCategories() {
-        $manager = new SousCategorieManager( $this->link );
-        $this->sous_categories = $manager->findByCategory( $this );
+        if ($this->sous_categories === null)
+        {
+            $manager = new SousCategorieManager( $this->link );
+            $this->sous_categories = $manager->findByCategory( $this );
+        }
         return $this->sous_categories;
     }
 

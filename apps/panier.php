@@ -1,11 +1,12 @@
 <?php
 
 if (isset($_SESSION['id']))
-
 {
-    $panierM = new PanierManager($link);
-    $panier = $panierM->findByIdUtilisateur($_SESSION['id']);
-    
+    $manager = new UtilisateurManager($link);
+    $utilisateur = $manager->findById($_SESSION['id']);
+    // $panierM = new PanierManager($link);
+    // $panier = $panierM->findByIdUtilisateur($_SESSION['id']);
+    $utilisateur->getPanier();
     // $produitM = new ProduitManager($link);
     // $produit = $produitM->findById();    
     

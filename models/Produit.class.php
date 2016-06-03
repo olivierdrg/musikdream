@@ -34,11 +34,21 @@ class Produit {
         return $this->id_sous_categorie;
     }
 
-    public function getSousCategorie() {
-        $id = $this->getIdSousCategorie();
+    public function getAvis() {
+        if ($this->avis === null)
+        {
+            $manager = new AvisManager( $this->link );
+            $this->avis = $manager->findByProduit( $this );
+        }
 
-        $manager = new SousCategorieManager( $this->link );
-        $this->sous_categorie = $manager->findById( $id );
+        return $this->avis;
+    }
+    public function getSousCategorie() {
+        if ($this->sous_categorie === null)
+        {
+            $manager = new SousCategorieManager( $this->link );
+            $this->sous_categorie = $manager->findById( $this->id_sous_categorie );
+        }
 
         return $this->sous_categorie;
     }

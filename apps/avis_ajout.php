@@ -11,5 +11,5 @@
 	if (isset( $_POST['date'] ) ) $date = $_POST['date'];
 	if (isset( $_POST['note'] ) ) $note = $_POST['note'];
 
-	require('views/admin_avis_ajout.phtml');
+	require('views/avis_ajout.phtml');
 ?>

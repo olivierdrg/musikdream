@@ -14,6 +14,7 @@ class Panier {
     private $poids;
     private $type;
 
+    private $utilisateur;
     private $produits;// pas stocké directement dans la db -> calculé et par défaut == NULL
 
     private $link;// propriété extérieure != DB
@@ -25,6 +26,15 @@ class Panier {
         $this->link = $link;
     }
     // Getter/Setter | Accesseur/Mutateur | Accessor/Mutator
+    public function getUtilisateur() {
+        if ($this->utilisateur === null)
+        {
+            $manager = new UtilisateurManager( $this->link );
+            $this->utilisateur = $manager->findById( $this->id_utilisateur );
+        }
+
+        return $this->utilisateur;
+    }
     public function getProduits()
     {
         // $this->produits => null

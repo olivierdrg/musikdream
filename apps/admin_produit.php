@@ -1,7 +1,4 @@
 <?php
-	$manager = new ProduitManager( $link );
-
-	$produits = $manager->findAll();
 
 	$i = 0;
 	$count = count( $produits );

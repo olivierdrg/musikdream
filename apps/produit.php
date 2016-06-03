@@ -1,8 +1,7 @@
 <?php
-    $manager = new ProduitManager( $link );
+    // $manager = new ProduitManager( $link );
 
-    $produits = $manager->findBySousCategorie( $sous_categorie );
-
+    // $produits = $manager->findBySousCategorie( $sous_categorie );
     $i = 0;
     $count = count( $produits );
 

@@ -1,5 +1,4 @@
 <?php
-    $sous_categories = $categorie->getSousCategories();
     $i = 0;
     $count = count( $sous_categories );
     while ( $i < $count ) {

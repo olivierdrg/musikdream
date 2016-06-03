@@ -14,7 +14,7 @@ class AvisManager
         $list = [];
         $request = "SELECT * FROM avis";
         $res = mysqli_query( $this->link, $request );
-        while ($avis = mysqli_fetch_object( $res, "Avis" ) )
+        while ($avis = mysqli_fetch_object( $res, "Avis" , [$this->link]) )
             $list[] = $avis;
         return $list;
     }
@@ -24,7 +24,7 @@ class AvisManager
         $id = intval( $id );
         $request = "SELECT * FROM avis WHERE id = " . $id;
         $res = mysqli_query( $this->link, $request );
-        $avis = mysqli_fetch_object( $res, "Avis" );
+        $avis = mysqli_fetch_object( $res, "Avis" , [$this->link]);
         return $avis;
     }
 
@@ -33,8 +33,20 @@ class AvisManager
         $id_produit = intval( $id_produit );
         $request = "SELECT * FROM avis WHERE id_produit = " . $id_produit;
         $res = mysqli_query( $this->link, $request );
-        $avis = mysqli_fetch_object( $res, "Avis" );
+        $avis = mysqli_fetch_object( $res, "Avis" , [$this->link]);
         return $avis;
+    }  
+    public function findByProduit(Produit $produit ) 
+    {
+        $liste = [];
+        $id_produit = intval( $produit->getId() );
+        $request = "SELECT * FROM avis WHERE id_produit = " . $id_produit;
+        $res = mysqli_query( $this->link, $request );
+        while ($avis = mysqli_fetch_object( $res, "Avis" , [$this->link]))
+        {
+            $liste[] = $avis;
+        }
+        return $liste;
     }  
 
     public function findByIdUtilisateur( $id_utilisateur ) 
@@ -42,7 +54,7 @@ class AvisManager
         $id_utilisateur = intval( $id_utilisateur );
         $request = "SELECT * FROM avis WHERE id_utilisateur = " . $id_utilisateur;
         $res = mysqli_query( $this->link, $request );
-        $avis = mysqli_fetch_object( $res, "Avis" );
+        $avis = mysqli_fetch_object( $res, "Avis" , [$this->link]);
         return $avis;
     }      
 
@@ -62,28 +74,27 @@ class AvisManager
     }
 
 
-    public function create( $data ) 
+    public function create( $data, Produit $produit, Utilisateur $utilisateur) 
     {
 
-        $avis = new Avis();
+        $avis = new Avis($this->link);
 
     if ( !isset( $data['contenu'] ) ) throw new Exception ("Contenu manquant");
     // if ( !isset( $data['date'] ) ) throw new Exception ("Date manquante");
     
 
-    $utilisateur = $_SESSION['id'];
-    $produit = 1;
+    $utilisateur = $utilisateur->getId();
+    $produit = $produit->getId();
 
     $avis->setContenu( $data['contenu'] );
     // $avis->setDate( $data['date'] );
     $avis->setNote( $data['note'] );
 
-    $contenu = $avis->getContenu();
-    $note = $avis->getNote();
+    $contenu = mysqli_real_escape_string($this->link, $avis->getContenu());
+    $note = intval($avis->getNote());
 
     $request = "INSERT INTO avis (contenu, note, id_produit, id_utilisateur) 
-            VALUES('" . $contenu . "', '" . $note . "', '".$utilisateur."', '".$produit."' )";
-
+            VALUES('" . $contenu . "', '" . $note . "', '".$produit."', '".$utilisateur."' )";
     $res = mysqli_query( $this->link, $request );
         
         // Si la requete s'est bien passée
@@ -98,7 +109,7 @@ class AvisManager
                 return $avis;    
             }
             else// Sinon
-                throw new Exception ("Internal server error");                
+                throw new Exception ("Internal server error");
         }
         else// Sinon
             throw new Exception ("Internal server error");

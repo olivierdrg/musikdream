@@ -16,12 +16,15 @@
                 <p>Prix TTC : <?= htmlentities( $produit->getPrixTtc() ) ?> € dont <?= htmlentities( $produit->getTvaValue() ) ?> € de tva</p>
                 <p>Description : <?= htmlentities( $produit->getDescription() ) ?></p>
                 <p>Poids : <?= htmlentities( $produit->getPoidsKg() ) ?> Kg</p> 
-                <form method="POST" class="register-form" enctype="multipart/form-data">
-                    <input type="hidden" name="id" value="<?= htmlentities( $produit->getId() ) ?>">
+                <form action="index.php?page=panier_ajout" method="POST" class="register-form" enctype="multipart/form-data">
+                    <input type="hidden" name="id" value="<?= intval( $produit->getId() ) ?>">
                     <button type="submit" class="btn btn-warning btn-xs pull-left" name="action" value="ajout">Ajouter au panier</button> 
                 </form>
             </div>
         </div>
 
     </div>
+    <h3>Avis</h3>
+    <?php require('apps/avis_ajout.php'); ?>
+    <?php require('apps/avisliste.php'); ?>
 </div>

@@ -118,16 +118,15 @@ class UtilisateurManager {
         $mot_passe = $data['mot_passe'];
         $login     = $data['login'];
 
-        $request = 'SELECT id, mot_passe, login, admin FROM utilisateur WHERE login="' . $login . '"';
+        $request = 'SELECT id, mot_passe, login, admin FROM utilisateur WHERE login="' . $login . '" LIMIT 1';
 
         $res = mysqli_query( $this->link, $request ); 
          
-        while ( $ligne = mysqli_fetch_assoc( $res ) ) {
-            if ( password_verify( $mot_passe, $ligne['mot_passe']) ) {
-                $_SESSION['id'] = $ligne['id'];
-                $_SESSION['login'] = $ligne['login'];
-                $_SESSION['admin'] = $ligne['admin'];
-            }
+        $ligne = mysqli_fetch_assoc( $res );
+        if ( password_verify( $mot_passe, $ligne['mot_passe']) ) {
+            $_SESSION['id'] = $ligne['id'];
+            $_SESSION['login'] = $ligne['login'];
+            $_SESSION['admin'] = $ligne['admin'];
         }
     }
 

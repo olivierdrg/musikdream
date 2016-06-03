@@ -1,4 +1,8 @@
 <?php
 	if ( isset( $_SESSION['login'] ) )
-	require('views/admin_categories.phtml');
+	{
+		$manager = new CategorieManager( $link );
+		$categories = $manager->findAll();
+		require('views/admin_categories.phtml');
+	}
 ?>
