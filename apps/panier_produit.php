@@ -25,7 +25,7 @@
         $prix = $prix + $tva;
         $prix_total = $prix_total + $prix;
         $prix = number_format($prix, 2, '.', '');
-
+        // var_dump($panier);
         $quantite = $produit->getQuantite();
 
         require('views/panier_produit.phtml');
