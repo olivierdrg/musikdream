@@ -10,6 +10,7 @@ class SousCategorie {
     private $link;
 
     private $categorie;
+    private $produits;
 
     public function __construct( $link ) {
         $this->link = $link;
@@ -43,6 +44,15 @@ class SousCategorie {
         }
 
         return $this->categorie;
+    }
+
+    public function getProduits() {
+        if ($this->produits === null)
+        {
+            $manager = new ProduitManager( $this->link );
+            $this->produits = $manager->findBySousCategorie( $this );
+        }
+        return $this->produits;
     }
 
     public function setIdCategorie( $id_categorie ) {
