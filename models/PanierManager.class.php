@@ -160,4 +160,21 @@ class PanierManager
         }
     }
 }
+
+//     public function updateLiaisonQuantite(Panier $panier ){
+//         $id = $panier->getId();
+//         if ( $id ) {// tdate si > 0
+//             // $quantite = 0;
+
+// idPanier
+// quantite_produit
+
+            
+
+
+
+//         }        
+//     }
+
+
 ?>
