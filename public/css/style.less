@@ -1,3 +1,4 @@
+/*GENERAL*/
 *::after, *::before {
     box-sizing: border-box;
 }
@@ -5,8 +6,12 @@
     box-sizing: border-box;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 @backColor : #262626;
-@linkColor : #D98926;
+@linkColor : #337ab7;
 @textcolor : #787676;
 @footerColor : #212121;
 
@@ -47,6 +52,8 @@ hr {
   border-color: #333; 
 }
 
+
+/*HEADER*/
 .musik_dream {
 	font-size: 8rem;
 	font-family: 'Faster One', cursive;
@@ -56,6 +63,7 @@ hr {
 	position:absolute;
 	opacity:0.7;
 	margin-top: 30px;
+	padding: 0px;
 }
 
 .banniere {
@@ -78,11 +86,27 @@ hr {
 	text-transform: uppercase;
 }
 
-.navbar-inverse {
-	border: none;
-	background-color: #080808;
+.navbar-nav > li > a {
+    color: @linkColor !important;
+
+    &:hover{
+    	color: #fff !important;
+    }
 }
 
+.navbar-inverse {
+	color: @linkColor !important;
+	border: none;
+	background-color: #080808;
+
+	& .bonjour > a {
+		text-decoration: none;
+		color: #F40B00 !important;
+	}
+}
+
+
+/*FOOTER*/
 .footer {
 	background-color: #080808;
 	border-top-left-radius: 5px;
@@ -94,36 +118,6 @@ hr {
 		margin-right: 25px;
 	}
 }
-
-/* PANIER*/
-.panier {
-	opacity: 0.7;
-	margin-top: -35px;
-	margin-right: -15px;
-	transform: scale(0.9);
-	padding: 1px;
-
-	&:hover {
-		transform: scale(1);
-		transition: all 0.5s;
-		opacity: 1;
-	}	
-}
-
-.quantite_panier {
-	font-size: 30px;
-	line-height: 35px;
-	color: #F40B00;
-	margin-top: -15px;
-
-	&> p {
-		font-size: 10px;
-		line-height: 10px;
-		color: #B7BBBB;
-		margin-right: 10px;
-	}
-}
-
 
 
 
@@ -203,4 +197,41 @@ hr {
 	padding: 65px 10px;
 	box-shadow: 1px 1px 50px #468;
 	border-radius: 50%;
+}
+
+
+/* PANIER*/
+
+.voir_panier {
+	padding-bottom: 0px !important;
+}
+
+.panier {
+	opacity: 0.7;
+	margin-top: -35px;
+	margin-right: -15px;
+	margin-bottom: 0px;
+	transform: scale(0.9);
+	padding: 0px;
+
+	&:hover {
+		transform: scale(1);
+		transition: all 0.5s;
+		opacity: 1;
+	}	
+}
+
+.quantite_panier {
+	font-size: 30px;
+	line-height: 35px;
+	color: #F40B00;
+	margin-top: -15px;
+	padding: 0px;
+
+	&> p {
+		font-size: 10px;
+		line-height: 10px;
+		color: #B7BBBB;
+		margin-right: 10px;
+	}
 }
