@@ -45,7 +45,8 @@ h1, h2 {
 }
 
 h3 {
-  color: #6B5B41;
+  color: #fff;
+  text-transform: uppercase;
 }
 
 hr {
@@ -147,6 +148,11 @@ hr {
 	font-size: 18px;
 	text-align: center;
 
+	& a {
+		font-size: 20px !important;
+		color: #fff !important;
+	}
+
 	& img {
 		transform: scale(0.9);
 	}
@@ -197,6 +203,41 @@ hr {
 	padding: 65px 10px;
 	box-shadow: 1px 1px 50px #468;
 	border-radius: 50%;
+}
+
+
+/*PRODUITS*/
+.panel-default, .panel-heading {
+	background-color: rgba(255,255,255,0.1) !important;
+	border-color: #5D5D5D !important;
+	color: #fff !important;
+
+	img {
+		transform: scale(0.9);
+		transition: all 0.5s;
+
+		&:hover {
+			transform: scale(1);
+			transition: all 0.5s;
+		}
+	}
+}
+
+.panel-heading {
+	font-size: 16px !important;
+	text-align: center;
+}
+
+button {
+	background-color: #6E9400 !important;
+	border-color: #6E9400 !important;
+	font-size: 16px !important;
+	padding: 5px !important;
+
+	&:hover {
+		background-color: #9CC720 !important;
+		border-color: #9CC720 !important;
+	}
 }
 
 
