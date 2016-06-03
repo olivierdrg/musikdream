@@ -23,7 +23,7 @@ body {
   color: @textcolor;
 }
   
-.container-fluid {
+.page_totale {
 	background-color: #404040;
 	border-radius: 5px;
 	margin-bottom: 20px;
@@ -110,20 +110,19 @@ hr {
 /*FOOTER*/
 .footer {
 	background-color: #080808;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
+	border-radius: 5px;
 
 	& > .container > p {
 		font-size: 12px;
 		line-height: 13px;
 		text-align: center;
 		margin-right: 25px;
-		margin-top: 10px;
+		margin-top: 20px;
 	}
 
 	& > .container > .text-muted {
-		font-size: 10px;
-		line-height: 13px;
+		font-size: 9px;
+		line-height: 11px;
 		text-align: center;
 		margin-right: 25px;
 		margin-top: 0px;
@@ -217,10 +216,11 @@ hr {
 
 
 /*PRODUITS*/
-.panel-default, .panel-heading {
-/*	background-color: rgba(255,255,255,0.1) !important;
-	border-color: #5D5D5D !important;
-	color: #000 !important;*/
+
+.cadre_produit {
+	background-color: rgba(255,255,255,0.5);
+	border-color: #5D5D5D;
+	color: #000;
 
 	img {
 		transform: scale(0.9);
@@ -233,12 +233,13 @@ hr {
 	}
 }
 
-.panel-heading {
-	font-size: 16px !important;
+.titre_cadre_produit {
+	background-color: none !important;
+	font-size: 16px;
 	text-align: center;
 }
 
-button {
+.bouton {
 	background-color: #6E9400 !important;
 	border-color: #6E9400 !important;
 	font-size: 16px !important;

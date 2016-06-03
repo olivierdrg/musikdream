@@ -1,9 +1,9 @@
 <div class="col-sm-12">
-    <div class="panel panel-default">
-        <div class="panel-heading">
+    <div class="cadre_produit panel panel-default">
+        <div class="titre_cadre_produit panel-heading">
             <?= htmlentities( $produit->getSousCategorie()->getNom() ) ?>
         </div>
-        <div class="panel-body text-center">
+        <div class="cadre_produit panel-body text-center">
             <a href="?page=detail_produit&id_produit=<?= $produit->getId() ?>">
                 <img src="<?= $produit->getPhoto() ?>" alt="<?= $produit->getNom() ?>">
             </a>
