@@ -19,7 +19,7 @@ class SousCategorieManager
         return $list;
     }
 
-    public function findByCategorie( Categorie $categorie ) {
+    public function findByCategory( Categorie $categorie ) {
         $list = [];
         $id = $categorie->getId();        
         $request = "SELECT * FROM sous_categorie WHERE id_categorie = " . $id;
