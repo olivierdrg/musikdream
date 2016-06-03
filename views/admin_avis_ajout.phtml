@@ -1,0 +1,24 @@
+<form method="POST" class="register-form" enctype="multipart/form-data">
+	<input type="hidden" name="id_produit" value="<?=$produit->getId()?>">
+	<div class="row">
+	    <div class="col-md-2"> 
+	        <label for="note">Note</label>
+	            <input type="text" id="note" name="note" value="<?= htmlentities ( $note ) ?>">
+	    </div>
+		<div class="col-md-2">
+			<label for="pseudo">Contenu</label>
+				<input type="text" id="contenu" name="contenu" value="<?= htmlentities ( $contenu ) ?>">
+		</div>
+	    <div class="col-md-2">    
+	        <?= htmlentities ($date = date("m/d/Y H\hi") ) ?>
+	    </div>
+		<div class="col-sm-12 submit">   
+            <button type="submit" class="button" name="action" value="admin_avis_ajout"><a href="?page=avis">Publier</a></button>   
+        </div>
+    </div>
+</form>
+
+
+    
+
+    
