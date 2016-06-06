@@ -44,7 +44,7 @@
         'avis',
         'admin_avisliste',
         'admin_avis_ajout',
-        'admin_avis_modif',
+        'admin_avis_modif'
     );
 
     $access_traitement = array(      
