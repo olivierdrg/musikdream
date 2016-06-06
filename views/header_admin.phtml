@@ -1,9 +1,11 @@
 <div class="header">
     <nav class="navbar navbar-inverse">
-        <div class="musik_dream col-sm-12">
+        <div class="musik_dream col-xs-12">
             <p>Musikdream</p>
         </div>
-        <img class ="banniere" src= "public/images/banniere1c.jpeg"/>
+        <a href="?page=articles">
+            <img class ="banniere" src= "public/images/banniere1c.jpeg"/>
+        </a>
         <div class="row">                        
             <div class="col-sm-12">
                 <ul class="nav navbar-nav">
@@ -19,8 +21,8 @@
                             <li><a href="index.php?page=admin_avisliste">Avis</a></li>
                         </ul>
                     </li>
-                    <li><a href="?page=profil">Modifier mon profil</a></li>
-                    <li><a href="index.php?page=logout">Se déconnecter</a></li>
+                    <li><a href="?page=profil">Mon profil</a></li>
+                    <li><a href="index.php?page=logout">Déconnexion</a></li>
                     <li><a class="voir_panier" href="?page=panier" title="Voir mon panier" alt="Voir mon panier"><img class ="panier" src= "public/images/panier.png"/></a></li>
                     <li class="quantite_panier"><?=htmlentities( $panier->getQuantite() ) ?><p>article<?= $s ?></p></li>
                 </ul>
