@@ -18,13 +18,20 @@
 @media-size : 992px;
 
 body {
-  background-color: @backColor;  
-  margin: 0 auto;
-  color: @textcolor;
+
+	background-image: url("../images/concert.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: left top;
+  	background-color: @backColor;  
+  	margin: 0 auto;
+  	color: @textcolor;
 }
   
 .page_totale {
-	background-color: #404040;
+	background-color: rgba(62,62,62,0.9);
 	border-radius: 5px;
 	margin-bottom: 20px;
 	padding: 40px;
@@ -189,7 +196,6 @@ hr {
 .cat1:hover, .cat2:hover, .cat3:hover, .cat4:hover, .cat5:hover{
 	background-color: rgba(255,255,255,0.1) !important;
 	cursor: pointer;
-/*	box-shadow: 0px 0px 20px #929095;*/
 	border-radius: 50%;
 	transition: all 0.4s;
 
@@ -217,7 +223,7 @@ hr {
 /*PRODUITS*/
 
 .cadre_produit {
-	background-color: rgba(255,255,255,0.1) !important;
+	background-color: rgba(255,255,255,0.2) !important;
 	border: none !important;
 	color: #fff !important;
 	margin-bottom: 30px;
