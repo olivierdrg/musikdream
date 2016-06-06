@@ -1,24 +1,15 @@
-<form method="POST" class="register-form" enctype="multipart/form-data">
-    <div class="row">
-        <div class="col-sm-12 col-md-6 col-lg-6">
-            <label for="login">Login</label>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-6">            
-            <input type="text" id="login" name="login" value="<?= htmlentities( $login ) ?>"> 
-        </div>
+<form class="form-inline" method="POST" enctype="multipart/form-data">
+    <div class="form-group col-md-6">
+        <label class="sr-only col-md-12" for="login">Login : </label>
+        <input class="col-xs-12" type="text" id="login" name="login" placeholder="Login*" value="<?= htmlentities( $login ) ?>"> 
+    </div>
+    <div class="form-group col-md-6">
+        <label class="sr-only col-md-12" for="mot_passe">Mot de passe</label>
+        <input class="col-xs-12" type="password" id="mot_passe" name="mot_passe" placeholder="Mot de passe*">
     </div>
     <div class="row">
-        <div class="col-sm-12 col-md-6 col-lg-6">
-            <label for="mot_passe">Mot de passe</label>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-6">              
-            <input type="password" id="mot_passe" name="mot_passe">
+        <div class="form-group col-md-12 col-sm-12 col-xs-12 text-center">
+            <button type="submit" class="bouton button btn btn-success" name="action" value="login">Me connecter</button>
         </div>
     </div>
-
-     <div class="row">
-        <div class="col-sm-12 text-center">   
-            <button type="submit" class="button" name="action" value="login">Envoyer</button>   
-        </div>
-    </div>    
 </form>
