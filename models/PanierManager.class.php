@@ -110,7 +110,7 @@ class PanierManager
             while( $i < $count ) {
                 $produit = $produits[$i];
 
-                $prix       += $produit->getPrixHt();
+                $prix       += $produit->getPrixTtc();
                 $quantite   += 1;//$produit->getQuantite();
                 $poids      += $produit->getPoids();
 
