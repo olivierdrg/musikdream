@@ -61,7 +61,7 @@ class ProduitManager {
 
     public function create( $data ) {
 
-        $produit = new Produit();
+        $produit = new Produit( $this->link );
 
         if ( !isset( $data['id_sous_categorie'] ) ) throw new Exception ("id sous categorie manquant");
         if ( !isset( $data['reference'] ) ) throw new Exception ("Référence manquant");
