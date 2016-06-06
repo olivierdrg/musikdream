@@ -111,11 +111,6 @@ class Panier {
     }
 
     public function setStatus( $status ) {
-        if ( strlen( $status ) < 3 ) 
-            throw new Exception ("Nom de status trop court (< 4)");
-        else if ( strlen( $status ) > 63 )
-            throw new Exception ("Nom de status trop long (> 63)");            
-
         $this->status = $status;
     }
 

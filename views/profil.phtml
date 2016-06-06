@@ -1,7 +1,7 @@
 <?php
     // var_dump($_POST);
 ?>
-
+<h2>Veuillez renseigner vos adresses de facturation et de livraison.</h2>
 <form method="POST" class="register-form" enctype="multipart/form-data">
     <div class="row">
         <div class="col-sm-6">
@@ -71,15 +71,15 @@
         <div class="col-sm-6">
             <div class="row">
                 <label for="cp">Code postal</label>
-                <input  type="text" id="cp" name="cp"
-                        value="<?=htmlentities( $utilisateur->getAdresseFacturation()->getCp() )?>">
+                <input type="text" id="cp" name="cp"
+                       value="<?=htmlentities( $utilisateur->getAdresseFacturation()->getCp() )?>">
             </div>
         </div>
         <div class="col-sm-6">
             <div class="row">
                 <label for="ville">Ville</label>
-                <input  type="text" id="ville" name="ville"
-                        value="<?=htmlentities( $utilisateur->getAdresseFacturation()->getVille() )?>">
+                <input type="text" id="ville" name="ville"
+                       value="<?=htmlentities( $utilisateur->getAdresseFacturation()->getVille() )?>">
             </div>
         </div>
     </div>    

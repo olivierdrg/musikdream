@@ -103,9 +103,10 @@ class PanierManager
             $produit    = 0;
             $prix       = 0;
             $poids      = 0;
-
+            $quantite   = 0;
             $i          = 0;
             $produits   = $panier->getProduits();
+            $status     = $panier->getStatus();
             $count      = count( $produits );
 
             while( $i < $count ) {
@@ -114,12 +115,11 @@ class PanierManager
                 $prix       += $produit->getPrixTtc();
                 $quantite   += 1;//$produit->getQuantite();
                 $poids      += $produit->getPoids();
-
                 $i++;
             }
 
             // table panier
-            $request = "UPDATE panier SET prix='" . $prix . "', quantite='" . $quantite . "', poids='" . $poids . "' WHERE id=" . $id;
+            $request = "UPDATE panier SET status='".$status."', prix='" . $prix . "', quantite='" . $quantite . "', poids='" . $poids . "' WHERE id=" . $id;
 
             $res = mysqli_query( $this->link, $request );
             if ( $res ) {

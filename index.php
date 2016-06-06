@@ -45,7 +45,8 @@
         'avisliste',
         'admin_avisliste',
         'admin_avis_ajout',
-        'admin_avis_modif'
+        'admin_avis_modif',
+        'recap_panier'
     );
 
     $access_traitement = array(      
