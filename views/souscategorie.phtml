@@ -1,12 +1,10 @@
-<div class="col-sm-12">
-    <div class="cadre_produit panel panel-default">
-        <div class="titre_cadre_produit panel-heading">
-            <?= htmlentities( $sous_categorie->getNom() ) ?>
-        </div>
-        <div class="cadre_produit panel-body text-center">
-            <a href="?page=produits&id_sous_categorie=<?= $sous_categorie->getId() ?>">
-                <img src="<?= $sous_categorie->getPhoto() ?>" alt="<?= $sous_categorie->getNom() ?>">
-            </a>
-        </div>
+<div class="col-md-4">
+    <div class="titre_cadre_produit panel-heading">
+        <?= htmlentities( $sous_categorie->getNom() ) ?>
+    </div>
+    <div class="cadre_produit panel-body text-center">
+        <a href="?page=produits&id_sous_categorie=<?= $sous_categorie->getId() ?>">
+            <img src="<?= $sous_categorie->getPhoto() ?>" alt="<?= $sous_categorie->getNom() ?>">
+        </a>
     </div>
 </div>

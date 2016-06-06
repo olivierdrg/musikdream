@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Mer 01 Juin 2016 à 13:47
+-- Généré le: Lun 06 Juin 2016 à 10:40
 -- Version du serveur: 5.6.28-0ubuntu0.14.04.1
 -- Version de PHP: 5.5.9-1ubuntu4.14
 
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `produit` (
   `actif` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1 actif  0 inactif',
   PRIMARY KEY (`id`),
   KEY `id_sous_categorie` (`id_sous_categorie`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=35 ;
 
 --
 -- Contenu de la table `produit`
@@ -61,7 +61,16 @@ INSERT INTO `produit` (`id`, `id_sous_categorie`, `reference`, `stock`, `prix_ht
 (22, 8, 'MD-65254', 5, 1349, 20, 'LP Galaxy Professional Conga Set', 'public/images/congas.png', 'Congas Serie Pro LP Galaxy', 7000, 1),
 (23, 14, 'MD-425687', 25, 3.5, 20, 'Pro Snake Patch Angled Jack 0,15 m', 'public/images/cable.png', 'Cable connectique Jack court', 250, 1),
 (24, 13, 'MD-78542', 3, 219, 20, 'K&M 17534 Guardian 3+1 Translucent', 'public/images/support.png', 'Support multi guitare K&M pro', 2300, 1),
-(25, 15, 'MD-46325', 12, 59, 20, 'Boss TU-3', 'public/images/accordeur.png', 'Accordeur pro guitare et basse', 159, 1);
+(25, 15, 'MD-46325', 12, 59, 20, 'Boss TU-3', 'public/images/accordeur.png', 'Accordeur pro guitare et basse', 159, 1),
+(26, 9, 'MD-98547', 3, 2969, 20, 'Yamaha CVP-701 B', 'public/images/pianonumerique.png', 'Piano numerique Yamaha Studio', 2969, 1),
+(27, 8, 'MD-65255', 5, 1598, 20, 'LP Galaxy Professional Conga Set Concert', 'public/images/congas.png', 'Congas Serie Pro LP Concert', 6000, 1),
+(28, 7, 'MD-69825', 4, 2699, 20, 'Pearl Export Double Bass Kit - Black', 'public/images/batterieaccoustique.png', 'Batterie accoustique TomTom', 9000, 1),
+(29, 6, 'MD-96543', 2, 3699, 20, 'Roland TD-30K V-Drum Set', 'public/images/batterielectrique.png', 'Batterie electrique Pearl', 6500, 1),
+(30, 1, 'MD-34568', 15, 2199, 20, 'Skier AM Elite Tele Thinline MN NAT', 'public/images/guitarelectrique.png', 'Guitare electrique Skier', 1600, 1),
+(31, 2, 'MD-45679', 8, 3199, 20, 'Peavey Bongo 6 Stealth Black', 'public/images/basselectrique.png', 'Basse electrique Peavey', 1900, 1),
+(32, 3, 'MD-23457', 25, 6599, 20, 'Selmer Tenor Reference 54 SE-TR54L', 'public/images/saxophone.png', 'Saxophone Yamaha Tenor', 1200, 1),
+(33, 4, 'MD-12347', 30, 1699, 20, 'Gerd Dowids BZ Series GL 72 Bb-Trumpet', 'public/images/trompette.png', 'Trompette Suzuki', 850, 1),
+(34, 10, 'MD-19564', 1, 15699, 20, 'Roland GL 30 E/P Grand Piano', 'public/images/pianoqueue.png', 'Piano a queue Roland Concert', 312000, 1);
 
 --
 -- Contraintes pour les tables exportées

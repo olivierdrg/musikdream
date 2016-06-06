@@ -2,9 +2,7 @@
     <a href="?page=categories">Catégorie</a> <?= htmlentities( $sous_categorie->getCategorie()->getNom() ) ?> >
     <a href="?page=souscategories&id_categorie=<?= htmlentities( $sous_categorie->getCategorie()->getId() ) ?>">Sous Catégorie</a> <?= htmlentities( $sous_categorie->getNom() ) ?> >
 </p>
-<!-- <p>Catégorie <?= htmlentities( $sous_categorie->getCategorie()->getNom() ) ?> > Sous Catégorie <?= htmlentities( $sous_categorie->getNom() ) ?> ></p> -->
-<p>Sélectionner un Produit</p>
 
 <div class="row">
-    <?php require('apps/produit.php'); ?>
+	<?php require('apps/produit.php'); ?>
 </div>
