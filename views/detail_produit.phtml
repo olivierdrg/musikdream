@@ -2,7 +2,30 @@
     <a href="?page=categories">Catégorie</a> <?= htmlentities( $produit->getSouscategorie()->getCategorie()->getNom() ) ?> >
     <a href="?page=souscategories&id_categorie=<?= htmlentities( $produit->getSouscategorie()->getCategorie()->getId() ) ?>">Sous Catégorie</a> <?= htmlentities( $produit->getSouscategorie()->getNom() ) ?> >
      <a href="?page=produits&id_sous_categorie=<?= htmlentities( $produit->getSouscategorie()->getId() ) ?>">Produit</a> <?= htmlentities( $produit->getNom() ) ?> >    
+<<<<<<< HEAD
 </p>
+=======
+</p
+<div class="row">
+    <div class="col-sm-12">
+        <div class="cadre_produit panel panel-default">
+            <div class="panel-body">
+                <img class="pull-right" src="<?= $produit->getPhoto() ?>" alt="<?= $produit->getNom() ?>">
+                <h3><?= htmlentities( $produit->getNom() ) ?></h3>
+                <p>Sous catégorie : <?= htmlentities( $produit->getSousCategorie()->getNom() ) ?></p>
+                <p>Référence : <?= htmlentities( $produit->getReference() ) ?></p>
+                <p>En stock : <?= htmlentities( $produit->getStock() ) ?></p>
+                <p>Prix HT : <?= htmlentities( $produit->getPrixHt() ) ?> €</p>
+                <p>Prix TTC : <?= htmlentities( $produit->getPrixTtc() ) ?> € dont <?= htmlentities( $produit->getTvaValue() ) ?> € de tva</p>
+                <p>Description : <?= htmlentities( $produit->getDescription() ) ?></p>
+                <p>Poids : <?= htmlentities( $produit->getPoidsKg() ) ?> Kg</p> 
+                <form action="index.php?page=panier" method="POST" class="register-form" enctype="multipart/form-data">
+                    <input type="hidden" name="id" value="<?= intval( $produit->getId() ) ?>">
+                    <button type="submit" class="bouton btn btn-warning btn-xs pull-left" name="action" value="ajout">Ajouter au panier</button> 
+                </form>
+            </div>
+        </div>
+>>>>>>> 89f89008500339e2a9bbbfa8c12203bd70ffedcc
 
 <div class="cadre_produit panel col-md-12">
     <img class="pull-right" src="<?= $produit->getPhoto() ?>" alt="<?= $produit->getNom() ?>">

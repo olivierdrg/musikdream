@@ -27,7 +27,7 @@ body {
 	background-color: #404040;
 	border-radius: 5px;
 	margin-bottom: 20px;
-	padding: 15px;
+	padding: 40px;
 }
 
 a:hover {
@@ -45,8 +45,7 @@ h1, h2 {
 }
 
 h3 {
-  // color: #159;
-  text-transform: uppercase;
+  color: #fff;
 }
 
 hr {
@@ -188,9 +187,9 @@ hr {
 }
 
 .cat1:hover, .cat2:hover, .cat3:hover, .cat4:hover, .cat5:hover{
-	background-color: #929095;
+	background-color: rgba(255,255,255,0.1) !important;
 	cursor: pointer;
-	box-shadow: 0px 0px 20px #929095;
+/*	box-shadow: 0px 0px 20px #929095;*/
 	border-radius: 50%;
 	transition: all 0.4s;
 
@@ -218,9 +217,10 @@ hr {
 /*PRODUITS*/
 
 .cadre_produit {
-	background-color: rgba(255,255,255,0.5);
-	border-color: #5D5D5D;
-	color: #000;
+	background-color: rgba(255,255,255,0.1) !important;
+	border: none !important;
+	color: #fff !important;
+	margin-bottom: 30px;
 
 	img {
 		transform: scale(0.9);
@@ -234,7 +234,9 @@ hr {
 }
 
 .titre_cadre_produit {
-	background-color: none !important;
+	background-color: rgba(255,255,255,0.3) !important;
+	border: none;
+	color: #fff !important;
 	font-size: 16px;
 	text-align: center;
 }
@@ -244,6 +246,7 @@ hr {
 	border-color: #6E9400 !important;
 	font-size: 16px !important;
 	padding: 5px !important;
+	margin-bottom: 15px;
 
 	&:hover {
 		background-color: #9CC720 !important;

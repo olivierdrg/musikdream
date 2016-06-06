@@ -1,11 +1,10 @@
 <?php
-    if ( isset( $_GET['id_produit'] ) ) {
-
-        $manager = new ProduitManager( $link );
-        $produit = $manager->findById( $_GET['id_produit'] );
-    	$avisliste = $produit->getAvisListe();
-        
-        require('views/avisliste.phtml');
-    }
-    
+$avisliste = $produit->getAvis();
+	$i = 0;
+	$count = count( $avisliste );
+    while ( $i < $count ) {
+    	$avis = $avisliste[$i];
+        require('views/avis.phtml');
+    	$i++;
+	}
 ?>

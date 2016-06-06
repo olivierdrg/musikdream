@@ -23,42 +23,26 @@ if ( isset( $_POST['action'] ) )
         }
     }
 
-    if ( $_POST['action'] == 'admin_avis_modif' ) 
+    if ( $_POST['action'] == 'supp' ) 
     {
-        $manager = new AvisManager( $link );// $link => $this->link
-        try 
+        if ( isset( $_POST['id'] ) ) 
         {
-            $avis = $manager->findById($_POST['id_avis']);
-            $avis->setContenu($_POST['contenu']);
-            $avis->setNote($_POST['note']);
-            $manager->update( $avis );
+            try 
+            {
+                $manager = new AvisManager( $link );
+                $id =  $_POST['id'];
+                $avis = $manager->findById( $id );
+                $manager->remove( $avis );
+            }
 
-            header('Location: index.php?page=avis');
-            exit;
+            catch (Exception $exception) 
+            {
+                $error = $exception->getMessage();
+            }            
         }
-
-        catch (Exception $exception) 
-        {
-            $error = $exception->getMessage();
-        }
-    }
-
-    if ( $_POST['action'] == 'admin_supp_avis' ) 
-    {
-        $manager = new AvisManager( $link );// $link => $this->link
-        try 
-        {
-            $avis = $manager->findById($_POST['id_avis']);
-            $manager->delete( $avis );
-
-            header('Location: index.php?page=avis');
-            exit;
-        }
-
-        catch (Exception $exception) 
-        {
-            $error = $exception->getMessage();
-        }
-    } 
+    }    
 }
 ?>
+
+
+  

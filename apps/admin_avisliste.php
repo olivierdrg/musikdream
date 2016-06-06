@@ -1,11 +1,11 @@
 <?php
         $manager = new AvisManager( $link );
-        $avisliste = $manager->findAll();
+        $admin_avisliste = $manager->findAll();
         
 	$i = 0;
-	$count = count( $avisliste );
+	$count = count( $admin_avisliste );
     while ( $i < $count ) {
-    	$avis = $avisliste[$i];
+    	$avis = $admin_avisliste[$i];
         require('views/avis.phtml');
     	$i++;
 	}

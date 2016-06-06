@@ -43,8 +43,9 @@
         'admin_produit_cache',
         'avis',
         'avisliste',
-        'avis_ajout',
-        'avis_modif',
+        'admin_avisliste',
+        'admin_avis_ajout',
+        'admin_avis_modif'
     );
 
     $access_traitement = array(      
@@ -53,9 +54,7 @@
         'register'                  => 'utilisateur',
         'profil'                    => 'utilisateur',
         'update'                    => 'utilisateur',
-        'panier_ajout'              => 'panier',
-        'panier_supp'               => 'panier',
-        'panier_commander'          => 'panier',
+        'panier'                    => 'panier',
         'admin'                     => 'admin',
         'admin_categories'          => 'categorie',
         'admin_categorie_ajout'     => 'categorie',
@@ -68,8 +67,9 @@
         'admin_produit_cache'       => 'produit',
         'avis'                      => 'avis',
         'avisliste'                 => 'avis',
-        'avis_ajout'                => 'avis',
-        'avis_modif'                => 'avis',
+        'admin_avisliste'           => 'avis',
+        'admin_avis_ajout'          => 'avis',
+        'admin_avis_modif'          => 'avis',
         'detail_produit'            => 'avis'
     );
 

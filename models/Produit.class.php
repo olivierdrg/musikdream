@@ -93,7 +93,7 @@ class Produit {
     }
 
     public function getPoidsKg() {
-        return number_format( ( $this->poids / 1000 ), 2, '.', '' );
+        return ( $this->poids / 1000 );
     }
 
     public function getActif() {
