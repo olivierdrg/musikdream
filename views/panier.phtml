@@ -14,8 +14,8 @@
 				
 
 					<?=htmlentities( $panier->getQuantite() ) ?> produits dans votre panier<br>
-					<strong>Prix total TTC : <?=$prix?> €</strong><br>
-					Poids total : <?=htmlentities( $panier->getPoids() ) ?> kg<br>
+					<strong>Prix total TTC : <?=number_format($prix_panier, 2, '.', '')?> €</strong><br>
+					Poids total : <?=number_format($panier->getPoids()/1000,2,'.','') ?> kg<br>
 					<em>(Status : <?=htmlentities( $panier->getStatus() ) ?>)</em><br>
 					<em>(Date : <?=htmlentities( $panier->getDate() ) ?>)</em><br>
 					<em>(prix total : <?=number_format($prix_total, 2, '.', '')?>)</em><br>

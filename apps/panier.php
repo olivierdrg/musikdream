@@ -15,10 +15,7 @@ if (isset($_SESSION['id']))
     // var_dump($panier);
     if ($panier){
 
-        $prix = $panier->getPrix();
-        $tva =  $prix / 0.2;
-        $prix = $prix + $tva;
-
+        $prix_panier = $panier->getPrix();
     	require('views/panier.phtml');
     }
     else{
