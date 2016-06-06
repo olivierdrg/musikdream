@@ -25,14 +25,15 @@ if ( isset( $_POST['action'] ) )
 
     if ( $_POST['action'] == 'supp' ) 
     {
-        if ( isset( $_POST['id'] ) ) 
-        {
-            try 
+        $avis_manager = new AvisManager( $link );
+        $admin_avisliste_manager = new AdminAvislisteManager( $link );
+        try 
             {
-                $manager = new AvisManager( $link );
-                $id =  $_POST['id'];
-                $avis = $manager->findById( $id );
-                $manager->remove( $avis );
+                $admin_avisliste = $admin_avisliste_manager->findById( $_POST['idProduit'] );
+                $avis = $avis_manager->getCurrent();
+                $avis_manager->removeAdminAvislisteAvis($admin_avisliste, $avis);
+                header('Location: index.php?page=admin_avisliste');
+                exit; 
             }
 
             catch (Exception $exception) 
@@ -41,7 +42,6 @@ if ( isset( $_POST['action'] ) )
             }            
         }
     }    
-}
 ?>
 
 
