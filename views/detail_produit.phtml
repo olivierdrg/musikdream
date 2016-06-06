@@ -23,9 +23,12 @@
                 </form>
             </div>
         </div>
-
+        <div class="cadre_produit panel panel-default">
+            <div class="panel-body">
+                <h3>Avis sur le produit <?= htmlentities( $produit->getNom() ) ?></h3>
+                <?php require('apps/avis_ajout.php'); ?>
+                <?php require('apps/avisliste.php'); ?>
+            </div>
+        </div>
     </div>
-    <h3>Avis</h3>
-    <?php require('apps/avis_ajout.php'); ?>
-    <?php require('apps/avisliste.php'); ?>
 </div>
