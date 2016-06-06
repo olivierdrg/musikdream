@@ -42,9 +42,9 @@
         'admin_produit_modif',
         'admin_produit_cache',
         'avis',
-        'avisliste',
-        'avis_ajout',
-        'avis_modif',
+        'admin_avisliste',
+        'admin_avis_ajout',
+        'admin_avis_modif'
     );
 
     $access_traitement = array(      
@@ -65,9 +65,9 @@
         'admin_produit_modif'       => 'produit',
         'admin_produit_cache'       => 'produit',
         'avis'                      => 'avis',
-        'avisliste'                 => 'avis',
-        'avis_ajout'                => 'avis',
-        'avis_modif'                => 'avis',
+        'admin_avisliste'           => 'avis',
+        'admin_avis_ajout'          => 'avis',
+        'admin_avis_modif'          => 'avis',
         'detail_produit'            => 'avis'
     );
 
