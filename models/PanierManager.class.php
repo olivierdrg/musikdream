@@ -60,7 +60,8 @@ class PanierManager
         $res = mysqli_query( $this->link, $request );
 
         if ( mysqli_num_rows( $res )  == 0 ) {
-            $this->create( $id );
+            $panier = $this->create( $id );
+            return $panier;
         } else {
             $panier = mysqli_fetch_object( $res, "Panier", [$this->link] );
 
