@@ -45,5 +45,34 @@
 
         }
 
+        if ($_POST['action'] == 'acheter') {
+
+            // $panier_manager = new PanierManager( $link );
+            // $produit_manager = new ProduitManager( $link );
+            $utilisateurM = new UtilisateurManager( $link );
+            try {
+                $utilisateur = $utilisateurM->getById( $_SESSION['id'] );
+                $designation = $utilisateur->getAdresseFacturation()->getDesignation();
+                $rue = $utilisateur->getAdresseFacturation()->getRue();
+                $cp = $utilisateur->getAdresseFacturation()->getCp();
+                $ville = $utilisateur->getAdresseFacturation()->getVille();
+                $pays = $utilisateur->getAdresseFacturation()->getPays();
+            }
+            catch (Exception $exception) {
+                $error = $exception->getMessage();
+            }
+            // $utilisateur->getAdresseFacturation()->getRue();
+
+
+
+            if($designation && $rue && $cp && $ville && $pays){
+                // ICI ACHETER
+                header('Location: index.php?page=recap_panier');
+                exit;
+            }
+            else{
+                header('Location: index.php?page=profil');
+            }  
+        }
     }
 ?>
