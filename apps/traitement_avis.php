@@ -2,7 +2,7 @@
 if ( isset( $_POST['action'] ) ) 
 {
     
-    if ($_POST['action'] == 'avis_ajout') 
+    if ($_POST['action'] == 'admin_avis_ajout') 
     {
 
         $manager = new AvisManager( $link );// $link => $this->link
@@ -23,7 +23,7 @@ if ( isset( $_POST['action'] ) )
         }
     }
 
-    if ( $_POST['action'] == 'avis_modif' ) 
+    if ( $_POST['action'] == 'admin_avis_modif' ) 
     {
         $manager = new AvisManager( $link );// $link => $this->link
         try 
