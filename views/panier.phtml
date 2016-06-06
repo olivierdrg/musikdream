@@ -6,10 +6,11 @@
 	</div>
 
 	<div class="col-sm-4">
-		<div class="panel panel-info">
+		<div class="cadre_produit panel panel-info">
 			<div class="panel-heading">
 				Etat de votre panier
 			</div>
+			<!-- <div class="panel-body cadre_produit"> -->
 			<div class="panel-body">
 					<?=htmlentities( $panier->getQuantite() ) ?> produits dans votre panier<br>
 					<strong>Prix total TTC : <?=number_format($prix_total, 2, '.', '')?> €</strong><br>
@@ -24,6 +25,9 @@
 			<button type="submit" name="action" class="btn btn-success pull-right" value="acheter">Passer à la caisse</button>
 		</form>
 
+		<form action="">
+			<button type="submit" name="page" class="btn btn-primary" value="home">Poursuivre mes achats</button>
+		</form>
 	</div>
 </div>
 
