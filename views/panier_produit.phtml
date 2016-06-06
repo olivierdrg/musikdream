@@ -2,7 +2,6 @@
 
 <div class="panel panel-default">
 	<div class="panel-body">
-		<?=var_dump($produit->getQuantite());?>
 		<img class="pull-right" src="<?=htmlentities( $produit->getPhoto() ) ?>">
 		<h3><?=htmlentities( $produit->getNom() ) ?></h3>
 		<div>
@@ -28,12 +27,12 @@
 		</div>
 
 		
-		<div class="pull-left">
+		<!-- <div class="pull-left">
 			nombre de produits :&nbsp
-		</div>
+		</div> -->
 
-		<form action="">
-			<select name="quantite_produit" class="pull-left">
+		<form action="" method="post">
+			<!-- <select name="quantite_produit" class="pull-left">
 				<option value=1 <?=$option_selected[$quantite][0] ?>>1</option>
 				<option value=2 <?=$option_selected[$quantite][1] ?>>2</option>
 				<option value=3 <?=$option_selected[$quantite][2] ?>>3</option>
@@ -43,19 +42,15 @@
 				<option value=7 <?=$option_selected[$quantite][6] ?>>7</option>
 				<option value=8 <?=$option_selected[$quantite][7] ?>>8</option>
 				<option value=9 <?=$option_selected[$quantite][8] ?>>9</option>
-
-
-
-
-			</select>
+			</select> -->
 
 			<input type='hidden' name="idProduit" value='<?=$produit->getId();?>'>
 			<input type='hidden' name="idPanier" value='<?=$panier->getId();?>'>
 			<input type='hidden' name="page" value='panier'>
 
-			<button type="submit" name="action" class="btn btn-warning btn-xs pull-left"value="modif">
+			<!-- <button type="submit" name="action" class="btn btn-warning btn-xs pull-left"value="modif">
 				Modifier mon panier
-			</button>
+			</button> -->
 			
 			<button type="submit" name="action" class="btn btn-warning btn-xs pull-right" value="retirer">
 				Retirer ce produit du panier

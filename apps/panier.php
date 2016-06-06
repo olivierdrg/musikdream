@@ -11,7 +11,7 @@ if (isset($_SESSION['id']))
     // $produit = $produitM->findById();    
     
     $prix_total=0;
-    
+    $poids_total=0;
     // var_dump($panier);
     if ($panier){
 

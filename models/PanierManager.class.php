@@ -159,22 +159,50 @@ class PanierManager
                 throw new Exception ("Internal server error");
         }
     }
+
+    public function removeProduitPanier(Panier $panier, Produit $produit ) {
+        $id = $panier->getId();
+        $id_produit = $produit->getId();
+
+        if ( $id ) {// tdate si > 0
+
+            $request = "DELETE FROM liaison_panier_produit WHERE id_panier=".$id." AND id_produit=".$id_produit." LIMIT 1";
+            $res = mysqli_query( $this->link, $request );
+
+
+
+            // Maj table liaison_panier
+            $produit    = 0;
+            $prix       = 0;
+            $poids      = 0;
+
+            $i          = 0;
+            $produits   = $panier->getProduits();
+            $count      = count( $produits );
+
+            while( $i < $count ) {
+                $produit = $produits[$i];
+
+                $prix       += $produit->getPrixTtc();
+                $quantite   += 1;//$produit->getQuantite();
+                $poids      += $produit->getPoids();
+
+                $i++;
+            }
+
+            // table panier
+            $request = "UPDATE panier SET prix='" . $prix . "', quantite='" . $quantite . "', poids='" . $poids . "' WHERE id=" . $id;
+
+            $res = mysqli_query( $this->link, $request );
+
+
+            if ( $res )
+                return $panier; // ou tdate
+            else
+                throw new Exception ("Internal server error");
+        }
+    }
+
 }
-
-//     public function updateLiaisonQuantite(Panier $panier ){
-//         $id = $panier->getId();
-//         if ( $id ) {// tdate si > 0
-//             // $quantite = 0;
-
-// idPanier
-// quantite_produit
-
-            
-
-
-
-//         }        
-//     }
-
 
 ?>

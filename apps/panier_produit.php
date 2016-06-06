@@ -18,13 +18,18 @@
     while ($count < $max)
     {
         $produit = $list[$count];
-        $poids = number_format(($produit->getPoids()/1000), 2, '.', '');
+
+        $poids = $produit->getPoids()/1000;
+        $poids_total = $poids_total + $poids;
+        // $poids = number_format($poids, 2, '.', '');
+
         $prix = $produit->getPrixHt();
         $tva = ($produit->getTva()/100) * $prix;
 
         $prix = $prix + $tva;
         $prix_total = $prix_total + $prix;
         $prix = number_format($prix, 2, '.', '');
+
         // var_dump($panier);
         $quantite = $produit->getQuantite();
 
