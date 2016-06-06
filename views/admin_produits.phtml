@@ -1,17 +1,24 @@
 <div class="row">
     <div><a href="?page=admin_produit_ajout">Nouveau produit</a></div>
-    <table>
-        <tr>
-            <td>Photo</td>
-            <td>Nom</td>
-            <td>Réference</td>
-            <td>Description</td>
-            <td>Sous-catégorie</td>
-            <td>Poids</td>
-            <td>Stock</td>
-            <td>Prix HT</td>
-            <td>Tva</td>                                       
-        </tr>
-        <?php require('apps/admin_produit.php'); ?>
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Photo</th>
+                <th>Nom</th>
+                <th>Réference</th>
+                <th>Description</th>
+                <th>Sous-catégorie</th>
+                <th>Poids</th>
+                <th>Stock</th>
+                <th>Prix HT</th>
+                <th>Tva</th>                                       
+            </tr>
+        </thead>
+        
+        <tbody>
+            <?php require('apps/admin_produit.php'); ?>
+        </tbody>
     </table>
+
 </div>
