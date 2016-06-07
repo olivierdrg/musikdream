@@ -62,7 +62,7 @@ class UtilisateurManager {
         $utilisateur->setDateNaissance( $data['date_naissance'] );
         $utilisateur->setTelephone( $data['telephone'] );
         $utilisateur->setLogin( $data['login'] );
-
+        // $id = $utilisateur->getId();
 
         $nom                = mysqli_real_escape_string( $this->link, $utilisateur->getNom() );
         $prenom             = mysqli_real_escape_string( $this->link, $utilisateur->getPrenom() );
@@ -77,6 +77,11 @@ class UtilisateurManager {
 
         $res = mysqli_query( $this->link, $request );
         
+        $request = "INSERT INTO adresse (id_utilisateur,designation,rue,cp,ville,pays,type)
+                    VALUES('".$id."','','','','','','0')";
+        $res0 = mysqli_query( $this->link, $request );
+
+
         // Si la requete s'est bien passée
         if ( $res ) {
             $id = mysqli_insert_id( $this->link );
@@ -84,13 +89,23 @@ class UtilisateurManager {
             // si c'est bon id > 0
             if ( $id ) {
                 $utilisateur = $this->findById( $id );
+
+                // création des adresses
+                $request = "INSERT INTO adresse (id_utilisateur,designation,rue,cp,ville,pays,type)
+                            VALUES('".$id."','','','','','','0')";
+                $res0 = mysqli_query( $this->link, $request );
+
+                $request = "INSERT INTO adresse (id_utilisateur,designation,rue,cp,ville,pays,type)
+                            VALUES('".$id."','','','','','','1')";
+                $res1 = mysqli_query( $this->link, $request );
+
                 return $utilisateur;    
             }
             else// Sinon
-                throw new Exception ("Internal server error");                
+                throw new Exception ("Internal server error0");                
         }
         else// Sinon
-            throw new Exception ("Internal server error");
+            throw new Exception ("Internal server error1");
                 
     }    
 
