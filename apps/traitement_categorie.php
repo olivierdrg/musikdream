@@ -28,7 +28,7 @@ if ( isset( $_POST['action'] ) ) {
             $categorie->setNom( $_POST['nom'] );
             $categorie->setDescription( $_POST['description'] );
 
-            $categorie = $manager->update( $_POST );//l'admin peut modifier une catégorie
+            $categorie = $manager->update( $categorie );//l'admin peut modifier une catégorie
 
             header('Location: index.php?page=admin_categories');
             exit;
