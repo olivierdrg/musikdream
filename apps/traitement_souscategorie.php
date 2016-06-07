@@ -8,7 +8,7 @@ if ( isset( $_POST['action'] ) ) {
         try {
             $sous_categorie = $manager->create( $_POST );//l'admin peut créer une catégorie
 
-            header('Location: index.php?page=admin_souscategories');
+            header('Location: index.php?page=admin_categories');
             exit;
         }
 
@@ -28,9 +28,9 @@ if ( isset( $_POST['action'] ) ) {
             $sous_categorie->setNom( $_POST['nom'] );
             $sous_categorie->setDescription( $_POST['description'] );
 
-            $sous_categorie = $manager->update( $_POST );//l'admin peut modifier une catégorie
+            $sous_categorie = $manager->update( $sous_categorie );//l'admin peut modifier une catégorie
 
-            header('Location: index.php?page=admin_souscategories');
+            header('Location: index.php?page=admin_categories');
             exit;
         }
 
@@ -47,7 +47,7 @@ if ( isset( $_POST['action'] ) ) {
             $sous_categorie = $manager->findById( $id );
             $manager->remove( $sous_categorie );//l'admin peut supprimer une catégorie
 
-            header('Location: index.php?page=admin_souscategories');
+            header('Location: index.php?page=admin_categories');
             exit;
         }
 

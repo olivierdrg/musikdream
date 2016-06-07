@@ -43,8 +43,8 @@ class Categorie {
 
 
     public function setPhoto( $photo ) {
-        if ( filter_var( $photo['photo']['value'], FILTER_VALIDATE_URL ) == false )
-            throw new Exception ("Ajouter l'URL de l'image");            
+        // if ( filter_var( $photo, FILTER_VALIDATE_URL ) == false )
+        //     throw new Exception ("Ajouter l'URL de l'image");            
 
         $this->photo = $photo;
     }

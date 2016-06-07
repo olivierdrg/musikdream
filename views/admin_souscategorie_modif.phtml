@@ -1,8 +1,8 @@
 <form method="POST" class="register-form" enctype="multipart/form-data">
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-md-12">
             <div class="row">
-                <label for="categorie">Catégorie</label>
+                <label for="categorie">Catégorie : </label>
                 <select id="id_categorie" name="id_categorie">
                     <?php require('apps/select_categorie.php'); ?>
                 </select>
@@ -11,34 +11,35 @@
     </div>
     
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-md-12">
             <div class="row">
-                <label for="photo">Photo</label>
+                <label for="photo">Photo : </label>
                 <input type="text" id="photo" name="photo" value="<?= htmlentities( $sous_categorie->getPhoto() ) ?>">
             </div>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-md-12">
             <div class="row">
-                <label for="nom">Nom</label>
+                <label for="nom">Nom : </label>
                 <input type="text" id="nom" name="nom" value="<?= htmlentities( $sous_categorie->getNom() ) ?>">
             </div>
         </div>
     </div> 
 
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-md-12">
             <div class="row">
-                <label for="description">Description</label>
+                <label for="description">Description : </label>
                 <input type="text" id="description" name="description" value="<?= htmlentities( $sous_categorie->getDescription() ) ?>">
             </div>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-sm-12 submit">   
+        <div class="col-sm-12 submit">
+        <input type="hidden" name="id" value="<?=$sous_categorie->getId()?>">   
             <button type="submit" class="bouton button btn btn-success" name="action" value="modif">Modifier</button>   
         </div>
     </div>

@@ -1,33 +1,34 @@
 <form method="POST" class="register-form" enctype="multipart/form-data">
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-md-12">
             <div class="row">
-                <label for="photo">Photo</label>
+                <label for="photo">Photo : </label>
                 <input type="text" id="photo" name="photo" value="<?= htmlentities( $categorie->getPhoto() ) ?>">
             </div>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-md-12">
             <div class="row">
-                <label for="nom">Nom</label>
+                <label for="nom">Nom : </label>
                 <input type="text" id="nom" name="nom" value="<?= htmlentities( $categorie->getNom() ) ?>">
             </div>
         </div>
     </div> 
 
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-md-12">
             <div class="row">
-                <label for="description">Description</label>
+                <label for="description">Description : </label>
                 <input type="text" id="description" name="description" value="<?= htmlentities( $categorie->getDescription() ) ?>">
             </div>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-sm-12 submit">   
+        <div class="col-sm-12 submit"> 
+        <input type="hidden" name="id" value="<?=$categorie->getId()?>"> 
             <button type="submit" class="bouton button btn btn-success" name="action" value="modif">Modifier</button>   
         </div>
     </div>
