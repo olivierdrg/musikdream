@@ -45,7 +45,7 @@ class CategorieManager
 
     public function create( $data ) {
 
-        $categorie = new Categorie();
+        $categorie = new Categorie($this->link);
 
         if ( !isset( $data['photo'] ) ) throw new Exception ("Photo de la catégorie manquante");
         if ( !isset( $data['nom'] ) ) throw new Exception ("Nom de la catégorie manquant");
