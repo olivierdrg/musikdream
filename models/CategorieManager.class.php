@@ -29,6 +29,12 @@ class CategorieManager
         return $categorie;
     }  
 
+    public function findFirst() {
+        $request = "SELECT * FROM categorie LIMIT 1 ";
+        $res = mysqli_query( $this->link, $request );
+        $categorie = mysqli_fetch_object( $res, "Categorie", array( $this->link ) );
+        return $categorie;
+    } 
 
 
     public function getById( $id ) {
