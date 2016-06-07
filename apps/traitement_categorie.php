@@ -58,7 +58,7 @@ if ( isset( $_POST['action'] ) ) {
         }
     }
 
-    if ( $_POST['action'] == 'upload' ) {
+    if ( $_POST['action'] == 'upload' && $_FILES["fileToUpload"]["name"]) {
 
         $target_dir = "public/images/";
         $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
