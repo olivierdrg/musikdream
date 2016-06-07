@@ -52,9 +52,7 @@ class Adresse {
 
 
     public function setDesignation( $designation ) {
-        if ( strlen( $designation ) < 3 ) 
-            throw new Exception ("designation trop courte (< 4)");
-        else if ( strlen( $designation ) > 63 )
+        if ( strlen( $designation ) > 63 )
             throw new Exception ("designation trop longe (> 63)");            
 
         $this->designation = $designation;
@@ -86,9 +84,7 @@ class Adresse {
     }
     
     public function setPays( $pays ) {     
-        if ( strlen( $pays ) < 3 ) 
-            throw new Exception ("Nom de pays trop court (< 4)");
-        else if ( strlen( $pays ) > 63 )
+        if ( strlen( $pays ) > 63 )
             throw new Exception ("Nom de pays trop long (> 63)");  
 
         $this->pays = $pays;

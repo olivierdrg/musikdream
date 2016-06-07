@@ -1,146 +1,88 @@
 <?php
     // var_dump($_POST);
 ?>
-<h2>Veuillez renseigner vos adresses de facturation et de livraison.</h2>
+<h2>
+    <div class="text-center">
+        Veuillez renseigner vos adresses de facturation et de livraison.
+    </div>
+</h2>
 <form method="POST" class="register-form" enctype="multipart/form-data">
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="row">
-                <label for="nom">Nom</label>
-                <input type="text" id="nom" name="nom" value="<?= htmlentities( $utilisateur->getNom() ) ?>">
-            </div>
+    <div class="col-sm-6">
+        <div class="col-md-12">
+            <label for="nom" class="sr-only">Nom</label>
+            <input placeholder="Mom" class="col-xs-12" type="text" id="nom" name="nom" value="<?= htmlentities( $utilisateur->getNom() ) ?>">
+            <label for="prenom" class="sr-only">Prénom</label>
+            <input placeholder="Prénom" class="col-xs-12" type="text" id="prenom" name="prenom" value="<?= htmlentities( $utilisateur->getPrenom() ) ?>">
+            <label for="email" class="sr-only">Email</label>
+            <input placeholder="Adresse Email" class="col-xs-12" type="email" id="email" name="email" value="<?= htmlentities( $utilisateur->getEmail() ) ?>">             
         </div>
-        <div class="col-sm-6">
-            <div class="row">
-                <label for="prenom">Prénom</label>
-                <input type="text" id="prenom" name="prenom" value="<?= htmlentities( $utilisateur->getPrenom() ) ?>">
-            </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="col-md-12">
+            <label for="date_naissance" class="sr-only">Date de naissance</label>
+            <input placeholder="Date de naissance" class="col-xs-12" type="date" id="date_naissance" name="date_naissance" value="<?= htmlentities( $utilisateur->getDateNaissance() ) ?>"> 
+            <label for="telephone" class="sr-only">Téléphone</label>
+            <input placeholder="Téléphone" class="col-xs-12" type="text" id="telephone" name="telephone" value="<?= htmlentities( $utilisateur->getTelephone() ) ?>">
+            <label for="sexe">Sexe</label><br>
+            <input type="radio" name="sexe" value="0" <?=$sexe[$utilisateur->getSexe()][0]?>> Femme<br>
+            <input type="radio" name="sexe" value="1" <?=$sexe[$utilisateur->getSexe()][1]?>> Homme<br>
         </div>
     </div>
     
-    <div class="row">
+    <hr>
+    <div class="col-md-12">
         <div class="col-sm-6">
-            <div class="row">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" value="<?= htmlentities( $utilisateur->getEmail() ) ?>"> 
-            </div>
-        </div>
+            <h2 class="text-center">Adresse de facturation</h2>
+            <div class="col-md-12">
+                <label class="col-xs-4" for="designation">Designation</label>
+                <label class="col-xs-8" for="rue">Rue</label><br>
 
-        <div class="col-sm-6">
-            <div class="row">
-                <label for="date_naissance">Date de naissance</label>
-                <input type="date" id="date_naissance" name="date_naissance" value="<?= htmlentities( $utilisateur->getDateNaissance() ) ?>"> 
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="row">
-                <label for="telephone">Téléphone</label>
-                <input type="text" id="telephone" name="telephone" value="<?= htmlentities( $utilisateur->getTelephone() ) ?>">
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="row">
-                <label for="sexe">Sexe</label><br>
-                <input type="radio" name="sexe" value="0" <?=$sexe[$utilisateur->getSexe()][0]?>> Femme<br>
-                <input type="radio" name="sexe" value="1" <?=$sexe[$utilisateur->getSexe()][1]?>> Homme<br>
-            </div>
-        </div>
-    </div>
-        <hr>
-    <div class="row">
-        <h2>Adresse de facturation</h2>
-        <div class="col-sm-6">
-            <div class="row">
-                <label for="designation">Designation</label>
-                <input  type="text" id="designation" name="designation"
+                <input class="col-xs-4" placeholder="Désignation" type="text" id="designation" name="designation"
                         value="<?=htmlentities( $utilisateur->getAdresseFacturation()->getDesignation() )?>">
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="row">
-                <label for="rue">Rue</label>
-                <input  type="text" id="rue" name="rue"
+                <input class="col-xs-8" placeholder="Rue" type="text" id="rue" name="rue"
                         value="<?=htmlentities( $utilisateur->getAdresseFacturation()->getRue() )?>">
-            </div>
-        </div>
-    </div>    
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="row">
-                <label for="cp">Code postal</label>
-                <input type="text" id="cp" name="cp"
+                <label class="col-xs-4" for="cp">Code postal</label>
+                <label class="col-xs-8" for="ville">Ville</label>
+            
+                <input class="col-xs-4" placeholder="Code postal" type="text" id="cp" name="cp"
                        value="<?=htmlentities( $utilisateur->getAdresseFacturation()->getCp() )?>">
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="row">
-                <label for="ville">Ville</label>
-                <input type="text" id="ville" name="ville"
+                <input class="col-xs-8" placeholder="Ville" type="text" id="ville" name="ville"
                        value="<?=htmlentities( $utilisateur->getAdresseFacturation()->getVille() )?>">
-            </div>
-        </div>
-    </div>    
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="row">
-                <label for="pays">Pays</label>
-                <input  type="text" id="pays" name="pays"
+                <label class="" for="pays">Pays</label><br>
+                <input class="col-xs-4" placeholder="Pays" type="text" id="pays" name="pays"
                         value="<?=htmlentities( $utilisateur->getAdresseFacturation()->getPays() )?>">
             </div>
-        </div>
+        </div>    
 
-    </div>    
-    <hr>
-    <div class="row">
-        <input type="checkbox" id="typeIdem" name="typeIdem" value="idem" onclick="this.form.submit()">
-        <label for="typeIdem">Adresse de livraison idem que l'adresse de facturation</label>
-    </div>
-    <div class="row">
 
-        <h2>Adresse de livraison</h2>
+
         <div class="col-sm-6">
-            <div class="row">
-                <label for="designation1">Designation</label>
-                <input  type="text" id="designation1" name="designation1"
+            <h2 class="text-center">Adresse de livraison</h2>
+            <div class="col-md-12">
+                <label class="col-xs-4" for="designation1">Designation</label>
+                <label class="col-xs-8" for="rue1">Rue</label><br>
+
+                <input class="col-xs-4" placeholder="Désignation" type="text" id="designation1" name="designation1"
                         value="<?=htmlentities( $utilisateur->getAdresseLivraison()->getDesignation() )?>">
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="row">
-                <label for="rue1">Rue</label>
-                <input  type="text" id="rue1" name="rue1"
+                <input class="col-xs-8" placeholder="Rue" type="text" id="rue1" name="rue1"
                         value="<?=htmlentities( $utilisateur->getAdresseLivraison()->getRue() )?>">
-            </div>
-        </div>
-    </div>    
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="row">
-                <label for="cp1">Code postal</label>
-                <input  type="text" id="cp1" name="cp1"
-                        value="<?=htmlentities( $utilisateur->getAdresseLivraison()->getCp() )?>">
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="row">
-                <label for="ville1">Ville</label>
-                <input  type="text" id="ville1" name="ville1"
-                        value="<?=htmlentities( $utilisateur->getAdresseLivraison()->getVille() )?>">
-            </div>
-        </div>
-    </div>    
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="row">
-                <label for="pays1">Pays</label>
-                <input  type="text" id="pays1" name="pays1"
+                <label class="col-xs-4" for="cp1">Code postal</label>
+                <label class="col-xs-8" for="ville1">Ville</label>
+            
+                <input class="col-xs-4" placeholder="Code postal" type="text" id="cp1" name="cp1"
+                       value="<?=htmlentities( $utilisateur->getAdresseLivraison()->getCp() )?>">
+                <input class="col-xs-8" placeholder="Ville" type="text" id="ville1" name="ville1"
+                       value="<?=htmlentities( $utilisateur->getAdresseLivraison()->getVille() )?>">
+                <label class="" for="pays1">Pays</label><br>
+                <input class="col-xs-4" placeholder="Pays" type="text" id="pays1" name="pays1"
                         value="<?=htmlentities( $utilisateur->getAdresseLivraison()->getPays() )?>">
             </div>
-        </div>
+        </div>    
 
+    </div>
+    <div class="col-sm-6">
+        <input type="checkbox" id="typeIdem" name="typeIdem" value="idem" onclick="this.form.submit()">
+        <label for="typeIdem">Adresse de livraison idem que l'adresse de facturation</label>
     </div>    
     <hr>
     <div class="row">
