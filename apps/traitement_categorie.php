@@ -44,6 +44,7 @@ if ( isset( $_POST['action'] ) ) {
 
         try {
             $manager = new CategorieManager( $link );
+            $id =  $_POST['id'];
             $categorie = $manager->findById( $id );
             $manager->remove( $categorie );//l'admin peut supprimer une catégorie
 
