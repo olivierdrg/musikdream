@@ -1,0 +1,1 @@
+limiter le nombre de catégories, sous-catégories, et produits
