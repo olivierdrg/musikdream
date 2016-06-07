@@ -1,13 +1,7 @@
-<?php
-    // var_dump($_POST);
-?>
-<h2>
-    <div class="text-center">
-        Veuillez renseigner vos adresses de facturation et de livraison.
-    </div>
-</h2>
+<h2 class="text-center">Veuillez renseigner vos adresses de facturation et de livraison.</h2>
+
 <form method="POST" class="register-form" enctype="multipart/form-data">
-    <div class="col-sm-6">
+    <div class="col-md-6">
         <div class="col-md-12">
             <label for="nom" class="sr-only">Nom</label>
             <input placeholder="Mom" class="col-xs-12" type="text" id="nom" name="nom" value="<?= htmlentities( $utilisateur->getNom() ) ?>">
@@ -17,7 +11,7 @@
             <input placeholder="Adresse Email" class="col-xs-12" type="email" id="email" name="email" value="<?= htmlentities( $utilisateur->getEmail() ) ?>">             
         </div>
     </div>
-    <div class="col-sm-6">
+    <div class="col-md-6">
         <div class="col-md-12">
             <label for="date_naissance" class="sr-only">Date de naissance</label>
             <input placeholder="Date de naissance" class="col-xs-12" type="date" id="date_naissance" name="date_naissance" value="<?= htmlentities( $utilisateur->getDateNaissance() ) ?>"> 
@@ -29,15 +23,15 @@
         </div>
     </div>
     
-    <hr>
-    <div class="col-md-12">
-        <div class="col-sm-6">
+
+    <div class="col-md-6">
+        <div class="col-md-12">
             <h2 class="text-center">Adresse de facturation</h2>
-            <div class="col-md-12">
+
                 <label class="col-xs-4" for="designation">Designation</label>
                 <label class="col-xs-8" for="rue">Rue</label><br>
 
-                <input class="col-xs-4" placeholder="Désignation" type="text" id="designation" name="designation"
+                <input class="col-xs-4" placeholder="Designation" type="text" id="designation" name="designation"
                         value="<?=htmlentities( $utilisateur->getAdresseFacturation()->getDesignation() )?>">
                 <input class="col-xs-8" placeholder="Rue" type="text" id="rue" name="rue"
                         value="<?=htmlentities( $utilisateur->getAdresseFacturation()->getRue() )?>">
@@ -48,18 +42,22 @@
                        value="<?=htmlentities( $utilisateur->getAdresseFacturation()->getCp() )?>">
                 <input class="col-xs-8" placeholder="Ville" type="text" id="ville" name="ville"
                        value="<?=htmlentities( $utilisateur->getAdresseFacturation()->getVille() )?>">
-                <label class="" for="pays">Pays</label><br>
+                <label class="col-xs-12" for="pays">Pays</label><br>
                 <input class="col-xs-4" placeholder="Pays" type="text" id="pays" name="pays"
                         value="<?=htmlentities( $utilisateur->getAdresseFacturation()->getPays() )?>">
-            </div>
-        </div>    
 
-
-
-        <div class="col-sm-6">
-            
+        </div>
+        <div class="col-xs-12 col-sm-12">
+            <br>
+            <input type="checkbox" id="typeIdem" name="typeIdem" value="idem" onclick="this.form.submit()">
+            <label for="typeIdem"> Adresse de livraison idem que l'adresse de facturation.</label>
+        </div>
+    </div>  
+    <div class="col-md-6">
+        <div class="col-md-12">
             <h2 class="text-center">Adresse de livraison</h2>
-            <div class="col-md-12">
+
+
                 <label class="col-xs-4" for="designation1">Designation</label>
                 <label class="col-xs-8" for="rue1">Rue</label><br>
 
@@ -74,22 +72,15 @@
                        value="<?=htmlentities( $utilisateur->getAdresseLivraison()->getCp() )?>">
                 <input class="col-xs-8" placeholder="Ville" type="text" id="ville1" name="ville1"
                        value="<?=htmlentities( $utilisateur->getAdresseLivraison()->getVille() )?>">
-                <label class="" for="pays1">Pays</label><br>
+                <label class="col-xs-12" for="pays1">Pays</label><br>
                 <input class="col-xs-4" placeholder="Pays" type="text" id="pays1" name="pays1"
                         value="<?=htmlentities( $utilisateur->getAdresseLivraison()->getPays() )?>">
-            </div>
-        </div>    
 
-    </div>
-    <div class="col-xs-12 col-sm-12">
-        <input type="checkbox" id="typeIdem" name="typeIdem" value="idem" onclick="this.form.submit()">
-        <label for="typeIdem">Adresse de livraison idem que l'adresse de facturation</label>
-    </div>    
-    <hr>
-    <div class="row">
-        <div class="col-sm-12 submit">   
+        </div>
+        <div class="form-group col-md-12 col-sm-12 col-xs-12 text-left">
+        <br><br>
             <input type="hidden" name="action" value="update">
-            <button type="submit" class="button">Mettre à jour</button>   
+            <button type="submit" class="bouton button btn btn-success">Mettre mon profil à jour</button>   
         </div>
     </div>
 
