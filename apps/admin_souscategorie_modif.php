@@ -1,12 +1,13 @@
 <?php
 
-    $manager = new SousCategorieManager( $link );
-    try {
-            $sous_categorie = $manager->findAll();
-        }
-        catch (Exception $exception) {
-            $error = $exception->getMessage();
-        }
-        
-    require('views/admin_souscategorie_modif.phtml');
+    if ( isset( $_GET['id'] ) ) {
+        $id = $_GET['id'];
+    
+        $manager = new SousCategorieManager( $link );
+
+        $sous_categorie = $manager->findById( $id );
+
+        require('views/admin_souscategorie_modif.phtml');
+    }
+    
 ?>
