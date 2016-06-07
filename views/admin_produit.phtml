@@ -9,11 +9,11 @@
     <td><?= htmlentities( $produit->getPrixHt() ) ?></td>
     <td><?= htmlentities( $produit->getTva() ) ?></td>
 
-    <td><a href="?page=admin_produit_modif&id=<?= $produit->getId() ?>">Modif</a></td>
+    <td><a class="bouton button btn btn-success" href="?page=admin_produit_modif&id=<?= $produit->getId() ?>">Modifier</a></td>
     <td>
         <form method="POST" class="register-form">
             <input type="hidden" name="id" value="<?= htmlentities( $produit->getId() ) ?>">
-            <button type="submit" class="button" name="action" value="supp">Supprimer</button>
+            <button type="submit" class="bouton button btn btn-success" name="action" value="supp">Supprimer</button>
         </form>
     </td>
 </tr>
