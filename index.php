@@ -87,13 +87,11 @@
         require('apps/traitement_' . $access_traitement[$page] . '.php' );
     }
 
-    if (isset($_GET['ajax']))
-    {
+    if ( isset( $_GET['ajax'] ) ) {
         $accessAjax = ['panier'];
         $pageAjax = 'panier';
         require('apps/'.$pageAjax.'.php');
-    }
-    else
+    } else
         require('apps/skel.php');
 
 ?>
