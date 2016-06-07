@@ -16,7 +16,7 @@
                     <li><a href="?page=profil">Mon profil</a></li>
                     <li><a href="index.php?page=logout">Déconnexion</a></li>
                     <li><a class="voir_panier" href="?page=panier" title="Voir mon panier" alt="Voir mon panier"><img class ="panier" src= "public/images/panier.png"/></a></li>
-                    <li class="quantite_panier"><?=htmlentities( $panier->getQuantite() ) ?><p>article<?= $s ?></p></li>
+                    <li class="quantite_panier"><?php require('apps/header_display_quantite.php') ?></li>
                 </ul>
             </div>    
         </div>     
