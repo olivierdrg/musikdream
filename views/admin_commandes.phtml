@@ -1,0 +1,27 @@
+<h1>Gestion des commandes</h1>
+
+<select id="j-panier-type">
+    <option value="0" <?= selected( $type, 0 ) ?>>Paniers en cours</option>
+    <option value="1" <?= selected( $type, 1 ) ?>>Panier payés</option>
+    <option value="2" <?= selected( $type, 2 ) ?>>Paniers validés</option>
+</select>
+
+<div class="row">
+    <table class="table table-striped table-vertical-align-middle">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Date</th>
+                <th>Prix</th>
+                <th>Quantité</th>
+                <th>Poids</th>
+                <th></th> 
+            </tr>
+        </thead>
+        
+        <tbody>
+            <?php require('apps/admin_commande.php'); ?>
+        </tbody>
+    </table>
+
+</div>

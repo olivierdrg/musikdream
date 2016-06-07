@@ -1,0 +1,8 @@
+<tr>
+    <td><?= htmlentities( $panier->getUtilisateur()->getNom() ) ?></td>
+    <td><?= htmlentities( $panier->getDate() ) ?></td>
+    <td><?= htmlentities( $panier->getPrix() ) ?></td>
+    <td><?= htmlentities( $panier->getQuantite() ) ?></td>
+    <td><?= htmlentities( $panier->getPoids() ) ?></td>
+    <td><?php require('apps/admin_commande_display_button.php'); ?></td>
+</tr>
