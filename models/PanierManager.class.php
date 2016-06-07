@@ -44,10 +44,14 @@ class PanierManager
 
     public function findByStatus( $status ) {
         $status = intval( $status );
+        $list = [];
         $request = "SELECT * FROM panier WHERE status = " . $status;
         $res = mysqli_query( $this->link, $request );
-        $panier = mysqli_fetch_object( $res, "Panier" , [$this->link]);
-        return $panier;
+
+        while ( $panier = mysqli_fetch_object( $res, "Panier" , [$this->link] ) )
+            $list[] = $panier;
+
+        return $list;
     }
 
     public function getById( $id ) {

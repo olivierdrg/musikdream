@@ -1,6 +1,7 @@
 <?php    
     session_start();
     require('config.php');
+    require('apps/functions.php');
 
     function __autoload( $className ) {
         require('models/' . $className . '.class.php' );
@@ -46,7 +47,8 @@
         'admin_avisliste',
         'admin_avis_ajout',
         'admin_avis_modif',
-        'recap_panier'
+        'recap_panier',
+        'admin_commandes',
     );
 
     $access_traitement = array(      
@@ -71,7 +73,8 @@
         'admin_avisliste'           => 'avis',
         'admin_avis_ajout'          => 'avis',
         'admin_avis_modif'          => 'avis',
-        'detail_produit'            => 'avis'
+        'detail_produit'            => 'avis',
+        'admin_commandes'           => 'admin_commande',
     );
 
     if ( isset( $_GET['page'] ) ) {
