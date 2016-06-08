@@ -38,6 +38,12 @@ class SousCategorieManager
         return $sous_categorie;
     }  
 
+    public function findFirst() {
+        $request = "SELECT * FROM sous_categorie LIMIT 1";
+        $res = mysqli_query( $this->link, $request );
+        $sous_categorie = mysqli_fetch_object( $res, "SousCategorie", array( $this->link ) );
+        return $sous_categorie;
+    } 
 
 
 
