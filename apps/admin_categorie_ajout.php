@@ -4,6 +4,7 @@
     $nom                = '';
     $description        = '';
 	$url_image 			= ''; 
+    $nom_photo          = '';
 
     if ( isset( $_POST['photo'] ) ) $photo = $_POST['photo']; 
     if ( isset( $_POST['nom'] ) ) $nom = $_POST['nom'];
