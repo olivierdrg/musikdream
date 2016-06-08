@@ -1,8 +1,9 @@
+<h3>Ajouter une sous-catégorie</h3>
 <div class="col-md-6">
 
     <form method="POST" class="register-form" enctype="multipart/form-data">
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-12">
 
                 <div class="row">
                     <label for="fileToUpload">Choisissez une image pour la sous-catégorie:</label>
@@ -27,19 +28,19 @@
             </select>
         </div>
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-12">
                 <div class="row">
-                    <label for="nom">Nom</label>
+                    <label for="nom">Nom</label><br>
                     <input type="text" id="nom" name="nom" value="<?= htmlentities( $nom ) ?>">
                 </div>
             </div>
         </div> 
 
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-12">
                 <div class="row">
-                    <label for="description">Description</label>
-                    <input type="text" id="description" name="description" value="<?= htmlentities( $description ) ?>">
+                    <label for="description">Description</label><br>
+                    <input class="col-sm-12" type="text" id="description" name="description" value="<?= htmlentities( $description ) ?>">
                 </div>
             </div>
         </div>
