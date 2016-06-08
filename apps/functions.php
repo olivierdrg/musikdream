@@ -9,4 +9,9 @@
             else return '';
     }
 
+    // fontawesome fa-star 
+    function display_star( $nb = 0 ) {
+        return str_repeat(STAR, $nb );
+    }
+
 ?>    

@@ -73,7 +73,7 @@
 
 		public function getStar() 
 		{
-			$this->star = str_repeat('* ', $this->getNote());
+			$this->star = str_repeat( STAR, $this->getNote());
 			return $this->star;
 		}
 

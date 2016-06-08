@@ -17,6 +17,7 @@
     define( 'IMAGE_PATH', LIB . 'images/' );
     define( 'CSS_PATH', LIB . 'css/' );
     define( 'JS_PATH', LIB . 'js/' );
+    define( 'STAR', '' ); // fontawesome fa-star 
     
 
     $page = 'categories';

@@ -1,5 +1,5 @@
 <form method="POST" class="register-form" enctype="multipart/form-data">
-	<input type="hidden" name="id_produit" value="<?=$produit->getId()?>">
+	<input type="hidden" name="id_produit" value="<?= htmlentities($produit->getId()) ?>">
 	<div class="row">
 	    <div class="col-md-2"> 
 	        <label for="note">Note</label>
