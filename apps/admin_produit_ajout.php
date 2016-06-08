@@ -9,6 +9,8 @@
     $nom                = '';
     $poids              = '';
     $actif              = '';
+    $url_image          = ''; 
+    $nom_photo          = '';
 
     if ( isset( $_POST['id_sous_categorie'] ) ) $id_sous_categorie = $_POST['id_sous_categorie'];
     if ( isset( $_POST['reference'] ) ) $reference = $_POST['reference'];   
@@ -20,6 +22,10 @@
     if ( isset( $_POST['nom'] ) ) $nom = $_POST['nom'];
     if ( isset( $_POST['poids'] ) ) $poids = $_POST['poids'];  
     if ( isset( $_POST['actif'] ) ) $actif = $_POST['actif'];  
+    if ( isset( $_FILES["fileToUpload"]["name"] ) ){
+        $url_image = 'public/images/'.$_FILES["fileToUpload"]["name"];
+        $nom_photo = $_FILES["fileToUpload"]["name"];
+    }
 
     require('views/admin_produit_ajout.phtml');
 ?>

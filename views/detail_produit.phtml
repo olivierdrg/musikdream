@@ -5,10 +5,10 @@
 </p>
 
 <div class="row">
-    <div class="col-sm-12">
+    <div class="col-md-12">
         <div class="cadre_produit panel panel-default">
             <div class="panel-body">
-                <img class="pull-right" src="<?= $produit->getPhoto() ?>" alt="<?= $produit->getNom() ?>">
+                <img class="pull-right" src="<?= $produit->getPhoto() ?>" alt="<?= $produit->getNom() ?>" onClick="window.open(this.href, '<?= $produit->getPhoto() ?>', 'height=400, width=400, top=400, left=700, toolbar=no, menubar=no, location=no, resizable=no, scrollbars=no, status=no')">
                 <h3><?= htmlentities( $produit->getNom() ) ?></h3>
                 <p>Sous catégorie : <?= htmlentities( $produit->getSousCategorie()->getNom() ) ?></p>
                 <p>Référence : <?= htmlentities( $produit->getReference() ) ?></p>

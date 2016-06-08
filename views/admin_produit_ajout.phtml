@@ -1,24 +1,24 @@
-<div class="col-md-6">
 
-    <form method="POST" class="register-form" enctype="multipart/form-data">
-        <div class="row">
-            <div class="col-sm-6">
-
-                <div class="row">
-                    <label for="fileToUpload">Choisissez une image pour la sous-catégorie:</label>
-                    <input type="file" name="fileToUpload" id="fileToUpload">
-                    <div class="text-center">
-                        <button class="btn btn-default" type="submit" value="upload" name="action">Uploader l'image
-                        </button><br>
-                        <img src="<?=htmlentities($url_image)?>" alt="<?=htmlentities($nom_photo)?>"><br>
-                        <?=htmlentities($nom_photo)?>
-                    </div>
-                </div>
+<form method="POST" class="register-form" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-sm-12 col-md-5">
+            <div class="row">
+                <label for="fileToUpload">Choisissez une image pour la sous-catégorie:</label>
+                <input type="file" name="fileToUpload" id="fileToUpload">
             </div>
         </div>
-    </form>
-</div>
+        <div class="col-sm-12 col-md-3">
+            <button class="btn btn-default" type="submit" value="upload" name="action">Uploader l'image
+            </button>
 
+        </div>
+        <div class="col-sm-12 col-md-4">
+            <img src="<?=htmlentities($url_image)?>" alt="<?=htmlentities($nom_photo)?>"><br>
+            <?=htmlentities($nom_photo)?>
+        </div>
+    </div>
+    <hr>   
+</form>
 
 <form method="POST" class="register-form" enctype="multipart/form-data">
     <div class="row">
@@ -73,10 +73,10 @@
 
     <div class="row">
         <div class="col-sm-12 col-md-3 col-lg-3">
-            <label for="photo">Photo</label>
+            <label for="poids">Poids</label>
         </div>
         <div class="col-sm-12 col-md-3 col-lg-3">                
-            <input type="text" id="photo" name="photo" value="<?= htmlentities( $photo ) ?>">
+            <input type="text" id="poids" name="poids" value="<?= htmlentities( $poids ) ?>"> 
         </div>
         <div class="col-sm-12 col-md-3 col-lg-3">
             <label for="nom">Nom</label>
@@ -88,10 +88,8 @@
 
     <div class="row">
         <div class="col-sm-12 col-md-3 col-lg-3">
-            <label for="poids">Poids</label>
         </div>
         <div class="col-sm-12 col-md-3 col-lg-3">                
-            <input type="text" id="poids" name="poids" value="<?= htmlentities( $poids ) ?>"> 
         </div>
         <div class="col-sm-12 col-md-3 col-lg-3">
             <label for="actif">Actif</label>
@@ -104,6 +102,7 @@
 
      <div class="row">
         <div class="col-sm-12 text-center">   
+            <input type="hidden" name='photo' value='<?=htmlentities($url_image)?>'><br>
             <button type="submit" class="bouton button btn btn-success" name="action" value="ajout">Ajouter</button>   
         </div>
     </div>

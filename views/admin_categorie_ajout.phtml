@@ -1,3 +1,5 @@
+<h3>Ajouter une catégorie</h3>
+
 <div class="col-md-6">
 
     <form method="POST" action="" class="register-form" enctype="multipart/form-data">
@@ -7,7 +9,7 @@
             <div class="text-center">
                 <button class="btn btn-default" type="submit" value="upload" name="action">Uploader l'image
                 </button><br>
-                <img src="<?=$url_image?>" alt=""><br>
+                <img src="<?=htmlentities($url_image)?>" alt=""><br>
                 <?=htmlentities($nom_photo)?>
             </div>
         </div>
@@ -21,7 +23,7 @@
                 <div class="row">
                     <br>
                     <label for="nom">Nom de la catégorie</label><br>
-                    <input class="col-xs-12" type="text" id="nom" name="nom" value="">
+                    <input class="col-xs-12" type="text" id="nom" name="nom" value="<?= htmlentities( $nom ) ?>">
                 </div>
             </div>
         </div> 
@@ -30,14 +32,14 @@
             <div class="col-sm-12">
                 <div class="row">
                     <label for="description">Description</label><br>
-                    <input class="col-xs-12" type="text" id="description" name="description" value="">
+                    <input class="col-xs-12" type="text" id="description" name="description" value="<?= htmlentities( $description ) ?>">
                 </div>
             </div>
         </div>
 
         <div class="row">
             <div class="col-sm-12 submit text-center">   
-                <input type="hidden" name='photo' value='<?=$url_image?>'><br>
+                <input type="hidden" name='photo' value='<?= htmlentities( $url_image ) ?>'><br>
 
                 <button type="submit" class="bouton button btn btn-success" name="action" value="ajout">Ajouter</button>   
             </div>
