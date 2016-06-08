@@ -48,7 +48,7 @@
         'admin_avis_ajout',
         'admin_avis_modif',
         'recap_panier',
-        'admin_commandes',
+        'admin_commandes'
     );
 
     $access_traitement = array(      
@@ -74,7 +74,7 @@
         'admin_avis_ajout'          => 'avis',
         'admin_avis_modif'          => 'avis',
         'detail_produit'            => 'avis',
-        'admin_commandes'           => 'admin_commande',
+        'admin_commandes'           => 'admin_commande'
     );
 
     if ( isset( $_GET['page'] ) ) {
