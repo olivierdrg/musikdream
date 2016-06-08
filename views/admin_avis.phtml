@@ -1,10 +1,9 @@
 <tr>
-
     <td><?= htmlentities( $date = date("m/d/Y H\hi") ) ?></td>
     <td><?= htmlentities( $avis->getProduit()->getNom() ) ?></td>
     <td><?= htmlentities( $avis->getUtilisateur()->getLogin() ) ?></td>
     <td><?= htmlentities( $avis->getContenu() ) ?></td>
-    <td><?= htmlentities( $avis->getStar() ) ?></td>
+    <td class="notes"><?= htmlentities( $avis->getStar() ) ?></td>
 
     <td>
         <a class="bouton button btn btn-success" href="?page=admin_avis_modif&id=<?= $avis->getId() ?>">Modifier</a>
