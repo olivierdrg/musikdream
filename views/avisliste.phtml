@@ -2,11 +2,11 @@
 <div class="avisliste row">
 	<div class="col-md-6">
 		<div class="row">
-		     <p class="col-md-8"><?= htmlentities($avis->getContenu()) ?></p>
+		     <p class="col-md-11"><?= htmlentities($avis->getContenu()) ?></p>
 		</div>
 	</div>
 	<div class="col-md-6">
-		<div class="col-md-4">
+		<div class="col-md-2">
 		   <p>Note : <p class="notes fa"><?= htmlentities( $avis->getStar()) ?></p></p>
 		</div>
 
@@ -14,8 +14,12 @@
 		    <p>Auteur : <?= htmlentities($avis->getUtilisateur()->getLogin()) ?></p>
 		</div>
 
-		<div class="col-md-4">    
+		<div class="col-md-3">    
 		    <p>Date : <?= htmlentities(date("m/d/Y H\hi", strtotime($avis->getDate()))) ?></p>
 		</div>
+
+		<div class="col-md-2">
+        	<a class="bouton button btn btn-success" href="?page=admin_avis_modif&id=<?= $avis->getId() ?>">Modifier</a>
+    	</div>
 	</div>
 </div>	
