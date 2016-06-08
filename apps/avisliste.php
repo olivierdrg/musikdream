@@ -4,7 +4,8 @@ $avisliste = $produit->getAvis();
 	$count = count( $avisliste );
     while ( $i < $count ) {
     	$avis = $avisliste[$i];
-        require('views/avis.phtml');
+
+        require('views/avisliste.phtml');
     	$i++;
 	}
 ?>

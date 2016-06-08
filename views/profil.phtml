@@ -43,7 +43,7 @@
                 <input class="col-xs-8" placeholder="Ville" type="text" id="ville" name="ville"
                        value="<?=htmlentities( $utilisateur->getAdresseFacturation()->getVille() )?>">
                 <label class="col-xs-12" for="pays">Pays</label><br>
-                <input class="col-xs-4" placeholder="Pays" type="text" id="pays" name="pays"
+                <input class="col-xs-12" placeholder="Pays" type="text" id="pays" name="pays"
                         value="<?=htmlentities( $utilisateur->getAdresseFacturation()->getPays() )?>">
 
         </div>
@@ -51,6 +51,7 @@
             <br>
             <input type="checkbox" id="typeIdem" name="typeIdem" value="idem" onclick="this.form.submit()">
             <label for="typeIdem"> Adresse de livraison idem que l'adresse de facturation.</label>
+            <br><br>
         </div>
     </div>  
     <div class="col-md-6">
@@ -73,7 +74,7 @@
                 <input class="col-xs-8" placeholder="Ville" type="text" id="ville1" name="ville1"
                        value="<?=htmlentities( $utilisateur->getAdresseLivraison()->getVille() )?>">
                 <label class="col-xs-12" for="pays1">Pays</label><br>
-                <input class="col-xs-4" placeholder="Pays" type="text" id="pays1" name="pays1"
+                <input class="col-xs-12" placeholder="Pays" type="text" id="pays1" name="pays1"
                         value="<?=htmlentities( $utilisateur->getAdresseLivraison()->getPays() )?>">
 
         </div>

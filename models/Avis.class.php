@@ -9,6 +9,7 @@
 		private $date;
 		private $note;
 
+		private $star;
 		private $utilisateur;// NULL
 		private $produit;
 
@@ -49,6 +50,7 @@
 			return $this->id_utilisateur;
 		}
 
+
 		public function getIdProduit() 
 		{
 			return $this->id_produit;
@@ -69,6 +71,11 @@
 			return $this->note;
 		}
 
+		public function getStar() 
+		{
+			$this->star = str_repeat('* ', $this->getNote());
+			return $this->star;
+		}
 
 
 		public function setContenu( $contenu ) 

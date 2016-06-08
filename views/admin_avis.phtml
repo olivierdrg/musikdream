@@ -1,19 +1,18 @@
-<div class="row">
-    <div class="col-md-4">
-       <p>Note :<?= $avis->getNote() ?></p>
-    </div>
-</div>
-<div class="row">
-    <p class="col-md-6">Avis :<?= $avis->getContenu() ?></p>
-</div>
+<tr>
 
-<div class="row">
-    <div class="col-md-4">    
-        <p>Posté le :<?= htmlentities ($date = date("m/d/Y H\hi") ) ?></p>
-    </div>
+    <td><?= htmlentities( $date = date("m/d/Y H\hi") ) ?></td>
+    <td><?= htmlentities( $avis->getProduit()->getNom() ) ?></td>
+    <td><?= htmlentities( $avis->getUtilisateur()->getLogin() ) ?></td>
+    <td><?= htmlentities( $avis->getContenu() ) ?></td>
+    <td><?= htmlentities( $avis->getStar() ) ?></td>
 
-    <div class="col-md-2 submit">   
-         <button type="submit" class="bouton button btn btn-success" name="action" value="ajout"><a href="?page=admin_avis_modif">Supprimer</a></button>   
-     </div>
-
-</div>
+    <td>
+        <a class="bouton button btn btn-success" href="?page=admin_avis_modif&id=<?= $avis->getId() ?>">Modifier</a>
+    </td>
+    <td>
+        <form method="POST" class="register-form">
+            <input type="hidden" name="id" value="<?= htmlentities( $avis->getId() ) ?>">
+             <button type="submit" class="bouton button btn btn-success" name="action" value="supp">Supprimer</button> 
+        </form> 
+    </td>
+</tr>
