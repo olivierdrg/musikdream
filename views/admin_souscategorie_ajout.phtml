@@ -1,46 +1,64 @@
-<form method="POST" class="register-form" enctype="multipart/form-data">
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="row">
-                <label for="categorie">Catégorie</label>
-                <select id="id_categorie" name="id_categorie">
-                    <?php require('apps/select_categorie.php'); ?>
-                </select>
+<div class="col-md-6">
+
+    <form method="POST" class="register-form" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="row">
+                    <label for="categorie">Catégorie</label>
+                    <select id="id_categorie" name="id_categorie">
+                        <?php require('apps/select_categorie.php'); ?>
+                    </select>
+                </div>
+                <div class="row">
+                    <label for="fileToUpload">Choisissez une image pour la sous-catégorie:</label>
+                    <input type="file" name="fileToUpload" id="fileToUpload">
+                    <div class="text-center">
+                        <button class="btn btn-default" type="submit" value="upload" name="action">Uploader l'image
+                        </button><br>
+                        <img src="<?=$url_image?>" alt=""><br>
+                        <?=htmlentities($nom_photo)?>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="row">
-                <label for="photo">Photo</label>
-                <input type="text" id="photo" name="photo" value="<?= htmlentities( $photo ) ?>">
+    </form>
+</div>
+<div class="col-md-6">
+    <form method="POST" class="register-form" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-sm-6">
+<!--                 <div class="row">
+                    <label for="photo">Photo</label>
+                    <input type="text" id="photo" name="photo" value="<?= htmlentities( $photo ) ?>">
+                </div> -->
+
             </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="row">
-                <label for="nom">Nom</label>
-                <input type="text" id="nom" name="nom" value="<?= htmlentities( $nom ) ?>">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="row">
+                    <label for="nom">Nom</label>
+                    <input type="text" id="nom" name="nom" value="<?= htmlentities( $nom ) ?>">
+                </div>
+            </div>
+        </div> 
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="row">
+                    <label for="description">Description</label>
+                    <input type="text" id="description" name="description" value="<?= htmlentities( $description ) ?>">
+                </div>
             </div>
         </div>
-    </div> 
 
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="row">
-                <label for="description">Description</label>
-                <input type="text" id="description" name="description" value="<?= htmlentities( $description ) ?>">
+        <div class="row">
+            <div class="col-sm-12 submit">
+                <input type="hidden" name='photo' value='<?=htmlentities($url_image)?>'><br>
+                <button type="submit" class="bouton button btn btn-success" name="action" value="ajout">Ajouter</button>   
             </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class="col-sm-12 submit">   
-            <button type="submit" class="bouton button btn btn-success" name="action" value="ajout">Ajouter</button>   
-        </div>
-    </div>
-
-</form>
+    </form>
+</div>

@@ -4,7 +4,7 @@
     </div>
     <div class="cadre_produit panel-body text-center">
         <a href="?page=produits&id_sous_categorie=<?= $sous_categorie->getId() ?>">
-            <img src="<?= $sous_categorie->getPhoto() ?>" alt="<?= $sous_categorie->getNom() ?>">
+            <img src="<?= $sous_categorie->getPhoto() ?>" alt="<?= htmlentities( $sous_categorie->getNom() ) ?>">
         </a>
     </div>
 </div>

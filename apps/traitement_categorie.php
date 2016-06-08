@@ -45,6 +45,7 @@ if ( isset( $_POST['action'] ) ) {
             try {
                 $manager = new CategorieManager( $link );
                 $id =  $_POST['id'];
+                var_dump($id);
                 $categorie = $manager->findById( $id );
                 $manager->remove( $categorie );//l'admin peut supprimer une catégorie
 
@@ -77,7 +78,7 @@ if ( isset( $_POST['action'] ) ) {
         // }
         // Check if file already exists
         if (file_exists($target_file)) {
-            $error = "Une image avec le même nom existe déjà sur le serveur.";
+            $error = "Une image avec le même nom existe déjà sur le serveur et sera utilisée.";
             $uploadOk = 0;
         }
         else{
@@ -105,9 +106,13 @@ if ( isset( $_POST['action'] ) ) {
                 }
             }
         }
-
-
     }
+
+
+
+
+
+
 }
 
 ?>

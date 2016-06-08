@@ -55,7 +55,7 @@ class SousCategorieManager
 
     public function create( $data ) {
 
-        $sous_categorie = new SousCategorie();
+        $sous_categorie = new SousCategorie($this->link);
 
         if ( !isset( $data['id_categorie'] ) ) throw new Exception ("Catégorie manquante");
         if ( !isset( $data['photo'] ) ) throw new Exception ("Photo de la sous-catégorie manquante");
