@@ -39,25 +39,6 @@ if ( isset( $_POST['action'] ) ) {
         }
     }
 
-    if ( $_POST['action'] == 'supp' ) {
-        if ( isset( $_POST['id'] ) ) {
-
-        try {
-            $manager = new SousCategorieManager( $link );
-            $id =  $_POST['id'];
-            $sous_categorie = $manager->findById( $id );
-            $manager->remove( $sous_categorie );//l'admin peut supprimer une catégorie
-
-            header('Location: index.php?page=admin_categories');
-            exit;
-        }
-
-        catch (Exception $exception) {
-            $error = $exception->getMessage();
-        }
-        }
-    }
-
     if ( $_POST['action'] == 'upload' && $_FILES["fileToUpload"]["name"]) {
 
         $target_dir = "public/images/";
