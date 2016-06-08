@@ -318,3 +318,7 @@ td > img {
 input {
   margin-bottom: 15px;
 }
+/*ERROR*/
+.error-header {
+  background-color: #337AB7;
+}
