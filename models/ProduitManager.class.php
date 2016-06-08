@@ -45,6 +45,13 @@ class ProduitManager {
         return $produit;
     }
 
+    public function findFirst() {
+        $request = 'SELECT * FROM produit LIMIT 1';
+        $res = mysqli_query( $this->link, $request );
+        $produit = mysqli_fetch_object( $res, 'Produit', array( $this->link ) );
+        return $produit;
+    }
+
     public function findBySousCategorie(SousCategorie $sous_categorie ) {
         $list = [];
         $id = $sous_categorie->getId();
