@@ -15,7 +15,7 @@
                     <div class="text-center">
                         <button class="btn btn-default" type="submit" value="upload" name="action">Uploader l'image
                         </button><br>
-                        <img src="<?=$url_image?>" alt=""><br>
+                        <img src="<?=htmlentities($url_image)?>" alt="<?=htmlentities($nom_photo)?>"><br>
                         <?=htmlentities($nom_photo)?>
                     </div>
                 </div>
@@ -25,16 +25,6 @@
 </div>
 <div class="col-md-6">
     <form method="POST" class="register-form" enctype="multipart/form-data">
-        <div class="row">
-            <div class="col-sm-6">
-<!--                 <div class="row">
-                    <label for="photo">Photo</label>
-                    <input type="text" id="photo" name="photo" value="<?= htmlentities( $photo ) ?>">
-                </div> -->
-
-            </div>
-        </div>
-
         <div class="row">
             <div class="col-sm-6">
                 <div class="row">
