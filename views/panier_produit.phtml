@@ -29,8 +29,8 @@
 		</div>
 
 		<form action="" method="post">
-			<input type='hidden' name="idProduit" value='<?=$produit->getId();?>'>
-			<input type='hidden' name="idPanier" value='<?=$panier->getId();?>'>
+			<input type='hidden' name="idProduit" value='<?= htmlentities($produit->getId()) ?>'>
+			<input type='hidden' name="idPanier" value='<?= htmlentities($panier->getId()) ?>'>
 			<input type='hidden' name="page" value='panier'>
 			
 			<button type="submit" name="action" class="btn btn-warning btn-xs pull-right" value="retirer">
