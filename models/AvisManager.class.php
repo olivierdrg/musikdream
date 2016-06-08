@@ -63,6 +63,11 @@ class AvisManager
         return $this->findById( $id );
     }
 
+    public function getByNote( $note ) 
+    {
+        return $this->findByNote( $note );
+    }
+
     public function getByIdProduit( $id_produit ) 
     {
         return $this->findByIdProduit( $id_produit );

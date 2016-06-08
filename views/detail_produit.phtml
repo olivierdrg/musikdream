@@ -22,8 +22,9 @@
         </div>
         <div class="cadre_produit panel panel-default">
             <div class="panel-body">
-                <h3>Avis sur le produit <?= htmlentities( $produit->getNom() ) ?></h3>
+                <h3>Votre avis sur le produit : <?= htmlentities( $produit->getNom() ) ?></h3>
                 <?php require('apps/avis_ajout.php'); ?>
+                <h3>Des clients ont donné leur avis sur : <?= htmlentities( $produit->getNom() ) ?></h3>
                 <?php require('apps/avisliste.php'); ?>
             </div>
         </div>
