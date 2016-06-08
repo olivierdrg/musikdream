@@ -1,0 +1,4 @@
+<form action="index.php?page=panier" method="POST" class="register-form" enctype="multipart/form-data">
+    <input type="hidden" name="id" value="<?= intval( $produit->getId() ) ?>">
+    <button type="submit" class="bouton btn btn-warning btn-xs pull-left" name="action" value="ajout">Ajouter au panier</button> 
+</form>
