@@ -3,12 +3,7 @@
     <form method="POST" class="register-form" enctype="multipart/form-data">
         <div class="row">
             <div class="col-sm-6">
-                <div class="row">
-                    <label for="categorie">Catégorie</label>
-                    <select id="id_categorie" name="id_categorie">
-                        <?php require('apps/select_categorie.php'); ?>
-                    </select>
-                </div>
+
                 <div class="row">
                     <label for="fileToUpload">Choisissez une image pour la sous-catégorie:</label>
                     <input type="file" name="fileToUpload" id="fileToUpload">
@@ -25,6 +20,12 @@
 </div>
 <div class="col-md-6">
     <form method="POST" class="register-form" enctype="multipart/form-data">
+        <div class="row">
+            <label for="categorie">Catégorie</label>
+            <select id="id_categorie" name="id_categorie">
+                <?php require('apps/select_categorie.php'); ?>
+            </select>
+        </div>
         <div class="row">
             <div class="col-sm-6">
                 <div class="row">
