@@ -75,6 +75,23 @@
                     $panier = $panier_manager->getCurrent();
                     $panier->setStatus(1);
                     $panier_manager->update($panier);
+
+                    // Mise à jour du stock
+                    $list = $panier->getProduits();
+                    $i = 0;
+                    $count = count( $list );
+                    while ( $i < $count ) {
+                        $produit = $list[$i];
+                        $stock = $produit->getStock();
+                        $stock--;
+                        $produit->setStock( $stock );
+                        
+                        $produit_manager = new ProduitManager( $link );
+                        $produit_manager->update( $produit );
+
+                        $i++;
+                    }
+
                 }
                 catch (Exception $exception) {
                     $error = $exception->getMessage();
