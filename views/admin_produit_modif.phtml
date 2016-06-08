@@ -1,91 +1,90 @@
-
-    <form method="POST" class="register-form" enctype="multipart/form-data">
-        <input type="hidden" id="id" name="id" value="<?= htmlentities( $produit->getId() ) ?>">
-        <div class="row">
-            <div class="col-sm-12 col-md-3 col-lg-3">
-                <label for="sous_categorie">Sous Catagorie</label>
-            </div>
-            <div class="col-sm-12 col-md-3 col-lg-3">
-                <select id="id_sous_categorie" name="id_sous_categorie">
-                    <?php require('apps/select_souscategorie.php'); ?>
-                </select>
-            </div>
-            <div class="col-sm-12 col-md-3 col-lg-3">
-                <label for="reference">Réference</label>
-            </div>
-            <div class="col-sm-12 col-md-3 col-lg-3">                
-                <input type="text" id="reference" name="reference" value="<?= htmlentities( $produit->getReference() ) ?>">
-            </div>
+<form method="POST" class="register-form" enctype="multipart/form-data">
+    <input type="hidden" id="id" name="id" value="<?= htmlentities( $produit->getId() ) ?>">
+    <div class="row">
+        <div class="col-sm-12 col-md-3 col-lg-3">
+            <label for="sous_categorie">Sous-catégorie</label>
         </div>
-        
-        <div class="row">
-            <div class="col-sm-12 col-md-3 col-lg-3">
-                <label for="stock">Stock</label>
-            </div>
-            <div class="col-sm-12 col-md-9 col-lg-9">                    
-                <input type="text" id="stock" name="stock" value="<?= htmlentities( $produit->getStock() ) ?>"> 
-            </div>
+        <div class="col-sm-12 col-md-3 col-lg-3">
+            <select id="id_sous_categorie" name="id_sous_categorie">
+                <?php require('apps/select_souscategorie.php'); ?>
+            </select>
         </div>
-
-        <div class="row">
-            <div class="col-sm-12 col-md-3 col-lg-3">
-                <label for="prix_ht">Prix ht</label>
-            </div>
-            <div class="col-sm-12 col-md-3 col-lg-3">                
-                <input type="text" id="prix_ht" name="prix_ht" value="<?= htmlentities( $produit->getPrixHt() ) ?>"> 
-            </div>
-            <div class="col-sm-12 col-md-3 col-lg-3">
-                <label for="tva">Tva</label>
-            </div>
-            <div class="col-sm-12 col-md-3 col-lg-3">                
-                <input type="text" id="tva" name="tva" value="<?= htmlentities( $produit->getTva() ) ?>">
-            </div>            
+        <div class="col-sm-12 col-md-3 col-lg-3">
+            <label for="reference">Référence</label>
         </div>
-
-        <div class="row">
-            <div class="col-sm-12 col-md-3 col-lg-3">
-                <label for="description">Déscription</label>
-            </div>
-            <div class="col-sm-12 col-md-9 col-lg-9">                
-                <input type="text" id="description" name="description" value="<?= htmlentities( $produit->getDescription() ) ?>">
-            </div>
+        <div class="col-sm-12 col-md-3 col-lg-3">                
+            <input type="text" id="reference" name="reference" value="<?= htmlentities( $produit->getReference() ) ?>">
         </div>
-
-        <div class="row">
-            <div class="col-sm-12 col-md-3 col-lg-3">
-                <label for="photo">Photo</label>
-            </div>
-            <div class="col-sm-12 col-md-3 col-lg-3">                
-                <input type="text" id="photo" name="photo" value="<?= htmlentities( $produit->getPhoto() ) ?>">
-            </div>
-            <div class="col-sm-12 col-md-3 col-lg-3">
-                <label for="nom">Nom</label>
-            </div>
-            <div class="col-sm-12 col-md-3 col-lg-3">                
-                <input type="text" id="nom" name="nom" value="<?= htmlentities( $produit->getNom() ) ?>">
-            </div>
-        </div>    
-
-        <div class="row">
-            <div class="col-sm-12 col-md-3 col-lg-3">
-                <label for="poids">Poids</label>
-            </div>
-            <div class="col-sm-12 col-md-3 col-lg-3">                
-                <input type="text" id="poids" name="poids" value="<?= htmlentities( $produit->getPoids() ) ?>"> 
-            </div>
-            <div class="col-sm-12 col-md-3 col-lg-3">
-                <label for="actif">Actif</label>
-            </div>
-            <div class="col-sm-12 col-md-3 col-lg-3">                
-                Oui <input type="radio" id="actif" name="actif" value="1" <?= $produit->checked( '1', $produit->getActif() )?>>
-                Non <input type="radio" name="actif" value="0" <?= $produit->checked( '0', $produit->getActif() )?>>
-            </div>            
+    </div>
+    
+    <div class="row">
+        <div class="col-sm-12 col-md-3 col-lg-3">
+            <label for="stock">Stock</label>
         </div>
-
-         <div class="row">
-            <div class="col-sm-12 text-center">   
-                <button type="submit" class="bouton button btn btn-success" name="action" value="modif">Modifier</button>   
-            </div>
+        <div class="col-sm-12 col-md-9 col-lg-9">                    
+            <input type="text" id="stock" name="stock" value="<?= htmlentities( $produit->getStock() ) ?>"> 
         </div>
+    </div>
 
-    </form>
+    <div class="row">
+        <div class="col-sm-12 col-md-3 col-lg-3">
+            <label for="prix_ht">Prix ht</label>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3">                
+            <input type="text" id="prix_ht" name="prix_ht" value="<?= htmlentities( $produit->getPrixHt() ) ?>"> 
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3">
+            <label for="tva">Tva</label>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3">                
+            <input type="text" id="tva" name="tva" value="<?= htmlentities( $produit->getTva() ) ?>">
+        </div>            
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 col-md-3 col-lg-3">
+            <label for="description">Description</label>
+        </div>
+        <div class="col-sm-12 col-md-9 col-lg-9">                
+            <input type="text" id="description" name="description" value="<?= htmlentities( $produit->getDescription() ) ?>">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 col-md-3 col-lg-3">
+            <label for="photo">Photo</label>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3">                
+            <input type="text" id="photo" name="photo" value="<?= htmlentities( $produit->getPhoto() ) ?>">
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3">
+            <label for="nom">Nom</label>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3">                
+            <input type="text" id="nom" name="nom" value="<?= htmlentities( $produit->getNom() ) ?>">
+        </div>
+    </div>    
+
+    <div class="row">
+        <div class="col-sm-12 col-md-3 col-lg-3">
+            <label for="poids">Poids</label>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3">                
+            <input type="text" id="poids" name="poids" value="<?= htmlentities( $produit->getPoids() ) ?>"> 
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3">
+            <label for="actif">Actif</label>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3">                
+            Oui <input type="radio" id="actif" name="actif" value="1" <?= $produit->checked( '1', $produit->getActif() )?>>
+            Non <input type="radio" name="actif" value="0" <?= $produit->checked( '0', $produit->getActif() )?>>
+        </div>            
+    </div>
+
+     <div class="row">
+        <div class="col-sm-12 text-center">   
+            <button type="submit" class="bouton button btn btn-success" name="action" value="modif">Modifier</button>   
+        </div>
+    </div>
+
+</form>
