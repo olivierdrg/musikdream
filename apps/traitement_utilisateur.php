@@ -1,7 +1,4 @@
 <?php
-        // var_dump($_POST['action']);
-        // var_dump($_POST);
-
 
 if ( isset( $_POST['action'] ) ) {
     
@@ -37,7 +34,6 @@ if ( isset( $_POST['action'] ) ) {
 
 
     if ( $_POST['action'] == 'update' ) {
-        // var_dump($_POST);
         // -----------------------------------------------
         // traitement de l'utilisateur
         // -----------------------------------------------
@@ -84,8 +80,6 @@ if ( isset( $_POST['action'] ) ) {
 
             // sauvegarder adresse, replacer la feuille à son endroit et retour à la home
             $manager -> update($adresse);
-            // header('Location: index.php?page=home');
-            // exit;
         }
 
         catch (Exception $exception) {
@@ -121,8 +115,6 @@ if ( isset( $_POST['action'] ) ) {
 
             // sauvegarder adresse, replacer la feuille à son endroit et retour à la page home
             $manager -> update($adresse);
-            // header('Location: index.php?page=profil');
-            // exit;
         }
 
         catch (Exception $exception) {

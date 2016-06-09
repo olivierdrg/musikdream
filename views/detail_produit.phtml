@@ -13,10 +13,10 @@
                 <p>Sous catégorie : <?= htmlentities( $produit->getSousCategorie()->getNom() ) ?></p>
                 <p>Référence : <?= htmlentities( $produit->getReference() ) ?></p>
                 <p>En stock : <?= htmlentities( $produit->getStock() ) ?></p>
-                <p>Prix HT : <?= htmlentities( $produit->getPrixHt() ) ?> €</p>
-                <p>Prix TTC : <?= htmlentities( $produit->getPrixTtc() ) ?> € dont <?= htmlentities( $produit->getTvaValue() ) ?> € de tva</p>
+                <p>Prix HT : <?= number_format(htmlentities( $produit->getPrixHt()),2,'.','') ?> €</p>
+                <p>Prix TTC : <?= number_format(htmlentities( $produit->getPrixTtc()),2,'.','') ?> € dont <?= number_format(htmlentities( $produit->getTvaValue()),2,'.','') ?> € de tva</p>
                 <p>Description : <?= htmlentities( $produit->getDescription() ) ?></p>
-                <p>Poids : <?= htmlentities( $produit->getPoidsKg() ) ?> Kg</p> 
+                <p>Poids : <?= number_format(htmlentities( $produit->getPoidsKg()),2,'.','') ?> Kg</p> 
                 <?php require('apps/detail_produit_button.php'); ?>
             </div>
         </div>

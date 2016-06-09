@@ -5,7 +5,6 @@
     }
 
     if ( isset( $_POST['action'] ) ) {
-        // var_dump($_POST);
         if ($_POST['action'] == 'ajout') {
 
             $panier_manager = new PanierManager( $link );
@@ -27,7 +26,6 @@
         }
        
         if ($_POST['action'] == 'retirer') {
-            // var_dump($POST);
             $panier_manager = new PanierManager( $link );
             $produit_manager = new ProduitManager( $link );
             try {
@@ -96,7 +94,6 @@
                 catch (Exception $exception) {
                     $error = $exception->getMessage();
                 }
-                // var_dump($panier);
                 header('Location: index.php?page=recap_panier');
                 exit;
             }

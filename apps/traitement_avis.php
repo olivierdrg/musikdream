@@ -30,25 +30,6 @@
                 $error = $exception->getMessage();
             }
         }
-
-        // if ( $_POST['action'] == 'supp' ) 
-        // {
-        //     $avis_manager = new AvisManager( $link );
-        //     $admin_avisliste_manager = new AdminAvislisteManager( $link );
-        //     try 
-        //         {
-        //             $admin_avisliste = $admin_avisliste_manager->findById( $_POST['idProduit'] );
-        //             $avis = $avis_manager->getCurrent();
-        //             $avis_manager->removeAdminAvislisteAvis($admin_avisliste, $avis);
-        //             header('Location: index.php?page=admin_avisliste');
-        //             exit; 
-        //         }
-
-        //         catch (Exception $exception) 
-        //         {
-        //             $error = $exception->getMessage();
-        //         }            
-        //     }
-        // }    
+ 
     }
 ?>
