@@ -11,6 +11,10 @@
 
     // fontawesome fa-star 
     function display_star( $nb = 0 ) {
+        $nb = intval($nb);
+        if($nb < 0 || $nb > 5){
+            $nb = 0;
+        }
         return str_repeat(STAR, $nb );
     }
 
