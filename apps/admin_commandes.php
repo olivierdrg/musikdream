@@ -1,16 +1,16 @@
 <?php
 	if ( isset( $_SESSION['login'] ) ) {
 
-        $type = 0;
+        $status = 0;
         
-        if ( isset( $_GET['type'] ) ) {
-            $type = intval( $_GET['type'] );
+        if ( isset( $_GET['status'] ) ) {
+            $status = intval( $_GET['status'] );
         }
 
 		$panier_manager = new PanierManager( $link );
         
 
-		$paniers = $panier_manager->findByStatus( $type );
+		$paniers = $panier_manager->findByStatus( $status );
 
 		require('views/admin_commandes.phtml');
 	}

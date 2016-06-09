@@ -1,10 +1,10 @@
 <div class="row">
     <h1>Gestion des commandes</h1>
 
-    <select id="j-panier-type">
-        <option value="0" <?= htmlentities(selected( $type, 0 )) ?>>Voir les commandes en cours</option>
-        <option value="1" <?= htmlentities(selected( $type, 1 )) ?>>Voir les commandes payées</option>
-        <option value="2" <?= htmlentities(selected( $type, 2 )) ?>>Voir les commandes validées</option>
+    <select id="js-panier-status">
+        <option value="0" <?= htmlentities(selected( $status, 0 )) ?>>Voir les commandes en cours</option>
+        <option value="1" <?= htmlentities(selected( $status, 1 )) ?>>Voir les commandes payées</option>
+        <option value="2" <?= htmlentities(selected( $status, 2 )) ?>>Voir les commandes validées</option>
     </select>
 </div>
 
