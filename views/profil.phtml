@@ -14,7 +14,7 @@
     <div class="col-md-6">
         <div class="col-md-12">
             <label for="date_naissance" class="sr-only">Date de naissance</label>
-            <input placeholder="Date de naissance" class="col-xs-12" type="date" id="date_naissance" name="date_naissance" value="<?= htmlentities( $utilisateur->getDateNaissance() ) ?>"> 
+            <input placeholder="Date de naissance" class="col-xs-12" type="date" id="date_naissance" name="date_naissance" value="<?= htmlentities( sql_2_date( $utilisateur->getDateNaissance() ) ) ?>"> 
             <label for="telephone" class="sr-only">Téléphone</label>
             <input placeholder="Téléphone" class="col-xs-12" type="text" id="telephone" name="telephone" value="<?= htmlentities( $utilisateur->getTelephone() ) ?>">
             <label for="sexe">Sexe</label><br>

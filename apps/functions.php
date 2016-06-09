@@ -12,10 +12,18 @@
     // fontawesome fa-star 
     function display_star( $nb = 0 ) {
         $nb = intval($nb);
-        if($nb < 0 || $nb > 5){
+        if($nb < 1 || $nb > 5){
             $nb = 0;
         }
         return str_repeat(STAR, $nb );
     }
 
+    function sql_2_date( $sql ){
+        return date( 'd/m/Y', strtotime( $sql ) );
+    }
+
+    function date_2_sql( $date ){
+        $date = str_replace( '/', '-', $date );
+        return date( 'Y-m-d', strtotime( $date ) );
+    }
 ?>    

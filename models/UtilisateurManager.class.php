@@ -59,7 +59,7 @@ class UtilisateurManager {
         $utilisateur->setPrenom( $data['prenom'] );
         $utilisateur->setEmail( $data['email'] );
         $utilisateur->setMotPasse( password_hash( $data['mot_passe'], PASSWORD_BCRYPT, array( 'cost' => 8 ) ) );
-        $utilisateur->setDateNaissance( $data['date_naissance'] );
+        $utilisateur->setDateNaissance( date_2_sql( $data['date_naissance'] ) );
         $utilisateur->setTelephone( $data['telephone'] );
         $utilisateur->setLogin( $data['login'] );
         // $id = $utilisateur->getId();
@@ -72,7 +72,7 @@ class UtilisateurManager {
         $telephone          = mysqli_real_escape_string( $this->link, $utilisateur->getTelephone() );
         $login              = mysqli_real_escape_string( $this->link, $utilisateur->getLogin() );
 
-        $request = "INSERT INTO utilisateur (nom, prenom, email,mot_passe, date_naissance,telephone, login) 
+        $request = "INSERT INTO utilisateur (nom, prenom, email, mot_passe, date_naissance,telephone, login) 
             VALUES('" . $nom . "', '" . $prenom . "', '" . $email . "', '" . $mot_passe . "', '" . $date_naissance . "', '" . $telephone . "', '" . $login . "')";
 
         $res = mysqli_query( $this->link, $request );
