@@ -19,7 +19,7 @@
                 $utilisateurManager = new UtilisateurManager($link);
                 $utilisateur = $utilisateurManager->findById($_SESSION['id']);
 
-                $avis = $manager->create( $_POST, $produit, $utilisateur, $note);
+                $avis = $manager->create( $_POST, $produit, $utilisateur );
 
                 header('Location: index.php?page=detail_produit&id_produit='.$produit->getId());
                 exit;
@@ -31,26 +31,24 @@
             }
         }
 
-        if ( $_POST['action'] == 'supp' ) 
-        {
-            $avis_manager = new AvisManager( $link );
-            $admin_avisliste_manager = new AdminAvislisteManager( $link );
-            try 
-                {
-                    $admin_avisliste = $admin_avisliste_manager->findById( $_POST['idProduit'] );
-                    $avis = $avis_manager->getCurrent();
-                    $avis_manager->removeAdminAvislisteAvis($admin_avisliste, $avis);
-                    header('Location: index.php?page=admin_avisliste');
-                    exit; 
-                }
+        // if ( $_POST['action'] == 'supp' ) 
+        // {
+        //     $avis_manager = new AvisManager( $link );
+        //     $admin_avisliste_manager = new AdminAvislisteManager( $link );
+        //     try 
+        //         {
+        //             $admin_avisliste = $admin_avisliste_manager->findById( $_POST['idProduit'] );
+        //             $avis = $avis_manager->getCurrent();
+        //             $avis_manager->removeAdminAvislisteAvis($admin_avisliste, $avis);
+        //             header('Location: index.php?page=admin_avisliste');
+        //             exit; 
+        //         }
 
-                catch (Exception $exception) 
-                {
-                    $error = $exception->getMessage();
-                }            
-            }
-        }    
+        //         catch (Exception $exception) 
+        //         {
+        //             $error = $exception->getMessage();
+        //         }            
+        //     }
+        // }    
+    }
 ?>
-
-
-  

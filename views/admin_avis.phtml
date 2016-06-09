@@ -3,7 +3,7 @@
     <td><?= htmlentities( $avis->getProduit()->getNom() ) ?></td>
     <td><?= htmlentities( $avis->getUtilisateur()->getLogin() ) ?></td>
     <td><?= htmlentities( $avis->getContenu() ) ?></td>
-    <td class="notes fa"><?= htmlentities( $avis->getStar() ) ?></td>
+    <td class="notes fa"><?= htmlentities( display_star( $avis->getNote() ) ) ?></td>
 
     <td>
         <a class="bouton button btn btn-success" href="?page=admin_avis_modif&id=<?= $avis->getId() ?>">Modifier</a>

@@ -1,7 +1,7 @@
 <tr>
     <td><?= htmlentities( $avis->getIdUtilisateur() ) ?></td>
     <td><?= htmlentities( $avis->getIdProduit() ) ?></td>
-    <td><?= htmlentities( $avis->getContenu()->getNom() ) ?></td>
+    <td><?= htmlentities( $avis->getContenu() ) ?></td>
     <td><?= htmlentities( $avis->getNote() ) ?></td>
 
     <td><a href="?page=admin_avis_modif&id=<?= $avis->getId() ?>">Modif</a></td>
