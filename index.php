@@ -33,7 +33,6 @@
         'register',
         'profil',
         'panier',
-        'admin',
         'admin_categories',
         'admin_categorie_ajout',
         'admin_categorie_modif',
