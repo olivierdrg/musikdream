@@ -7,15 +7,15 @@
 	</div>
 	<div class="col-md-5">
 		<div class="col-md-2">
-		   <p>Note : <p class="notes fa"><?= htmlentities( display_star( $avis->getNote() ) ) ?></p></p>
+		   <p>Note: <p class="notes fa"><?= htmlentities( display_star( $avis->getNote() ) ) ?></p></p>
 		</div>
 
 		<div class="col-md-5">
-		    <p>Auteur : <?= htmlentities($avis->getUtilisateur()->getLogin()) ?></p>
+		    <p>Auteur: <?= htmlentities($avis->getUtilisateur()->getLogin()) ?></p>
 		</div>
 
 		<div class="col-md-2">    
-		    <p>Date : <?= htmlentities(date("m/d/Y H\hi", strtotime($avis->getDate()))) ?></p>
+		    <p>Date: <?= htmlentities(date("m/d/Y H\hi", strtotime($avis->getDate()))) ?></p>
 		</div>
 
 <!-- 		<div class="col-md-2">
