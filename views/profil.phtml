@@ -81,16 +81,12 @@
         <div class="form-group col-md-12 col-sm-12 col-xs-12 text-left">
         <br><br>
             <input type="hidden" name="action" value="update">
-            <button type="submit" class="bouton button btn btn-success">Mettre mon profil à jour</button>   
-            <form method='POST' action='?action=supp_profil'>
-                <button type="submit" class="button btn btn-warning pull-right">Supprimer mon compte</button>
-            </form>
-            <form method='POST'>
-                <input type="hidden" name="action" value="supp_profil">
-                <button type="submit" class="button btn btn-warning pull-right">Supprimer mon compte</button>
-            </form>
+            <button type="submit" class="bouton button btn btn-success pull-right">Mettre mon profil à jour</button>   
         </div>
     </div>
 
 </form>
-
+<form method='POST'>
+    <input type="hidden" name="action" value="supp_profil">
+    <button type="submit" class="button btn btn-warning pull-right">Supprimer mon compte</button>
+</form>
