@@ -10,13 +10,20 @@
             $panier_manager = new PanierManager( $link );
             $produit_manager = new ProduitManager( $link );
             try {
-                $produit = $produit_manager->findById( $_POST['id'] );
-                $panier = $panier_manager->getCurrent();
-                $panier->addProduit( $produit );
-                $panier_manager->update( $panier );
+                $id = intval( $_POST['id'] );
 
-                header('Location: index.php?page=panier');
-                exit;            
+                $produit = $produit_manager->findById( $id );
+
+                if ( $produit != null ) {
+                    $panier = $panier_manager->getCurrent();
+                    $panier->addProduit( $produit );
+                    $panier_manager->update( $panier );
+
+                    header('Location: index.php?page=panier');
+                    exit;  
+                }  else {
+                    $error = 'Données invalides';
+                }       
             }
 
             catch ( Exception $exception ){
