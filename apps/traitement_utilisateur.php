@@ -121,6 +121,24 @@ if ( isset( $_POST['action'] ) ) {
             $error = $exception->getMessage();
         }
     }
+
+    if ( $_POST['action'] == 'supp_profil' ) {
+        if ( isset( $_SESSION['id'] ) ) {
+            try {
+                $manager = new UtilisateurManager( $link );
+                $id =  $_SESSION['id'];
+                $utilisateur = $manager->findById( $id );
+                $manager->remove( $utilisateur );
+                session_destroy();
+
+                header('Location: index.php?page=home');
+                exit;         
+            }
+            catch (Exception $exception) {
+                $error = $exception->getMessage();
+            }            
+        }
+    }
 }
 
 if ( $_GET['page'] == 'logout' ) {
@@ -128,5 +146,6 @@ if ( $_GET['page'] == 'logout' ) {
 
     header('Location: index.php?page=home');
     exit;
-}  
+}
+
 ?>
