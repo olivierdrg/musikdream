@@ -130,7 +130,7 @@ class ProduitManager {
 
 
     public function update( Produit $produit ) { // type-hinting
-        var_dump( $produit );
+
         $id = $produit->getId();
 
         if ( $id ) {// true si > 0
