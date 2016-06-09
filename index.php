@@ -57,6 +57,7 @@
         'register'                  => 'utilisateur',
         'profil'                    => 'utilisateur',
         'update'                    => 'utilisateur',
+        'supp_profil'               => 'utilisateur',
         'panier'                    => 'panier',
         'admin'                     => 'admin',
         'admin_categories'          => 'categorie',
