@@ -1,26 +1,32 @@
-    <h4>Sous-catégorie : <?= htmlentities($sous_categorie->getNom()) ?></h4>
-<table class="table table-striped table-vertical-align-middle">
-    <thead>
-        <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th> 
-            <th></th> 
-        </tr>
-    </thead>
+<h4>Sous-catégorie : <?= htmlentities($sous_categorie->getNom()) ?></h4>
+<div class="table-responsive">
+    <table class="table table-striped table-vertical-align-middle">
+        <thead>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th> 
+                <th></th> 
+            </tr>
+        </thead>
 
-    <tbody>
-        <td><img src="<?= $sous_categorie->getPhoto() ?>" alt="<?= $sous_categorie->getNom() ?>"/></td>
-        <td><?= htmlentities($sous_categorie->getNom()) ?></td>
-        <td><?= htmlentities($sous_categorie->getDescription()) ?></td>
-        <td>
-            <a class="bouton button btn btn-success" href="?page=admin_souscategorie_modif&id=<?= $sous_categorie->getId() ?>">Modifier</a></td>
-        <td>
-            <form method="POST" class="register-form">
-                <input type="hidden" name="id" value="<?= htmlentities( $sous_categorie->getId() ) ?>">
-                <button type="submit" class="bouton button btn btn-success" name="action" value="supp">Supprimer</button>
-            </form>
-        </td>
-    </tbody>
-</table>
+        <tbody>
+            <td><img src="<?= $sous_categorie->getPhoto() ?>" alt="<?= $sous_categorie->getNom() ?>"/></td>
+            <td><?= htmlentities($sous_categorie->getNom()) ?></td>
+            <td><?= htmlentities($sous_categorie->getDescription()) ?></td>
+            <td>
+                <a class="bouton button btn btn-success" href="?page=admin_souscategorie_modif&id=<?= $sous_categorie->getId() ?>">
+                    Modifier
+                </a>
+            </td>
+            <td>
+                <form method="POST" action="?page=admin_categories" class="register-form">
+                    <input type="hidden" name="id" value="<?= htmlentities( $sous_categorie->getId() ) ?>">
+                    <button type="submit" class="bouton button btn btn-success" name="action" value="supp_souscategorie">Supprimer</button>
+
+                </form>
+            </td>
+        </tbody>
+    </table>
+</div>

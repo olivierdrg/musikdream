@@ -1,110 +1,112 @@
-
-<form method="POST" class="register-form" enctype="multipart/form-data">
-    <div class="row">
-        <div class="col-sm-12 col-md-5">
+<div class"col-md-12">
+    <div class"col-md-6">
+        <form method="POST" class="register-form" enctype="multipart/form-data">
             <div class="row">
-                <label for="fileToUpload">Choisissez une image pour la sous-catégorie:</label>
+                <div class="col-md-4">
+                    <label for="sous_categorie">Sous-catégorie :</label>
+                </div>
+                <div class="col-md-4">
+                    <select id="id_sous_categorie" name="id_sous_categorie">
+                        <?php require('apps/select_souscategorie.php'); ?>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="reference">Référence :</label>
+                </div>
+                <div class="col-md-4">                
+                    <input type="text" id="reference" name="reference" value="<?= htmlentities( $reference ) ?>">
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="stock">Stock :</label>
+                </div>
+                <div class="col-md-4">                    
+                    <input type="text" id="stock" name="stock" value="<?= htmlentities( $stock ) ?>"> 
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="prix_ht">Prix ht :</label>
+                </div>
+                <div class="col-md-4">                
+                    <input type="text" id="prix_ht" name="prix_ht" value="<?= htmlentities( $prix_ht ) ?>"> 
+                </div>
+                <div class="col-md-4">
+                    <label for="tva">Tva :</label>
+                </div>
+                <div class="col-md-4">                
+                    <input type="text" id="tva" name="tva" value="<?= htmlentities( $prix_ht ) ?>">
+                </div>            
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="description">Description :</label>
+                </div>
+                <div class="col-md-4">                
+                    <input type="text" id="description" name="description" value="<?= htmlentities( $description ) ?>">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class"col-md-12">
+
+        <div class="row">
+            <div class="col-md-4">
+                <label for="poids">Poids :</label>
+            </div>
+            <div class="col-md-4">                
+                <input type="text" id="poids" name="poids" value="<?= htmlentities( $poids ) ?>"> 
+            </div>
+            <div class="col-md-4">
+                <label for="nom">Nom :</label>
+            </div>
+            <div class="col-md-4">                
+                <input type="text" id="nom" name="nom" value="<?= htmlentities( $nom ) ?>">
+            </div>
+        </div>    
+
+        <div class="row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4">                
+            </div>
+            <div class="col-md-4">
+                <label for="actif">Actif</label>
+            </div>
+            <div class="col-md-4">                
+                Oui <input type="radio" id="actif" name="actif" value="1" checked > 
+                Non <input type="radio" name="actif" value="0">
+            </div>            
+        </div>
+
+    </form>
+</div>
+<div class"col-md-12">
+    <form method="POST" class="register-form" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-md-4">
+                <label for="fileToUpload">Choisissez une image pour le produit :</label>
                 <input type="file" name="fileToUpload" id="fileToUpload">
+
+                <button class="btn btn-default" type="submit" value="upload" name="action">Uploader l'image</button>
             </div>
         </div>
-        <div class="col-sm-12 col-md-3">
-            <button class="btn btn-default" type="submit" value="upload" name="action">Uploader l'image
-            </button>
 
-        </div>
-        <div class="col-sm-12 col-md-4">
+        <div class="col-md-4">
             <img src="<?=htmlentities($url_image)?>" alt="<?=htmlentities($nom_photo)?>"><br>
             <?=htmlentities($nom_photo)?>
         </div>
-    </div>
-    <hr>   
-</form>
-
-<form method="POST" class="register-form" enctype="multipart/form-data">
-    <div class="row">
-        <div class="col-sm-12 col-md-3 col-lg-3">
-            <label for="sous_categorie">Sous-catégorie</label>
+        <div class="row">
+            <div class="col-sm-12 text-center">   
+                <input type="hidden" name='photo' value='<?=htmlentities($url_image)?>'><br>
+                <button type="submit" class="bouton button btn btn-success" name="action" value="ajout">Ajouter ce produit</button>   
+            </div>
         </div>
-        <div class="col-sm-12 col-md-3 col-lg-3">
-            <select id="id_sous_categorie" name="id_sous_categorie">
-                <?php require('apps/select_souscategorie.php'); ?>
-            </select>
-        </div>
-        <div class="col-sm-12 col-md-3 col-lg-3">
-            <label for="reference">Référence</label>
-        </div>
-        <div class="col-sm-12 col-md-3 col-lg-3">                
-            <input type="text" id="reference" name="reference" value="<?= htmlentities( $reference ) ?>">
-        </div>
-    </div>
-    
-    <div class="row">
-        <div class="col-sm-12 col-md-3 col-lg-3">
-            <label for="stock">Stock</label>
-        </div>
-        <div class="col-sm-12 col-md-9 col-lg-9">                    
-            <input type="text" id="stock" name="stock" value="<?= htmlentities( $stock ) ?>"> 
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-sm-12 col-md-3 col-lg-3">
-            <label for="prix_ht">Prix ht</label>
-        </div>
-        <div class="col-sm-12 col-md-3 col-lg-3">                
-            <input type="text" id="prix_ht" name="prix_ht" value="<?= htmlentities( $prix_ht ) ?>"> 
-        </div>
-        <div class="col-sm-12 col-md-3 col-lg-3">
-            <label for="tva">Tva</label>
-        </div>
-        <div class="col-sm-12 col-md-3 col-lg-3">                
-            <input type="text" id="tva" name="tva" value="<?= htmlentities( $prix_ht ) ?>">
-        </div>            
-    </div>
-
-    <div class="row">
-        <div class="col-sm-12 col-md-3 col-lg-3">
-            <label for="description">Description</label>
-        </div>
-        <div class="col-sm-12 col-md-9 col-lg-9">                
-            <input type="text" id="description" name="description" value="<?= htmlentities( $description ) ?>">
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-sm-12 col-md-3 col-lg-3">
-            <label for="poids">Poids</label>
-        </div>
-        <div class="col-sm-12 col-md-3 col-lg-3">                
-            <input type="text" id="poids" name="poids" value="<?= htmlentities( $poids ) ?>"> 
-        </div>
-        <div class="col-sm-12 col-md-3 col-lg-3">
-            <label for="nom">Nom</label>
-        </div>
-        <div class="col-sm-12 col-md-3 col-lg-3">                
-            <input type="text" id="nom" name="nom" value="<?= htmlentities( $nom ) ?>">
-        </div>
-    </div>    
-
-    <div class="row">
-        <div class="col-sm-12 col-md-3 col-lg-3">
-        </div>
-        <div class="col-sm-12 col-md-3 col-lg-3">                
-        </div>
-        <div class="col-sm-12 col-md-3 col-lg-3">
-            <label for="actif">Actif</label>
-        </div>
-        <div class="col-sm-12 col-md-3 col-lg-3">                
-            Oui <input type="radio" id="actif" name="actif" value="1" checked > 
-            Non <input type="radio" name="actif" value="0"
-        </div>            
-    </div>
-
-     <div class="row">
-        <div class="col-sm-12 text-center">   
-            <input type="hidden" name='photo' value='<?=htmlentities($url_image)?>'><br>
-            <button type="submit" class="bouton button btn btn-success" name="action" value="ajout">Ajouter</button>   
-        </div>
-    </div>
-
-</form>
+    </form>
+</div>

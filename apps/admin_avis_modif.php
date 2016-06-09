@@ -3,7 +3,7 @@
 	{
 		$id = $_GET['id'];
  
-        $avis = $manager->findByIdAvis($_POST['id_avis']);
+        $avis = $manager->findById($_POST['id_avis']);
 
 		$form = array(
         'success'       => true,

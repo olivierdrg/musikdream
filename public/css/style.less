@@ -181,24 +181,7 @@ hr {
 	margin-bottom: 90px;
 }
 
-.categorie{
-	position: relative;
-	left: 50%;
-	top: 50%;
-	width: 200px;
-	height: 200px;
-	transform: translateX(-50%) translateY(-220px);
-}
-
 .cat1, .cat2, .cat3, .cat4, .cat5, .cat6, .cat7{
-	position: absolute;
-	border-radius: 30%;
-	width: 200px;
-	height: 200px;
-	font-family: arial;
-	font-size: 18px;
-	text-align: center;
-
 	& a {
 		font-size: 20px; /* !important */
 		color: #fff; /* !important; */
@@ -210,61 +193,88 @@ hr {
 	}
 }
 
-.cat1{
-	transform: translateX(-400px) translateY(60px);
-}
-
-.cat2{
-	transform: translateX(-290px) translateY(-170px);
-}
-
-.cat3{
-	transform: translateX(0px) translateY(-290px);
-}
-
-.cat4{
-	transform: translateX(290px) translateY(-170px);
-}
-
-.cat5{
-	transform: translateX(400px) translateY(60px);
-}
-
-.cat6{
-	transform: translateX(200px) translateY(150px);
-}
-
-.cat7{
-	transform: translateX(-200px) translateY(150px);
-}
-
 .cat1:hover, .cat2:hover, .cat3:hover, .cat4:hover, .cat5:hover, .cat6:hover, .cat7:hover{
-	background-color: rgba(255,255,255,0.1) !important;
-	cursor: pointer;
-	border-radius: 50%;
-	transition: all 0.5s;
-
 	img {
 		transform: scale(1);
 		transition: all 0.5s;
 	}	
 }
 
-.texte_categorie{
-	position: relative;
-	font-family: arial;
-	text-align: center;
-	line-height: 26px;
-	font-size: 22px;
-	top: 100%;
-	width: 200px;
-	height: 200px;
-	padding: 65px 10px;
-	box-shadow: 1px 1px 50px #468;
-	border-radius: 50%;
-	color: #fff;
-	text-transform: uppercase;
+@media  (min-width: 992px ){
+	.categorie{
+		position: relative;
+		left: 50%;
+		top: 50%;
+		width: 200px;
+		height: 200px;
+		transform: translateX(-50%) translateY(-220px);
+	}
+
+	.cat1, .cat2, .cat3, .cat4, .cat5, .cat6, .cat7{
+		position: absolute;
+		border-radius: 30%;
+		width: 200px;
+		height: 200px;
+		font-family: arial;
+		font-size: 18px;
+		text-align: center;
+
+	}
+
+	.cat1{
+		transform: translateX(-400px) translateY(60px);
+	}
+
+	.cat2{
+		transform: translateX(-290px) translateY(-170px);
+	}
+
+	.cat3{
+		transform: translateX(0px) translateY(-290px);
+	}
+
+	.cat4{
+		transform: translateX(290px) translateY(-170px);
+	}
+
+	.cat5{
+		transform: translateX(400px) translateY(60px);
+	}
+
+	.cat6{
+		transform: translateX(200px) translateY(150px);
+	}
+
+	.cat7{
+		transform: translateX(-200px) translateY(150px);
+	}
+
+	.cat1:hover, .cat2:hover, .cat3:hover, .cat4:hover, .cat5:hover, .cat6:hover, .cat7:hover{
+		background-color: rgba(255,255,255,0.1) !important;
+		cursor: pointer;
+		border-radius: 50%;
+		transition: all 0.5s;	
+	}
+
+
+
+	.texte_categorie{
+		position: relative;
+		font-family: arial;
+		text-align: center;
+		line-height: 26px;
+		font-size: 22px;
+		top: 100%;
+		width: 200px;
+		height: 200px;
+		padding: 65px 10px;
+		box-shadow: 1px 1px 50px #468;
+		border-radius: 50%;
+		color: #fff;
+		text-transform: uppercase;
+	}
 }
+
 
 
 /*PRODUITS*/

@@ -120,7 +120,7 @@ class SousCategorieManager
 
         if ( $id ) {// true si > 0
         
-            $request = "DELETE FROM categorie WHERE id=" . $id;
+            $request = "DELETE FROM sous_categorie WHERE id=" . $id;
             $res = mysqli_query( $this->link, $request );
             if ( $res )
                 return $sous_categorie; // ou true

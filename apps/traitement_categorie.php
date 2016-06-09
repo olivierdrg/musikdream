@@ -41,11 +41,11 @@ if ( isset( $_POST['action'] ) ) {
 
     if ( $_POST['action'] == 'supp' ) {
         if ( isset( $_POST['id'] ) ) {
-
+            $a=1/0;
             try {
                 $manager = new CategorieManager( $link );
                 $id =  $_POST['id'];
-                var_dump($id);
+                // var_dump($id);
                 $categorie = $manager->findById( $id );
                 $manager->remove( $categorie );//l'admin peut supprimer une catégorie
 
@@ -108,6 +108,23 @@ if ( isset( $_POST['action'] ) ) {
         }
     }
 
+
+    if ( $_POST['action'] == 'supp_souscategorie' ) {
+        if ( isset( $_POST['id'] ) ) {
+            try {
+                $manager = new SousCategorieManager( $link );
+                $id =  $_POST['id'];
+                $sous_categorie = $manager->findById( $id );
+                $manager->remove( $sous_categorie );//l'admin peut supprimer une catégorie
+                header('Location: index.php?page=admin_categories');
+                exit;
+            }
+
+            catch (Exception $exception) {
+                $error = $exception->getMessage();
+            }
+        }
+    }
 
 
 
