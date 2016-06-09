@@ -1,6 +1,5 @@
 <?php
 
-
     if ( isset( $_POST['action'] ) ) 
     {
         if ( !isset( $_SESSION['login'] ) ) {

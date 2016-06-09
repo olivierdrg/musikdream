@@ -1,4 +1,4 @@
-<form method="POST" class="register-form" enctype="multipart/form-data">
+<form method="POST" class="register-form">
 	<input type="hidden" name="id_produit" value="<?=$produit->getId()?>">
 
 
@@ -30,7 +30,7 @@
 	    </div>
 
 		<div class="col-md-2 submit">   
-            <button type="submit" class="bouton button btn btn-success" name="action" value="admin_avis_ajout"><a href="?page=detail_produit&id_produit=<?=$produit->getId()?>">Publier mon avis</a></button>   
+            <button type="submit" class="bouton button btn btn-success" name="action" value="admin_avis_ajout">Publier mon avis</button>   
         </div>
     </div>
 </form>
