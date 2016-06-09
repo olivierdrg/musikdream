@@ -52,7 +52,7 @@ class UtilisateurManager {
         if ( !isset( $data['login'] ) ) throw new Exception ("Login manquant");                 
     
         if ( $data['mot_passe'] !=  $data['confirme_mot_passe'] ) throw new Exception ("Mot de passe incorrect");
-
+        if ( !is_date_valide( $data['date_naissance'] ) ) throw new Exception ("Date de naissance non valide");
         
 
         $utilisateur->setNom( $data['nom'] );

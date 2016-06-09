@@ -26,4 +26,11 @@
         $date = str_replace( '/', '-', $date );
         return date( 'Y-m-d', strtotime( $date ) );
     }
+
+    function is_date_valide( $date ) {
+        $age = time() - strtotime( date_2_sql( $date ) );
+
+        if ( $age < 0 ) return false;
+            else return true;
+    }
 ?>    
