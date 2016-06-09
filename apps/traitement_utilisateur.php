@@ -46,7 +46,7 @@ if ( isset( $_POST['action'] ) ) {
             $utilisateur -> setNom($_POST['nom']);
             $utilisateur -> setPrenom($_POST['prenom']);
             $utilisateur -> setEmail($_POST['email']);
-            $utilisateur -> setDateNaissance($_POST['date_naissance']);
+            $utilisateur -> setDateNaissance(date_2_sql($_POST['date_naissance']));
             $utilisateur -> setTelephone($_POST['telephone']);
             $utilisateur -> setSexe($_POST['sexe']);
 
