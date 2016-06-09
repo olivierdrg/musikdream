@@ -71,13 +71,6 @@
 			return $this->note;
 		}
 
-		public function getStar() 
-		{
-			$this->star = str_repeat( STAR, $this->getNote());
-			return $this->star;
-		}
-
-
 		public function setContenu( $contenu ) 
 		{
         if ( strlen( $contenu ) < 10 ) 

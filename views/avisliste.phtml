@@ -7,7 +7,7 @@
 	</div>
 	<div class="col-md-6">
 		<div class="col-md-2">
-		   <p>Note : <p class="notes fa"><?= htmlentities( $avis->getStar()) ?></p></p>
+		   <p>Note : <p class="notes fa"><?= htmlentities( display_star( $avis->getNote() ) ) ?></p></p>
 		</div>
 
 		<div class="col-md-4">
@@ -18,8 +18,8 @@
 		    <p>Date : <?= htmlentities(date("m/d/Y H\hi", strtotime($avis->getDate()))) ?></p>
 		</div>
 
-		<div class="col-md-2">
+<!-- 		<div class="col-md-2">
         	<a class="bouton button btn btn-success" href="?page=admin_avis_modif&id=<?= $avis->getId() ?>">Modifier</a>
-    	</div>
+    	</div> -->
 	</div>
 </div>	
