@@ -66,7 +66,6 @@ if ( isset( $_POST['action'] ) ) {
         $uploadOk = 1;
         $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
         // Check if image file is a actual image or fake image
-        // if(isset($_POST["submit"])) {
             $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
             if($check !== false) {
                 // echo "File is an image - " . $check["mime"] . ".";
@@ -75,7 +74,6 @@ if ( isset( $_POST['action'] ) ) {
                 $error = "Ce fichier n'est pas une image valide.";
                 $uploadOk = 0;
             }
-        // }
         // Check if file already exists
         if (file_exists($target_file)) {
             $error = "Une image avec le même nom existe déjà sur le serveur et sera utilisée.";
@@ -100,14 +98,13 @@ if ( isset( $_POST['action'] ) ) {
             }
             else {
                 if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-                    $error = "L'image ". basename( $_FILES["fileToUpload"]["name"]). " a été correctement uploadé.";
+                    $error = "L'image ". basename( $_FILES["fileToUpload"]["name"]). " a été correctement uploadée.";
                 } else {
                     $error = "Erreur interne1.";
                 }
             }
         }
     }
-
 
     if ( $_POST['action'] == 'supp_souscategorie' ) {
         if ( isset( $_POST['id'] ) ) {
@@ -119,17 +116,11 @@ if ( isset( $_POST['action'] ) ) {
                 header('Location: index.php?page=admin_categories');
                 exit;
             }
-
             catch (Exception $exception) {
                 $error = $exception->getMessage();
             }
         }
     }
-
-
-
-
-
 }
 
 ?>
