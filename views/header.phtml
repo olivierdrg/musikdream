@@ -11,18 +11,6 @@
                 <ul class="nav navbar-nav">
                     <li><a href="index.php">Accueil</a></li>
                 </ul>
-                <ul class="nav navbar-nav">
-                    <form action="recherche" method="post">
-                        <div class="input-group col-md-12">
-                            <input class="form-control input-sm" type="text" placeholder="Rechercher sur le site...">
-                            <span class="input-group-btn">
-                                <button class="bouton-recherche btn btn-info btn-sm" type="button">
-                                    <i class="glyphicon glyphicon-search"></i>
-                                </button>
-                            </span>
-                        </div>
-                    </form>
-                </ul>
 
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="index.php?page=register">Créer mon compte</a></li>
@@ -34,3 +22,17 @@
         </div>
     </nav>    
 </div>
+<form action="recherche" method="post">
+    <div class="form-group">
+        <div class="input-group input-group-md icon-addon addon-md">
+            <input type="text" placeholder="Rechercher sur le site..." name="" id="schbox" class="form-control">
+                <i class="icon icon-search"></i>
+            <span class="input-group-btn">
+                <button type="submit" class="bouton-recherche btn btn-inverse">
+                    <i class="glyphicon glyphicon-search"></i>
+                    Rechercher
+                </button>
+            </span>
+        </div>
+    </div>
+</form>

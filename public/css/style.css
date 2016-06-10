@@ -111,6 +111,7 @@ hr {
 .navbar-nav > li > a:hover {
   color: #fff !important;
 }
+
 @media (max-width: 768px) {
   .navbar-nav > li > a {
     padding-left: 35px;
@@ -124,6 +125,11 @@ hr {
 .navbar-inverse .bonjour > a {
   text-decoration: none;
   color: #F40B00 !important;
+}
+
+.bouton-recherche {
+  background-color: #337AB7;
+  color: #fff;
 }
 /*FOOTER*/
 .footer {
