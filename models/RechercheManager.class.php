@@ -1,9 +1,9 @@
 <?php
 /**
-* @file : ProduitManager.class.php
+* @file : RechercheManager.class.php
 *
 */
-class ProduitManager {
+class RechercheManager {
 
     private $link;
 
@@ -168,17 +168,5 @@ class ProduitManager {
         }
     }
 
-    public function search( $s ) {
-        $s = mysqli_real_escape_string( $this->link, $s );
-        $s = '%' . $s . '%';
-        
-        $list = [];
-        $request = "SELECT * FROM produit WHERE nom LIKE '" . $s . "' OR description LIKE '" . $s . "'";
- 
-        $res = mysqli_query( $this->link, $request );
-        while ( $produit = mysqli_fetch_object( $res, 'Produit', array( $this->link ) ) )
-            $list[] = $produit;
-        return $list;
-    }
 }
 ?>

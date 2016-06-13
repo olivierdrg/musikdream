@@ -1,0 +1,19 @@
+
+<div class="col-md-12">
+    <div class="cadre_produit panel panel-default">
+        <div class="panel-body">
+        	
+            <img class="pull-right" src="<?= $produit->getPhoto() ?>" alt="<?= $produit->getNom() ?>" onClick="window.open(this.href, '<?= $produit->getPhoto() ?>', 'height=400, width=400, top=400, left=700, toolbar=no, menubar=no, location=no, resizable=no, scrollbars=no, status=no')">
+            <a href="?page=detail_produit&id_produit=<?= htmlentities( $produit->getId() ) ?>">
+            	<h3><?= htmlentities( $produit->getNom() ) ?></h3>
+            </a>
+            <p>Sous catégorie : <?= htmlentities( $produit->getSousCategorie()->getNom() ) ?></p>
+            <p>Référence : <?= htmlentities( $produit->getReference() ) ?></p>
+            <p>En stock : <?= htmlentities( $produit->getStock() ) ?></p>
+            <p>Prix HT : <?= number_format(htmlentities( $produit->getPrixHt()),2,'.','') ?> €</p>
+            <p>Prix TTC : <?= number_format(htmlentities( $produit->getPrixTtc()),2,'.','') ?> € dont <?= number_format(htmlentities( $produit->getTvaValue()),2,'.','') ?> € de tva</p>
+            <p>Description : <?= htmlentities( $produit->getDescription() ) ?></p>
+            <p>Poids : <?= number_format(htmlentities( $produit->getPoidsKg()),2,'.','') ?> Kg</p> 
+        </div>
+    </div>
+</div>

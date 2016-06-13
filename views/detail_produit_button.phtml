@@ -1,4 +1,27 @@
-<form action="index.php?page=panier" method="POST" class="register-form" enctype="multipart/form-data">
+<form action="index.php?page=panier" method="POST" id="achat_produit" class="register-form" enctype="multipart/form-data">
     <input type="hidden" name="id" value="<?= intval( $produit->getId() ) ?>">
     <button type="submit" class="bouton btn btn-warning btn-xs pull-left" name="action" value="ajout">Ajouter au panier</button> 
 </form>
+<script>
+jQuery('#achat_produit').submit(function(e){
+    e.preventDefault();
+    var s = jQuery(this).find('input').val();
+    jQuery.ajax({
+        url: 'index.php?page=panier',
+        type:'POST',
+        data: {
+            'ajax' : true,
+            'action' : 'ajout',
+            'id' : s,
+        },
+        success:function(data) {
+            jQuery('.quantite_panier').html(jQuery('.quantite_panier', data).html());
+        },
+        error: function(errorThrown){
+            console.log(errorThrown);
+        }
+    });
+
+    return false;
+});
+</script>

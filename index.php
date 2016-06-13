@@ -48,7 +48,8 @@
         'admin_avis_ajout',
         'admin_avis_modif',
         'recap_panier',
-        'admin_commandes'
+        'admin_commandes',
+        'recherches'
     );
 
     $access_traitement = array(      
@@ -74,7 +75,8 @@
         'admin_avis_ajout'          => 'avis',
         'admin_avis_modif'          => 'avis',
         'detail_produit'            => 'avis',
-        'admin_commandes'           => 'admin_commande'
+        'admin_commandes'           => 'admin_commande',
+        'recherches'                => 'recherche',
     );
 
     if ( isset( $_GET['page'] ) ) {
@@ -88,9 +90,8 @@
     }
 
     if ( isset( $_GET['ajax'] ) ) {
-        $accessAjax = ['panier'];
-        $pageAjax = 'panier';
-        require('apps/'.$pageAjax.'.php');
+
+        require('apps/recherche.php');
     } else
         require('apps/skel.php');
 

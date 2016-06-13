@@ -22,13 +22,13 @@
         </div>     
     </nav>    
 </div>
-<form action="recherche" method="post">
+<form action="index.php?page=recherches" method="post">
     <div class="form-group">
         <div class="input-group input-group-md icon-addon addon-md">
-            <input type="text" placeholder="Rechercher sur le site..." name="" id="schbox" class="form-control">
+            <input type="text" placeholder="Rechercher sur le site..." name="s" id="js-search" class="form-control">
                 <i class="icon icon-search"></i>
             <span class="input-group-btn">
-                <button type="submit" class="bouton-recherche btn btn-inverse">
+                <button type="submit" class="bouton-recherche btn btn-inverse" name="action" value="recherche">
                     <i class="glyphicon glyphicon-search"></i>
                     Rechercher
                 </button>
@@ -36,3 +36,4 @@
         </div>
     </div>
 </form>
+<div class="row" id="js-result"></div>
